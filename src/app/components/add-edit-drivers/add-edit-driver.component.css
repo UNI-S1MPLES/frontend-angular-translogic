@@ -1,0 +1,9 @@
+.all {
+    margin: 50px;
+}
+
+.has-error {
+    display: inline-block;
+    margin-left: 30px;
+    color: red;
+}
