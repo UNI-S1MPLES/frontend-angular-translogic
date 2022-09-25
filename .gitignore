@@ -7,8 +7,6 @@
 /bazel-out
 
 # Node
-/node_modules
-npm-debug.log
 yarn-error.log
 
 # IDEs and editors
@@ -37,6 +35,5 @@ yarn-error.log
 testem.log
 /typings
 
-# System files
-.DS_Store
+# System 
 Thumbs.db
