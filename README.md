@@ -1,6 +1,6 @@
 
 # IMPORTANTE #
-Se recomienda usar una terminal distinta para cada paso
+Se recomienda usar una terminal distinta para <LOS PASOS 2 Y 3>
 
 # AL CLONAR EL REPOSITORIO (Paso 1)
 npm install
