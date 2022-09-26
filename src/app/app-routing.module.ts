@@ -1,10 +1,16 @@
+import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddEditDriverComponent } from './components/add-edit-drivers/add-edit-driver.component';
 import { ListdriversComponent } from './components/listdrivers/listdrivers.component';
 
 const routes: Routes = [
-  { path: "", component:ListdriversComponent },
+  { path: "", component:LoginComponent },
+  { path: "register", component:RegisterComponent },
+  { path: "home", component:HomeComponent },
+  { path: "list", component:ListdriversComponent },
   { path: "add", component:AddEditDriverComponent }
 ];
 
