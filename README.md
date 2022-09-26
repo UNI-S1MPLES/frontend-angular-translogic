@@ -1,12 +1,12 @@
 
 # IMPORTANTE #
-Acciones que se deben realizar para poder trabajar correctamente sobre el programa y poder ejecutarlo sin problemas...
+Se recomienda usar una terminal distinta para cada paso
 
-# AL CLONAR EL REPOSITORIO POR PRIMERA VEZ: (1)
+# AL CLONAR EL REPOSITORIO (Paso 1)
 npm install
  
-# INICIAR DB (2)
+# INICIAR DB (Paso 2)
 npm run json:server
 
-# INICIAR SERVER (3)
+# INICIAR SERVER (Paso 3)
 ng serve -o
