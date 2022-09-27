@@ -422,7 +422,7 @@
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #aab7cf transparent;
-    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+    box-shadow: 0px 0px 20px #0129701a;
     background-color: #FF4800;
   }
   @media (max-width: 1199px) {
@@ -474,7 +474,7 @@
   .sidebar-nav .nav-heading {
     font-size: 11px;
     text-transform: uppercase;
-    color: #899bbd;
+    color: #ffffff;
     font-weight: 600;
     margin: 10px 0 5px 15px;
   }
@@ -483,7 +483,7 @@
     align-items: center;
     font-size: 15px;
     font-weight: 600;
-    color: #000000;
+    color: #FF4800;
     transition: 0.3;
     background: #f6f9ff;
     padding: 10px 15px;
