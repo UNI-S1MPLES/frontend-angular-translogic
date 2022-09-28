@@ -2,27 +2,10 @@
   "drivers": [
     {
       "id": 0,
-      "name": "Brian",
-      "email": "brian.uceda@gmail",
-      "age": "18"
-    },
-    {
-      "id": 1,
-      "name": "Edward",
-      "email": "edward@gmail",
-      "age": "20"
-    },
-    {
-      "id": 2,
-      "name": "sdsdf",
-      "email": "asdfasdf@hotmail.com",
-      "age": "12"
-    },
-    {
-      "id": 3,
-      "name": "sadsa",
-      "email": "dasd@gmail.com",
-      "age": "12"
+      "names": "Brian",
+      "surnames": "Uceda Hirata",
+      "date_register": "28/09/22",
+      "email": "brian.uceda@gmail.com"
     }
   ]
 }

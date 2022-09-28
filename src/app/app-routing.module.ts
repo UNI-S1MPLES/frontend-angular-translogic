@@ -7,10 +7,16 @@ import { AddEditDriverComponent } from './components/add-edit-drivers/add-edit-d
 import { ListdriversComponent } from './components/listdrivers/listdrivers.component';
 
 const routes: Routes = [
-  { path: "", component:LoginComponent },
-  { path: "register", component:RegisterComponent },
+  // Principales
+  { path: "", component:LoginComponent }, // Login
+  { path: "register", component:RegisterComponent }, // Register
   { path: "home", component:HomeComponent },
-  { path: "drivers-list", component:ListdriversComponent },
+  { path: "travels", component:HomeComponent },
+  { path: "drivers", component:ListdriversComponent },
+  { path: "admins", component:ListdriversComponent },
+  { path: "faq", component:ListdriversComponent },
+  { path: "contact", component:ListdriversComponent },
+  // Extras
   { path: "drivers-add-edit", component:AddEditDriverComponent }
 ];
 
