@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: "", component:LoginComponent },
   { path: "register", component:RegisterComponent },
   { path: "home", component:HomeComponent },
-  { path: "list", component:ListdriversComponent },
-  { path: "add", component:AddEditDriverComponent }
+  { path: "drivers-list", component:ListdriversComponent },
+  { path: "drivers-add-edit", component:AddEditDriverComponent }
 ];
 
 @NgModule({
