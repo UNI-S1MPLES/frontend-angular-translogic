@@ -2,10 +2,9 @@
   "drivers": [
     {
       "id": 0,
-      "names": "Brian",
-      "surnames": "Uceda Hirata",
-      "date_register": "28/09/22",
-      "email": "brian.uceda@gmail.com"
+      "name": "Brian",
+      "email": "brian.uceda@gmail.com",
+      "age": "18"
     }
   ]
 }
