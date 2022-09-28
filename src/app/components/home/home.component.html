@@ -1,6 +1,7 @@
 
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
+  
       <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="">
@@ -8,23 +9,33 @@
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
       </div><!-- End Logo -->
-
+  
+  
+  
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
-          <li class="nav-item dropdown pe-3">  
+
+  
+          <li class="nav-item dropdown pe-3">
+  
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
               <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
               <span> Edward Paolo</span>
-            </a><!-- End Profile Iamge Icon -->           
-          </li><!-- End Profile Nav -->  
+            </a><!-- End Profile Iamge Icon -->
+  
+           
+          </li><!-- End Profile Nav -->
+  
         </ul>
-      </nav><!-- End Icons Navigation -->  
+      </nav><!-- End Icons Navigation -->
+  
     </header><!-- End Header -->
   
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
+  
       <ul class="sidebar-nav" id="sidebar-nav">
-
+  
         <li class="nav-item">
           <a class="nav-link " routerLink="home"> 
             <i class="bi bi-grid"></i>
@@ -32,23 +43,35 @@
           </a>
         </li><!-- End Dashboard Nav -->
   
+
         <li class="nav-item">
-          <a class="nav-link collapsed" href="page-travels.html">
-            <i class="bi bi-share"></i><span>Viajes</span>
+          <a class="nav-link collapsed" href="#">
+            <i class="bi bi-journal-text"></i><span>Viajes</span><i></i>
           </a>
         </li><!-- End Forms Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="page-drivers.html">
-            <i class="bi bi-people"></i><span>Conductores</span>
+          <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-layout-text-window-reverse"></i><span>Tablas</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="tables-data.html">
+                <i class="bi bi-circle"></i><span>Tablas de datos</span>
+              </a>
+            </li>
+          </ul>
+        </li><!-- End Tables Nav -->
+  
+       
+        <li class="nav-heading">Pages</li>
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>Conductores</span>
           </a>
         </li><!-- End Profile Page Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="page-schedule.html">
-            <i class="bi bi-people"></i><span>Horarios</span>
-          </a>
-        </li><!-- End Forms Nav -->
   
         <li class="nav-item">
           <a class="nav-link collapsed" href="pages-faq.html">
@@ -84,13 +107,14 @@
             <span>Error 404</span>
           </a>
         </li><!-- End Error 404 Page Nav -->
-
+  
+  
       </ul>
   
     </aside><!-- End Sidebar-->
   
     <main id="main" class="main">
-
+  
       <div class="pagetitle">
         <h1>Inicio</h1>
         <nav>
@@ -103,35 +127,31 @@
   
       <section class="section dashboard">
         <div class="row">
-          
+  
           <!-- Left side columns -->
           <div class="col-lg-8">
             <div class="row">
-
+  
               <!-- Horizontal Form -->
               <form>
-
                 <div class="row mb-3">
                   <label for="inputEmail3" class="col-sm-2 col-form-label">importe</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputText">
                   </div>
                 </div>
-
                 <div class="row mb-3">
                   <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                   <div class="col-sm-10">
                     <input type="email" class="form-control" id="inputEmail">
                   </div>
                 </div>
-
                 <div class="row mb-3">
                   <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                   <div class="col-sm-10">
                     <input type="password" class="form-control" id="inputPassword">
                   </div>
                 </div>
-
                 <fieldset class="row mb-3">
                   <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
                   <div class="col-sm-10">
@@ -155,7 +175,6 @@
                     </div>
                   </div>
                 </fieldset>
-
                 <div class="row mb-3">
                   <div class="col-sm-10 offset-sm-2">
                     <div class="form-check">
@@ -166,33 +185,33 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary btn-primary-modded">Submit</button>
-                  <button type="reset" class="btn btn-secondary btn-secondary-modded">Reset</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
-
               </form><!-- End Horizontal Form -->
-
+  
+              
+  
             </div>
           </div><!-- End Left side columns -->
-
-        </div><!-- End Right side columns -->
+  
+        
+          
+  
+          </div><!-- End Right side columns -->
+  
+        
       </section>
   
     </main><!-- End #main -->
   
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
-
       <div class="copyright">
         &copy; Copyright <strong><span>TransLogic</span></strong>. Todos los derechos reservados
       </div>
-
       <div class="credits">
         Diseñado por <a >Grupo 2 Arquitectura de Aplicaciones Web</a>
       </div>
-
     </footer><!-- End Footer -->
-
-    <!-- Este comentario viene desde la capa DEV -->

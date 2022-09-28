@@ -1,0 +1,44 @@
+<div class="all">
+    <div>
+        <h2>Detalle de conductores</h2>
+    </div>
+    <div>
+        <form [formGroup]="myForm">
+            <!-- NAME -->
+            <mat-form-field appearance="fill" color="warn">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="name" placeholder="Ingresar nombre...">
+            </mat-form-field>
+            <div *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched" class="has-error">
+                <span>Este campo es obligatorio</span>
+            </div>
+            <div *ngIf="myForm.get('name')?.hasError('maxlength') && myForm.get('name')?.touched" class="has-error">
+                <span>El tamaño maximo es de 30 caracteres</span>
+            </div>
+            <br>
+            <!-- EMAIL -->
+            <mat-form-field appearance="fill" color="warn">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Ingresar email...">
+            </mat-form-field>
+            <div *ngIf="myForm.get('email')?.hasError('required') && myForm.get('email')?.touched" class="has-error">
+                <span>Este campo es obligatorio</span>
+            </div>
+            <br>
+            <!-- AGE -->
+            <mat-form-field appearance="fill" color="warn">
+                <mat-label>Age</mat-label>
+                <input matInput formControlName="age" placeholder="Ingresar edad...">
+            </mat-form-field>
+            <div *ngIf="myForm.get('age')?.hasError('required') && myForm.get('age')?.touched" class="has-error">
+                <span>Este campo es obligatorio</span>
+            </div>
+            <br>
+            <!-- BUTTON FOR SAVE -->
+            <button type="button" mat-raised-button color="warn" [disabled]="myForm.invalid" (click)="saveDriver()">Guardar</button>
+            <button type="button" mat-raised-button color="warn" routerLink="/">Cancelar</button>
+            <!-- myForm IS invalid = El botón estará desahabilitado -->
+            <!-- user CLICK in button = Llama a la funcion 'saveDriver' -->
+        </form>
+    </div>
+</div>
