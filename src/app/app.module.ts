@@ -1,41 +1,48 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms'; // PARA FORMULARIOS (TABLAS)
-import { ListdriversComponent } from './components/listdrivers/listdrivers.component';
-import { AddEditDriverComponent } from './components/add-edit-drivers/add-edit-driver.component';
 import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+
+import { ReactiveFormsModule } from '@angular/forms'; // PARA FORMULARIOS (TABLAS)
+import { HttpClientModule } from '@angular/common/http'; // PARA JSON
+
 import { HomeComponent } from './components/home/home.component';
+import { TravelsComponent } from './components/travels/travels.component';
+import { DriversComponent } from './components/drivers/drivers.component';
 import { AdminsComponent } from './components/admins/admins.component';
-import { ViajesComponent } from './components/viajes/viajes.component';
 import { FaqComponent } from './components/faq/faq.component';
-import { Error404Component } from './components/error404/error404.component'; // PARA JSON
+import { ContactComponent } from './components/contact/contact.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { Error404Component } from './components/error404/error404.component';
+
+import { AddEditDriverComponent } from './components/add-edit-drivers/add-edit-driver.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListdriversComponent,
-    AddEditDriverComponent,
-    LoginComponent,
-    RegisterComponent,
+    DriversComponent,
     HomeComponent,
+    TravelsComponent,
+    DriversComponent,
     AdminsComponent,
-    ViajesComponent,
     FaqComponent,
-    Error404Component
+    ContactComponent,
+    RegisterComponent,
+    LoginComponent,
+    Error404Component,
+    AddEditDriverComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule, // PARA JSON
     AppRoutingModule,
     AngularMaterialModule,
     ReactiveFormsModule, // PARA FORMULARIOS (TABLAS)
-    HttpClientModule, BrowserAnimationsModule // PARA JSON
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

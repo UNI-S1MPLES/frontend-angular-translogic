@@ -5,11 +5,11 @@ import { Driver } from 'src/app/models/driver';
 import { DriverService } from 'src/app/services/driver.service';
 
 @Component({
-  selector: 'app-listdrivers',
-  templateUrl: './listdrivers.component.html',
-  styleUrls: ['./listdrivers.component.css']
+  selector: 'app-drivers',
+  templateUrl: './drivers.component.html',
+  styleUrls: ['./drivers.component.css']
 })
-export class ListdriversComponent implements OnInit {
+export class DriversComponent implements OnInit {
 
   driver: Driver[] = []; // Areglo para llenarlo con la lista de drivers ya llena
   dataSource = new MatTableDataSource<Driver>();
