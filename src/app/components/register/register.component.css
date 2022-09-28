@@ -39,19 +39,7 @@
     }
   }
   
-  /*--------------------------------------------------------------
-  # Page Title
-  --------------------------------------------------------------*/
-  .pagetitle {
-    margin-bottom: 10px;
-  }
-  .pagetitle h1 {
-    font-size: 24px;
-    margin-bottom: 0;
-    font-weight: 600;
-    color: #012970;
-  }
-  
+
   /*--------------------------------------------------------------
   # Back to top button
   --------------------------------------------------------------*/
@@ -85,90 +73,6 @@
   /*--------------------------------------------------------------
   # Override some default Bootstrap stylings
   --------------------------------------------------------------*/
-  /* Dropdown menus */
-  .dropdown-menu {
-    border-radius: 4px;
-    padding: 10px 0;
-    -webkit-animation-name: dropdown-animate;
-    animation-name: dropdown-animate;
-    -webkit-animation-duration: 0.2s;
-    animation-duration: 0.2s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    border: 0;
-    box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
-  }
-  @media (max-width: 480px) {
-    .dropdown-menu {
-      width: 100vw !important;
-    }
-  }
-  .dropdown-menu .dropdown-header, .dropdown-menu .dropdown-footer {
-    text-align: center;
-    font-size: 15px;
-    padding: 10px 25px;
-  }
-  .dropdown-menu .dropdown-footer a {
-    color: #444444;
-    text-decoration: underline;
-  }
-  .dropdown-menu .dropdown-footer a:hover {
-    text-decoration: none;
-  }
-  .dropdown-menu .dropdown-divider {
-    color: #a5c5fe;
-    margin: 0;
-  }
-  .dropdown-menu .dropdown-item {
-    font-size: 14px;
-    padding: 10px 15px;
-    transition: 0.3s;
-  }
-  .dropdown-menu .dropdown-item i {
-    margin-right: 10px;
-    font-size: 18px;
-    line-height: 0;
-  }
-  .dropdown-menu .dropdown-item:hover {
-    background-color: #f6f9ff;
-  }
-  
-  @media (min-width: 768px) {
-    .dropdown-menu-arrow::before {
-      content: "";
-      width: 13px;
-      height: 13px;
-      background: #fff;
-      position: absolute;
-      top: -7px;
-      right: 20px;
-      transform: rotate(45deg);
-      border-top: 1px solid #eaedf1;
-      border-left: 1px solid #eaedf1;
-    }
-  }
-  @-webkit-keyframes dropdown-animate {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-    0% {
-      opacity: 0;
-    }
-  }
-  @keyframes dropdown-animate {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-    0% {
-      opacity: 0;
-    }
-  }
   /* Light Backgrounds */
   .bg-primary-light {
     background-color: #cfe2ff;
@@ -225,7 +129,7 @@
     padding: 20px 0 15px 0;
     font-size: 18px;
     font-weight: 500;
-    color: #012970;
+    color: #000000;
     font-family: "Poppins", sans-serif;
   }
   .card-title span {
@@ -268,7 +172,7 @@
     box-shadow: none;
   }
   .accordion-button:not(.collapsed) {
-    color: #012970;
+    color: #000000;
     background-color: #f6f9ff;
   }
   
@@ -287,27 +191,6 @@
     font-size: 15px;
   }
   
-  /* Breadcrumbs */
-  .breadcrumb {
-    font-size: 14px;
-    font-family: "Nunito", sans-serif;
-    color: #899bbd;
-    font-weight: 600;
-  }
-  .breadcrumb a {
-    color: #899bbd;
-    transition: 0.3s;
-  }
-  .breadcrumb a:hover {
-    color: #51678f;
-  }
-  .breadcrumb .breadcrumb-item::before {
-    color: #899bbd;
-  }
-  .breadcrumb .active {
-    color: #51678f;
-    font-weight: 600;
-  }
   
   /* Bordered Tabs */
   .nav-tabs-bordered {
@@ -319,11 +202,11 @@
     color: #2c384e;
   }
   .nav-tabs-bordered .nav-link:hover, .nav-tabs-bordered .nav-link:focus {
-    color: #4154f1;
+    color: #000000;
   }
   .nav-tabs-bordered .nav-link.active {
     background-color: #fff;
-    color: #4154f1;
+    color: #000000;
     border-bottom: 2px solid #4154f1;
   }
   
@@ -345,7 +228,7 @@
   .logo span {
     font-size: 26px;
     font-weight: 700;
-    color: #012970;
+    color: #000000;
     font-family: "Nunito", sans-serif;
   }
   
@@ -363,7 +246,7 @@
     font-size: 32px;
     padding-left: 10px;
     cursor: pointer;
-    color: #012970;
+    color: #000000;
   }
   .header .search-bar {
     min-width: 360px;
@@ -611,7 +494,7 @@
     color: #4154f1;
   }
   .sidebar-nav .nav-link.collapsed {
-    color: #012970;
+    color: #000000;
     background: #fff;
   }
   .sidebar-nav .nav-link.collapsed i {
@@ -700,7 +583,7 @@
   }
   .dashboard .info-card h6 {
     font-size: 28px;
-    color: #012970;
+    color: #000000;
     font-weight: 700;
     margin: 0;
     padding: 0;
@@ -714,7 +597,7 @@
     flex-grow: 0;
   }
   .dashboard .sales-card .card-icon {
-    color: #4154f1;
+    color: #000000;
     background: #f6f6fe;
   }
   .dashboard .revenue-card .card-icon {
@@ -832,215 +715,3 @@
   
   
   
-  /*--------------------------------------------------------------
-  # Profie Page
-  --------------------------------------------------------------*/
-  .profile .profile-card img {
-    max-width: 120px;
-  }
-  .profile .profile-card h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #2c384e;
-    margin: 10px 0 0 0;
-  }
-  .profile .profile-card h3 {
-    font-size: 18px;
-  }
-  .profile .profile-card .social-links a {
-    font-size: 20px;
-    display: inline-block;
-    color: rgba(1, 41, 112, 0.5);
-    line-height: 0;
-    margin-right: 10px;
-    transition: 0.3s;
-  }
-  .profile .profile-card .social-links a:hover {
-    color: #012970;
-  }
-  .profile .profile-overview .row {
-    margin-bottom: 20px;
-    font-size: 15px;
-  }
-  .profile .profile-overview .card-title {
-    color: #012970;
-  }
-  .profile .profile-overview .label {
-    font-weight: 600;
-    color: rgba(1, 41, 112, 0.6);
-  }
-  .profile .profile-edit label {
-    font-weight: 600;
-    color: rgba(1, 41, 112, 0.6);
-  }
-  .profile .profile-edit img {
-    max-width: 120px;
-  }
-  
-  /*--------------------------------------------------------------
-  # F.A.Q Page
-  --------------------------------------------------------------*/
-  .faq .basic h6 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #4154f1;
-  }
-  .faq .basic p {
-    color: #6980aa;
-  }
-  
-  /*--------------------------------------------------------------
-  # Contact
-  --------------------------------------------------------------*/
-  .contact .info-box {
-    padding: 28px 30px;
-  }
-  .contact .info-box i {
-    font-size: 38px;
-    line-height: 0;
-    color: #4154f1;
-  }
-  .contact .info-box h3 {
-    font-size: 20px;
-    color: #012970;
-    font-weight: 700;
-    margin: 20px 0 10px 0;
-  }
-  .contact .info-box p {
-    padding: 0;
-    line-height: 24px;
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-  .contact .php-email-form .error-message {
-    display: none;
-    color: #fff;
-    background: #ed3c0d;
-    text-align: left;
-    padding: 15px;
-    margin-bottom: 24px;
-    font-weight: 600;
-  }
-  .contact .php-email-form .sent-message {
-    display: none;
-    color: #fff;
-    background: #18d26e;
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 24px;
-    font-weight: 600;
-  }
-  .contact .php-email-form .loading {
-    display: none;
-    background: #fff;
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 24px;
-  }
-  .contact .php-email-form .loading:before {
-    content: "";
-    display: inline-block;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    margin: 0 10px -6px 0;
-    border: 3px solid #18d26e;
-    border-top-color: #eee;
-    -webkit-animation: animate-loading 1s linear infinite;
-    animation: animate-loading 1s linear infinite;
-  }
-  .contact .php-email-form input, .contact .php-email-form textarea {
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 14px;
-    border-radius: 0;
-  }
-  .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-    border-color: #4154f1;
-  }
-  .contact .php-email-form input {
-    padding: 10px 15px;
-  }
-  .contact .php-email-form textarea {
-    padding: 12px 15px;
-  }
-  .contact .php-email-form button[type=submit] {
-    background: #4154f1;
-    border: 0;
-    padding: 10px 30px;
-    color: #fff;
-    transition: 0.4s;
-    border-radius: 4px;
-  }
-  .contact .php-email-form button[type=submit]:hover {
-    background: #5969f3;
-  }
-  @-webkit-keyframes animate-loading {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes animate-loading {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /*--------------------------------------------------------------
-  # Error 404
-  --------------------------------------------------------------*/
-  .error-404 {
-    padding: 30px;
-  }
-  .error-404 h1 {
-    font-size: 180px;
-    font-weight: 700;
-    color: #4154f1;
-    margin-bottom: 0;
-    line-height: 150px;
-  }
-  .error-404 h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #012970;
-    margin-bottom: 30px;
-  }
-  .error-404 .btn {
-    background: #51678f;
-    color: #fff;
-    padding: 8px 30px;
-  }
-  .error-404 .btn:hover {
-    background: #3e4f6f;
-  }
-  @media (min-width: 992px) {
-    .error-404 img {
-      max-width: 50%;
-    }
-  }
-  
-  /*--------------------------------------------------------------
-  # Footer
-  --------------------------------------------------------------*/
-  .footer {
-    padding: 20px 0;
-    font-size: 14px;
-    transition: all 0.3s;
-    border-top: 1px solid #cddfff;
-  }
-  .footer .copyright {
-    text-align: center;
-    color: #012970;
-  }
-  .footer .credits {
-    padding-top: 5px;
-    text-align: center;
-    font-size: 13px;
-    color: #012970;
-  }
