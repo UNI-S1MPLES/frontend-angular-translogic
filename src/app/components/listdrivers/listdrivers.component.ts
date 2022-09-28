@@ -27,9 +27,6 @@ export class ListdriversComponent implements OnInit {
         this.dataSource = new MatTableDataSource(data); // La usa para llenar 'dataSource'
       }
     );
-
-    //this.driver = this.driverService.getDrivers();
-    //this.dataSource = new MatTableDataSource(this.driver); // Llenar dataSource con informacion de driver
   }
 
   applyFilter(event: Event) {

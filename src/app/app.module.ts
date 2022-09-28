@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms'; // PARA FORMULARIOS (TABLAS)
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListdriversComponent } from './components/listdrivers/listdrivers.component';
 import { AddEditDriverComponent } from './components/add-edit-drivers/add-edit-driver.component';
 import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
@@ -21,7 +20,6 @@ import { Error404Component } from './components/error404/error404.component'; //
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     ListdriversComponent,
     AddEditDriverComponent,
     LoginComponent,

@@ -1,6 +1,6 @@
 <div class="all">
     <div>
-        <h2>Detalle de conductores</h2>
+        <h2>Agregar nuevo conductor</h2>
     </div>
     <div>
         <form [formGroup]="myForm">
@@ -35,8 +35,8 @@
             </div>
             <br>
             <!-- BUTTON FOR SAVE -->
-            <button type="button" mat-raised-button color="warn" [disabled]="myForm.invalid" (click)="saveDriver()">Guardar</button>
-            <button type="button" mat-raised-button color="warn" routerLink="/drivers-list">Cancelar</button>
+            <button type="button" mat-raised-button color="warn" class="btn_raised" [disabled]="myForm.invalid" (click)="saveDriver()">Guardar</button>
+            <button type="button" mat-raised-button color="warn" routerLink="/drivers-list" class="btn_raised">Cancelar</button>
             <!-- myForm IS invalid = El botón estará desahabilitado -->
             <!-- user CLICK in button = Llama a la funcion 'saveDriver' -->
         </form>

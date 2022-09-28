@@ -486,28 +486,33 @@
     font-weight: 600;
     color: #FF4800;
     transition: 0.3;
-    background: #fff8f6;
-    padding: 10px 15px;
+    background: #ffe4dc;
+    padding: 10px 25px;
     border-radius: 4px;
+  }
+  .sub {
+    padding: 10px 25px;
   }
   .sidebar-nav .nav-link i {
     font-size: 16px;
     margin-right: 10px;
-    color: #000000;
+    color: #FF4800;
   }
   .sidebar-nav .nav-link.collapsed {
+    padding: 10px 15px;
     color: #000000;
     background: #fff;
   }
   .sidebar-nav .nav-link.collapsed i {
-    color: #bd9189;
+    color: #000;
   }
   .sidebar-nav .nav-link:hover {
-    color: #000000;
-    background: #f6f9ff;
+    color: #FF4800;
+    background: #ffe4dc;
+    padding: 10px 25px;
   }
   .sidebar-nav .nav-link:hover i {
-    color: #000000;
+    color: #FF4800;
   }
   .sidebar-nav .nav-link .bi-chevron-down {
     margin-right: 0;
@@ -944,4 +949,9 @@
 
   .bi {
     color: #18d26e;
+  }
+
+  .margin_navbar {
+    margin-left: 10px;
+    margin-right: 10px;
   }
