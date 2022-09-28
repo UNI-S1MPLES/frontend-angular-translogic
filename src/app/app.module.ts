@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { Error404Component } from './components/error404/error404.component';
 
 import { AddEditDriverComponent } from './components/add-edit-drivers/add-edit-driver.component';
+import { HorariosComponent } from './components/horarios/horarios.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { AddEditDriverComponent } from './components/add-edit-drivers/add-edit-d
     LoginComponent,
     Error404Component,
     AddEditDriverComponent,
+    HorariosComponent,
   ],
   imports: [
     BrowserModule,
