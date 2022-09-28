@@ -3,32 +3,8 @@
     {
       "id": 0,
       "name": "Brian",
-      "email": "brian.uceda@gmail",
+      "email": "brian.uceda@gmail.com",
       "age": "18"
-    },
-    {
-      "id": 1,
-      "name": "Edward",
-      "email": "edward@gmail",
-      "age": "20"
-    },
-    {
-      "id": 2,
-      "name": "sdsdf",
-      "email": "asdfasdf@hotmail.com",
-      "age": "12"
-    },
-    {
-      "id": 3,
-      "name": "sadsa",
-      "email": "sdasdsadsad@gmail.com",
-      "age": "12"
-    },
-    {
-      "id": 4,
-      "name": "Juan",
-      "email": "juancito@gmail.com",
-      "age": "10"
     }
   ]
 }
