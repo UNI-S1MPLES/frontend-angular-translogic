@@ -12,7 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { HomeComponent } from './components/home/home.component'; // PARA JSON
+import { HomeComponent } from './components/home/home.component';
+import { AdminsComponent } from './components/admins/admins.component';
+import { ViajesComponent } from './components/viajes/viajes.component';
+import { FaqComponent } from './components/faq/faq.component';
+import { Error404Component } from './components/error404/error404.component'; // PARA JSON
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { HomeComponent } from './components/home/home.component'; // PARA JSON
     AddEditDriverComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    AdminsComponent,
+    ViajesComponent,
+    FaqComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
