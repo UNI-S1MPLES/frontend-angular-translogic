@@ -91,6 +91,8 @@
   
     </aside><!-- End Sidebar-->
   
+ 
+
     <main id="main" class="main">
 
       <div class="pagetitle">
@@ -103,98 +105,133 @@
         </nav>
       </div><!-- End Page Title -->
   
+
       <section class="section dashboard">
         <div class="row">
-          
+  
           <!-- Left side columns -->
           <div class="col-lg-8">
             <div class="row">
-
-              <!-- Horizontal Form -->
-              <form>
-
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">importe</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText">
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail">
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword">
-                  </div>
-                </div>
-
-                <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                      <label class="form-check-label" for="gridRadios1">
-                        First radio
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                      <label class="form-check-label" for="gridRadios2">
-                        Second radio
-                      </label>
-                    </div>
-                    <div class="form-check disabled">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                      <label class="form-check-label" for="gridRadios3">
-                        Third disabled radio
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-
-                <div class="row mb-3">
-                  <div class="col-sm-10 offset-sm-2">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck1">
-                      <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary btn-primary-modded">Submit</button>
-                  <button type="reset" class="btn btn-secondary btn-secondary-modded">Reset</button>
-                </div>
-
-              </form><!-- End Horizontal Form -->
-
-            </div>
-          </div><!-- End Left side columns -->
-
-        </div><!-- End Right side columns -->
-      </section>
   
-    </main><!-- End #main -->
+              <!-- Sales Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card sales-card">
   
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
+  
+                  <div class="card-body">
+                    <h5 class="card-title">Viajes <span>| Hoy</span></h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-geo-alt-fill"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>14</h6>
+                        <span class="text-success small pt-1 fw-bold">22%</span> <span class="text-muted small pt-2 ps-1">progreso</span>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div><!-- End Sales Card -->
+  
+              <!-- Revenue Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card revenue-card">
+  
+                  <div class="card-body">
+                    <h5 class="card-title">Conductores <span>| Este Mes</span></h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-truck"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>51</h6>
+                        <span class="text-success small pt-1 fw-bold">78%</span> <span class="text-muted small pt-2 ps-1">activos</span>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div><!-- End Revenue Card -->
 
-      <div class="copyright">
-        &copy; Copyright <strong><span>TransLogic</span></strong>. Todos los derechos reservados
-      </div>
+             <!-- Recent Sales -->
+             <div class="col-12">
+              <div class="card recent-sales">
 
-      <div class="credits">
-        Diseñado por <a >Grupo 2 Arquitectura de Aplicaciones Web</a>
-      </div>
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
 
-    </footer><!-- End Footer -->
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
 
-    <!-- Este comentario viene desde la capa DEV -->
+                <div class="card-body">
+                  <h5 class="card-title">Top Conductores <span>| Mes</span></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Conductor</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Vehiculo</th>
+                        <th scope="col">Km</th>
+                        <th scope="col">Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a><img src="assets/img/conductor-1.jpg" alt="Profile" class="rounded-circle"></a></th>
+                        <td>Alipio Cabrera</td>
+                        <td><a href="#" class="text-primary">Autobús de dos pisos</a></td>
+                        <td>164</td>
+                        <td><span class="badge bg-success">En curso</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a><img src="assets/img/conductor-2.jpg" alt="Profile" class="rounded-circle"></a></th>
+                        <td>Jose Ramos</td>
+                        <td><a href="#" class="text-primary">Bus Cama</a></td>
+                        <td>447</td>
+                        <td><span class="badge bg-warning">En Espera</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a><img src="assets/img/conductor-3.jpg" alt="Profile" class="rounded-circle"></a></th>
+                        <td>Pablo Pando</td>
+                        <td><a href="#" class="text-primary">Autobús de dos pisos</a></td>
+                        <td>247</td>
+                        <td><span class="badge bg-success">En Curso</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a><img src="assets/img/conductor-4.jpg" alt="Profile" class="rounded-circle"></a></th>
+                        <td>Sierra Ferguson</td>
+                        <td><a href="#" class="text-primar">Autobús de dos pisos.</a></td>
+                        <td>67</td>
+                        <td><span class="badge bg-danger">Finalizado</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a><img src="assets/img/conductor-5.jpg" alt="Profile" class="rounded-circle"></a></th>
+                        <td>Raul Mamani</td>
+                        <td><a href="#" class="text-primary">Bus Cama</a></td>
+                        <td>165</td>
+                        <td><span class="badge bg-success">En Curso</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Recent Sales -->
+          </div><!-- End Right side columns -->
+        </div>
+       </div>
+    </section>
