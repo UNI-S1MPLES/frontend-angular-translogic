@@ -1,2 +1,0 @@
-# TransLogic
-Web App - Fronted
