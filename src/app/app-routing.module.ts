@@ -1,3 +1,4 @@
+
 // ANGULAR
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TravelsComponent } from './components/travels/travels.component';
 import { DriversComponent } from './components/drivers/drivers.component';
 import { AdminsComponent } from './components/admins/admins.component';
+import { HorariosComponent } from './components/horarios/horarios.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { Error404Component } from './components/error404/error404.component';
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: "travels", component:TravelsComponent },
   { path: "drivers", component:DriversComponent },
   { path: "admins", component:AdminsComponent },
+  { path: "horarios", component:HorariosComponent},
+  { path: "faq", component:FaqComponent },
   { path: "faq", component:FaqComponent },
   { path: "contact", component:ContactComponent },
   { path: "error-404", component:Error404Component },
