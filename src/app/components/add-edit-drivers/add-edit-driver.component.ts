@@ -37,7 +37,7 @@ export class AddEditDriverComponent implements OnInit {
     }
     this.driverService.add(tempDriver).subscribe({
       next: (data) => {        
-        this.router.navigate(["/"]);
+        this.router.navigate(["/drivers"]);
       },
       error: (varError) => {
         console.log(varError);
