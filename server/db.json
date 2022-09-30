@@ -5,6 +5,12 @@
       "name": "Brian",
       "email": "brian.uceda@gmail.com",
       "age": "18"
+    },
+    {
+      "id": 1,
+      "name": "Edward",
+      "email": "edu@gmail.com",
+      "age": "14"
     }
   ]
 }
