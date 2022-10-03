@@ -1,5 +1,5 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
 import { MatTableDataSource } from '@angular/material/table';
 import { Driver } from 'src/app/models/driver';
 import { DriverService } from 'src/app/services/driver.service';

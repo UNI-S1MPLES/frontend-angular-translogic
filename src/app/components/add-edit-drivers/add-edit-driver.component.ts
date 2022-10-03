@@ -11,7 +11,7 @@ import { DriverService } from 'src/app/services/driver.service';
 })
 export class AddEditDriverComponent implements OnInit {
 
-  myForm!: FormGroup; // Indica al compilador que un dato SIEMPRE será ingresado
+  myForm!: FormGroup; // Conjunto de datos visuales
 
   constructor(private formBuilder:FormBuilder, private driverService:DriverService, private router:Router) { }
 
@@ -43,8 +43,5 @@ export class AddEditDriverComponent implements OnInit {
         console.log(varError);
       }
     })
-
-    //this.driverService.add(tempDriver);
-    //this.router.navigate(["/"]);
   }
 }

@@ -9,10 +9,6 @@
     margin: 50px;
   }
   
-  table {
-    width: 100%;
-  }
-  
   body {
     font-family: "Open Sans", sans-serif;
     background: #fff7f6;
@@ -779,4 +775,7 @@
   }
   .btn-secondary-modded {
     margin-left: 10px;
+  }
+  table {
+    width: 100%;
   }
