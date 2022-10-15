@@ -7,7 +7,7 @@
       "cantTramos": 222,
       "fecha": "2004-01-02T05:01:00.000Z",
       "conductorId": 1,
-      "ruta": "Habilitada",
+      "ruta": "Deshabilitada",
       "tipoVehiculo": "Bus cama"
     },
     {
