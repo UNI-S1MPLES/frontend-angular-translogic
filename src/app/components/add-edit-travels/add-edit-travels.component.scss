@@ -1,0 +1,31 @@
+// Input information field
+mat-form-field {
+    width: 100%;
+}
+
+// Radio Button
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.example-radio-button {
+    margin: 10px;
+}
+.file-input {
+    display: none;
+}
+
+// BUTTONS
+.agregarAcualizar {
+    color: #ffffffff;
+    font-weight: 500;
+    background: #a06ac7;
+    cursor: pointer;
+}
+.cerrar {
+    color: #ffffffff;
+    font-weight: 500;
+    background: #ff628a;
+    cursor: pointer;
+}

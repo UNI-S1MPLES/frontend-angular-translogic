@@ -1,0 +1,68 @@
+<div class="dialog">
+    <div>
+      <h1 mat-dialog-title>Product information</h1>
+    </div>
+  
+    <div mat-dialog-content>
+      <form [formGroup]="productForm">
+  
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Origen del viaje</mat-label>
+          <input formControlName="origen" matInput placeholder="Origen del viaje">
+        </mat-form-field>
+  
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Destino del viaje</mat-label>
+          <input formControlName="destino" matInput placeholder="Destino del viaje">
+        </mat-form-field>
+  
+        <!-- PRODUCT PRICE (Input Numbers) -->
+        <mat-form-field appearance="outline">
+          <mat-label>Cantidad de tramos</mat-label>
+          <input formControlName="cantTramos" matInput type="number" placeholder="Cantidad de tramos">
+        </mat-form-field>
+        
+        <!-- PRODUCT DATE (Date Picker) -->
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de partida</mat-label>
+          <input formControlName="fecha" matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br><br>
+  
+        <!-- PRODUCT PRICE (Input Numbers) -->
+        <mat-form-field appearance="outline">
+          <mat-label>ID de Conductor</mat-label>
+          <input formControlName="conductorId" matInput type="number" placeholder="D de Conductor">
+        </mat-form-field>
+  
+        <!-- PRODUCT FRESHNESS (Radio Button) -->
+        <label for=""><h1>Ruta</h1></label>
+        <mat-radio-group formControlName="ruta" class="example-radio-group">
+          <mat-radio-button class="example-radio-button" *ngFor="let ruta of rutas" [value]="ruta">{{ruta}}</mat-radio-button>
+        </mat-radio-group>
+        <br>
+  
+        <!-- PRODUCT CATEGORY  (Select Label)-->
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo de vehiculo</mat-label>
+          <mat-select formControlName="tipoVehiculo" placeholder="Tipo de vehiculo">
+            <mat-option value="Bus super cama">Bus super cama</mat-option>
+            <mat-option value="Bus semi cama">Bus semi cama</mat-option>
+            <mat-option value="Bus cama">Bus cama</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </form>
+    </div>
+  
+    <!-- BUTTONS FOR SAVE AND CLOSE -->
+    <div mat-dialog-actions [align]="'end'">
+      <button mat-raised-button class="cerrar" mat-dialog-close>Cerrar</button>
+      <button mat-raised-button class="agregarAcualizar" (click)="addProduct()">{{actionBtn}}</button>
+    </div>
+  </div>

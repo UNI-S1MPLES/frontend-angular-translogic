@@ -1,0 +1,36 @@
+// General *
+.error-404 {
+  padding: 30px;
+}
+.error-404 h1 {
+  font-size: 180px;
+  font-weight: 700;
+  color: #ffffffcc;
+  margin-bottom: 0;
+  line-height: 150px;
+}
+.error-404 h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #715683;
+  margin-bottom: 30px;
+}
+.error-404 .btn {
+  background: #715683;
+  color: #ffffffcc;
+  padding: 8px 30px;
+}
+.error-404 .btn:hover {
+  background: #8c709e;
+}
+@media (min-width: 992px) {
+  .error-404 img {
+    max-width: 50%;
+  }
+}
+.credits {
+  color: #5e466e;
+}
+body {
+  background: #9B7EB0;
+}

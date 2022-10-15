@@ -1,0 +1,28 @@
+<mat-drawer-container>
+  
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      
+      <div class="principal">
+        
+        <div class="container-fluid">
+          <div class="page__box p-4">ADMINISTRADORES</div>
+          <div class="page_content shadow p-3 position-relative">
+              <div class="page_content-data">
+    
+                <main class="contenido">
+
+                </main>
+                
+              </div>
+          </div>
+      </div>
+      </div>
+  
+    </mat-drawer-content>
+
+</mat-drawer-container>

@@ -1,0 +1,64 @@
+// MAIN
+:root {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f6f9ff;
+  color: #444444;
+}
+a {
+  color: #4154f1;
+  text-decoration: none;
+}
+a:hover {
+  color: #717ff5;
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nunito", sans-serif;
+}
+
+// MAIN
+#main {
+  margin-top: 60px;
+  padding: 20px 30px;
+  transition: all 0.3s;
+}
+@media (max-width: 1199px) {
+  #main {
+    padding: 20px;
+  }
+}
+
+// BASIC CONTROL
+.logo {
+  line-height: 1;
+}
+@media (min-width: 1200px) {
+  .logo {
+    width: 280px;
+  }
+}
+.logo img {
+  max-height: 50px;
+  margin-right: 20px;
+}
+.logo span {
+  font-size: 26px;
+  font-weight: 600;
+  color: #9B7EB0;
+  font-family: "Nunito", sans-serif;
+}
+
+// REGISTER
+.card {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  overflow: hidden;
+}
+.card-img-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+}

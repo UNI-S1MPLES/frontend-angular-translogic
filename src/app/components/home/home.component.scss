@@ -1,0 +1,213 @@
+// ------------------------------- App Component -------------------------------
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-drawer {
+    width: 300px;
+    background: #9B7EB0;
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+// ------------------------------- Toolbar -------------------------------
+mat-toolbar {
+    background: #9B7EB0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+button {
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.user {
+    font-size: 14px;
+    color: white;
+}
+
+.user-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.user-image-icon {
+    height: 18px;
+    font-size: 16px;
+}
+
+::ng-deep {
+    .mat-menu-content {
+        width: 300px;
+    }
+}
+
+// ------------------------------- Content -------------------------------
+.page {
+    padding: 0 1rem;
+    background: #f6f1f9;
+
+    &__box {
+        min-height: 120px;
+        background: #ffffff;
+        color: #9B7EB0;
+        margin: 0 -0.5rem;
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-align: center;
+        -webkit-text-stroke: 3px #9B7EB0;
+    }
+    &_content {
+        min-height: calc(100vh - 160px);
+        border: 1px solid #9B7EB0;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        margin-top: -3rem;
+        background: #f9f4fd;
+        color: black;
+    }
+}
+
+// General *
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #fbf6ff;
+    color: #444444;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito", sans-serif;
+}
+a {
+    color: #9B7EB0;
+    text-decoration: none;
+}
+
+/* Page title */
+.pagetitle {
+    margin-bottom: 10px;
+}
+.pagetitle h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #3b0066;
+}
+
+/* Card */
+.card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+    overflow: hidden;
+}
+.card-header, .card-footer {
+    border-color: #f1ebf4;
+    background-color: rgb(255, 255, 255);
+    color: #9e79b3;
+    padding: 15px;
+}
+.card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #40006e;
+    font-family: "Poppins", sans-serif;
+}
+.card-title span {
+    color: #a889bd;
+    font-size: 14px;
+    font-weight: 400;
+}
+.card-body {
+    padding: 0 20px 20px 20px;
+}
+.card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+img {
+    margin-left: 40px;
+}
+.list-col-conductor {
+    padding-left: 30px;
+}
+.list-col-estado {
+    padding-left: 60px;
+}
+td span {
+    margin-left: 70px;
+}
+
+/* Textos de inicio */
+.breadcrumb {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    color: #a689bd;
+    font-weight: 600;
+}
+.breadcrumb a {
+    color: #a689bd;
+    transition: 0.3s;
+}
+.breadcrumb a:hover {
+    color: #73518f;
+}
+.breadcrumb .breadcrumb-item::before {
+    color: #a689bd;
+}
+.breadcrumb .active {
+    color: #73518f;
+    font-weight: 600;
+}
+
+/* ---------- Inicio ---------- */
+/* Info Cards */
+.dashboard .info-card h6 {
+    font-size: 28px;
+    color: #3e0170;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+.dashboard .card-icon {
+    font-size: 32px;
+    line-height: 0;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+.dashboard .sales-card .card-icon {
+    color: #a241f1;
+    background: #fbf6fe;
+}
+.dashboard .revenue-card .card-icon {
+    color: #8c2eca;
+    background: #eee0f8;
+}
+.dashboard .customers-card .card-icon {
+    color: #a51dff;
+    background: #f2dfff;
+}
+.dashboard .recent-sales .table thead {
+    background: #fbf6fe;
+}

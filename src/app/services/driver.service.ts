@@ -1,27 +1,27 @@
+import { Driver } from './../models/driver';
 import { Injectable } from '@angular/core';
-import { Driver } from '../models/driver';
 import { HttpClient } from "@angular/common/http"
 
 @Injectable({
   providedIn: 'root'
 })
 export class DriverService {
+
+  constructor(private http:HttpClient) {}
   
-  constructor(private http:HttpClient) { }
-
   get() {
-    return this.http.get<Driver[]>("http://localhost:3000/drivers");
+    return this.http.get<Driver[]>("http://localhost:3000/listDrivers");
   }
-
+  getAbout(id: number) {
+    return this.http.get<Driver>("http://localhost:3000/listDrivers" + "/" + id.toString());
+  }
   add(driver: Driver) {
-    return this.http.post<Driver>("http://localhost:3000/drivers", driver);
+    return this.http.post<Driver>("http://localhost:3000/listDrivers", driver);
   }
-
   update(driver: Driver) {
-    return this.http.put<Driver>("http://localhost:3000/drivers" + "/" + driver.id.toString(), driver);
+    return this.http.put<Driver>("http://localhost:3000/listDrivers" + "/" + driver.id.toString(), driver);
   }
-
   delete(id: number) {
-    return this.http.delete<Driver>("http://localhost:3000/drivers" + "/" + id.toString());
+    return this.http.delete<Driver>("http://localhost:3000/listDrivers" + "/" + id.toString());
   }
 }

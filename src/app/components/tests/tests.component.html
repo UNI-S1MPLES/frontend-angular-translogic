@@ -1,0 +1,118 @@
+<mat-drawer-container>
+  
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      
+      <div class="main">
+        
+        <div class="container-fluid">
+          <div class="page__box p-4">VIAJES</div>
+          <div class="page_content shadow p-3 position-relative">
+              <div class="page_content-data">
+    
+                <main class="contenido">
+                    <div>
+                        <h2>Lista de viajes</h2>
+                        <br>
+                        <button mat-raised-button color="warn" class="button" (click)="openDialog()">
+                            <mat-icon class="img_button">add_box</mat-icon>    Programar nuevo viaje
+                        </button>
+                    </div>
+                    <br>
+                
+                    <div class="table">
+                        <mat-form-field appearance="standard">
+                            <mat-label>Filtro</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Filtro de busqueda" #input>
+                        </mat-form-field>
+                        
+                        <div class="mat-elevation-z5">
+                            <table mat-table [dataSource]="dataSource" matSort>
+                                
+                                <!-- ID Column -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                                </ng-container>
+                          
+                                <!-- Photo Column -->
+                                <ng-container matColumnDef="photo">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Foto </th>
+                                    <td mat-cell *matCellDef="let row"><img class="imgs-table" src="assets/img/unknown.png"></td>
+                                </ng-container>
+                          
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="category">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.category}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="date">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.date | date}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="freshness">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.freshness}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="price">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.price | currency}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="comment">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Comentario </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.comment}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="actions">
+                                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <button mat-icon-button color="warn" (click)="editProduct(row)">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                        <button mat-icon-button color="primary" (click)="deleteProduct(row.id)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </td>
+                                </ng-container>
+                              
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                              
+                                <!-- Row shown when there is no matching data. -->
+                                <tr class="mat-row" *matNoDataRow>
+                                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                                </tr>
+                            </table>
+                          
+                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+                        </div>
+                    </div>
+                </main>
+                
+              </div>
+          </div>
+      </div>
+      </div>
+  
+    </mat-drawer-content>
+
+</mat-drawer-container>

@@ -1,36 +1,29 @@
-
-// ANGULAR
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// PAGINA
-import { RegisterComponent } from './components/register/register.component';
+// Components
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-import { TravelsComponent } from './components/travels/travels.component';
-import { DriversComponent } from './components/drivers/drivers.component';
-import { AdminsComponent } from './components/admins/admins.component';
-import { HorariosComponent } from './components/horarios/horarios.component';
+import { ListTravelsComponent } from './components/list-travels/list-travels.component';
+import { ListDriversComponent } from './components/list-drivers/list-drivers.component';
+import { ListAdminsComponent } from './components/list-admins/list-admins.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { Error404Component } from './components/error404/error404.component';
-
-import { AddEditDriverComponent } from './components/add-edit-drivers/add-edit-driver.component';
+import { TestsComponent } from './components/tests/tests.component';
 
 const routes: Routes = [
-  // RUTAS PRINCIPALES
-  { path: "register", component:RegisterComponent }, // Register
-  { path: "", component:LoginComponent }, // Login
+  { path: "", redirectTo:"login", pathMatch: "full" },
+  { path: "login", component:LoginComponent },
+  { path: "register", component:RegisterComponent },
   { path: "home", component:HomeComponent },
-  { path: "travels", component:TravelsComponent },
-  { path: "drivers", component:DriversComponent },
-  { path: "admins", component:AdminsComponent },
-  { path: "horarios", component:HorariosComponent},
-  { path: "faq", component:FaqComponent },
+  { path: "travels", component:ListTravelsComponent },
+  { path: "drivers", component:ListDriversComponent },
+  { path: "admins", component:ListAdminsComponent },
   { path: "faq", component:FaqComponent },
   { path: "contact", component:ContactComponent },
-  { path: "error-404", component:Error404Component },
-  // RUTAS EXTRAS
-  { path: "drivers-add-edit", component:AddEditDriverComponent }
+  { path: "error404", component:Error404Component },
+  { path: "tests", component:TestsComponent }
 ];
 
 @NgModule({

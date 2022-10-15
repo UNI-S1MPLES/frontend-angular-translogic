@@ -1,0 +1,216 @@
+// ------------------------------- App Component -------------------------------
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-drawer {
+    width: 300px;
+    background: #9B7EB0;
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+// ------------------------------- Toolbar -------------------------------
+mat-toolbar {
+    background: #9B7EB0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+button {
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.user {
+    font-size: 14px;
+    color: white;
+}
+
+.user-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.user-image-icon {
+    height: 18px;
+    font-size: 16px;
+}
+
+::ng-deep {
+    .mat-menu-content {
+        width: 300px;
+    }
+}
+
+// ------------------------------- Content -------------------------------
+.page {
+    padding: 0 1rem;
+    background: #f6f1f9;
+
+    &__box {
+        min-height: 120px;
+        background: #ffffff;
+        color: #9B7EB0;
+        margin: 0 -0.5rem;
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-align: center;
+        -webkit-text-stroke: 3px #9B7EB0;
+    }
+    &_content {
+        min-height: calc(100vh - 160px);
+        border: 1px solid #9B7EB0;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        margin-top: -3rem;
+        background: #f9f4fd;
+        color: black;
+    }
+}
+
+// General *
+.contenido {
+    margin: 20px;
+}
+.button{
+    padding-left: 15px;
+    transition: .5s;
+}
+.button:hover {
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
+.img_button {
+    padding-right: 10px;
+}
+.h2 {
+    display: inline-block;
+    color: #76518f;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.h2:hover {
+    color: #a689bd;
+    cursor: pointer;
+}
+
+// Contact*
+.contact .info-box {
+  padding: 28px 30px;
+}
+.contact .info-box i {
+  font-size: 38px;
+  line-height: 0;
+  color: #ab41f1;
+}
+.contact .info-box h3 {
+  font-size: 20px;
+  color: #440170;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.contact .php-email-form .error-message {
+  display: none;
+  color: #ffffff;
+  background: #880ded;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #8818d2;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.contact .php-email-form .loading {
+  display: none;
+  background: #ffffff;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #8818d2;
+  border-top-color: rgb(238, 238, 238);
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+.contact .php-email-form input, .contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 0;
+}
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+  border-color: #ab41f1;
+}
+.contact .php-email-form input {
+  padding: 10px 15px;
+}
+.contact .php-email-form textarea {
+  padding: 12px 15px;
+}
+.contact .php-email-form button[type=submit] {
+  background: #b041f1;
+  border: 0;
+  padding: 10px 30px;
+  color: #ffffff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+.contact .php-email-form button[type=submit]:hover {
+  background: #a959f3;
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

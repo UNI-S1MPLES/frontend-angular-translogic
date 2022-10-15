@@ -1,0 +1,91 @@
+// ------------------------------- App Component -------------------------------
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-drawer {
+    width: 300px;
+    background: #9B7EB0;
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+// ------------------------------- Toolbar -------------------------------
+mat-toolbar {
+    background: #9B7EB0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+button {
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.user {
+    font-size: 14px;
+    color: white;
+}
+
+.user-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.user-image-icon {
+    height: 18px;
+    font-size: 16px;
+}
+
+::ng-deep {
+    .mat-menu-content {
+        width: 300px;
+    }
+}
+
+// ------------------------------- Content -------------------------------
+.page {
+    padding: 0 1rem;
+    background: #f5f1f9;
+
+    &__box {
+        min-height: 120px;
+        background: #ffffff;
+        color: #9B7EB0;
+        margin: 0 -0.5rem;
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-align: center;
+        -webkit-text-stroke: 3px #9B7EB0;
+    }
+    &_content {
+        min-height: calc(100vh - 160px);
+        border: 1px solid #9B7EB0;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        margin-top: -3rem;
+        background: #faf4fd;
+        color: black;
+    }
+}
+
+/* ---------- List Admins ---------- */
+// General *

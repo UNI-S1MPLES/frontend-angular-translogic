@@ -1,0 +1,117 @@
+<mat-drawer-container>
+  
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      
+      <div class="main">
+        
+        <div class="container-fluid">
+          <div class="page__box p-4">VIAJES</div>
+          <div class="page_content shadow p-3 position-relative">
+              <div class="page_content-data">
+    
+                <main class="contenido">
+                    <div>
+                        <h2 class="h2">LISTA DE VIAJES</h2>
+                        <br>
+                        <button mat-raised-button class="button" (click)="openDialog()">
+                            <mat-icon class="img_button">add_box</mat-icon>    Programar nuevo viaje
+                        </button>
+                    </div>
+                
+                    <div class="table">
+                        <mat-form-field appearance="standard">
+                            <mat-label>Filtro</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Filtro de busqueda" #input>
+                        </mat-form-field>
+                        
+                        <div class="mat-elevation-z5">
+                            <table mat-table [dataSource]="dataSource" matSort>
+                                
+                                <!-- ID Column -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                                </ng-container>
+                          
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="origen">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Origen </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.origen}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="destino">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Destino </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.destino}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="cantTramos">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tramos </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.cantTramos}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="fecha">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.fecha | date }} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="conductorId">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID de Conductor </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.conductorId}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="ruta">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ruta </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.ruta}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="tipoVehiculo">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Vehiculo </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.tipoVehiculo}} </td>
+                                </ng-container>
+                          
+                                <!-- Fruit Column -->
+                                <ng-container matColumnDef="actions">
+                                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <button mat-icon-button class="edit" (click)="editProduct(row)">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                        <button mat-icon-button class="delete" (click)="deleteProduct(row.id)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </td>
+                                </ng-container>
+                              
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                              
+                                <!-- Row shown when there is no matching data. -->
+                                <tr class="mat-row" *matNoDataRow>
+                                    <td class="mat-cell" colspan="4">No se ha encontrado información similar</td>
+                                </tr>
+                            </table>
+                          
+                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecciona la cantidad de items por página"></mat-paginator>
+                        </div>
+                    </div>
+                </main>
+                
+              </div>
+          </div>
+      </div>
+      </div>
+  
+    </mat-drawer-content>
+
+</mat-drawer-container>
