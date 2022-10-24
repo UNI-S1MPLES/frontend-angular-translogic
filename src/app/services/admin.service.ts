@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http"
 })
 export class AdminService {
 
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
   
   get() {
     return this.http.get<Admin[]>("http://localhost:3000/listAdmins");

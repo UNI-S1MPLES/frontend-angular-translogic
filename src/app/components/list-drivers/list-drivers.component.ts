@@ -1,4 +1,8 @@
+import { UserService } from './../../services/user.service';
+import { User } from './../../models/user';
+import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-list-drivers',
@@ -7,11 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDriversComponent implements OnInit {
 
-  constructor() { }
-  title = 'myTranslogic';
+  myForm!: FormGroup;
+  datSource = new MatTableDataSource<User>()
+
+  constructor(private api: UserService) { }
   sideBarOpen = true;
 
   ngOnInit(): void {
+    
+  }
+
+  verificarEmail(): void {
+
   }
   
   sideBarToggler() {

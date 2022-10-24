@@ -18,7 +18,6 @@ export class ListTravelsComponent implements OnInit {
   title = 'myTranslogic';
   sideBarOpen = true;
   
-  product: Travel[] = [];
   dataSource = new MatTableDataSource<Travel>();
   displayedColumns: string[] = ['id', 'origen', 'destino', 'cantTramos', 'fecha', 'conductorId', 'ruta', 'tipoVehiculo', 'actions'];
 
@@ -30,11 +29,6 @@ export class ListTravelsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllProducts();
   }
-  
-  sideBarToggler() {
-    this.sideBarOpen = !this.sideBarOpen;
-  }
-
   openDialog() {
     this.dialog.open(AddEditTravelsComponent, {
       width: '50%'
@@ -74,6 +68,10 @@ export class ListTravelsComponent implements OnInit {
         this.snackBar.open("Ocurrió un error al eliminar el viaje de ID " + id, "Ok", { duration: 3000 });
       }
     });
+  }
+  
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
   }
 
   applyFilter(event: Event) {

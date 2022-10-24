@@ -6,28 +6,8 @@
       "destino": "Japón",
       "cantTramos": 222,
       "fecha": "2004-01-02T05:01:00.000Z",
-      "conductorId": 1,
+      "conductorId": 4,
       "ruta": "Deshabilitada",
-      "tipoVehiculo": "Bus cama"
-    },
-    {
-      "id": 2,
-      "origen": "Hola",
-      "destino": "Fin",
-      "cantTramos": 45,
-      "fecha": "2022-10-28T05:00:00.000Z",
-      "conductorId": 12,
-      "ruta": "Habilitada",
-      "tipoVehiculo": "Bus semi cama"
-    },
-    {
-      "id": 3,
-      "origen": "aggga",
-      "destino": "fgerth",
-      "cantTramos": 121,
-      "fecha": "2022-10-26T05:00:00.000Z",
-      "conductorId": 16,
-      "ruta": "Habilitada",
       "tipoVehiculo": "Bus cama"
     }
   ],
@@ -48,6 +28,16 @@
       "nombres": "Brian Kaoru",
       "apellidos": "Uceda Hirata",
       "nickname": "TSM_Kirigaya"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "nombres": "Brian Kaoru",
+      "apellidos": "Uceda Hirata",
+      "nickname": "kiri",
+      "email": "monalek",
+      "pass": "hola"
     }
   ]
 }

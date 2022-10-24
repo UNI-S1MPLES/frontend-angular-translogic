@@ -4,7 +4,7 @@
     </div>
   
     <div mat-dialog-content>
-      <form [formGroup]="productForm">
+      <form [formGroup]="myForm">
   
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
@@ -59,10 +59,12 @@
 
       </form>
     </div>
+
+    <span *ngIf="myForm.get('origen')?.hasError('required') && myForm.get('origen')?.touched" class="has-error"></span>
   
     <!-- BUTTONS FOR SAVE AND CLOSE -->
     <div mat-dialog-actions [align]="'end'">
       <button mat-raised-button class="cerrar" mat-dialog-close>Cerrar</button>
-      <button mat-raised-button class="agregarAcualizar" (click)="addProduct()">{{actionBtn}}</button>
+      <button mat-raised-button class="agregarAcualizar" [disabled]="myForm.invalid" (click)="addProduct()">{{actionBtn}}</button>
     </div>
   </div>
