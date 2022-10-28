@@ -11,6 +11,13 @@
       "tipoVehiculo": "Bus cama"
     }
   ],
+  "listTramos": [
+    {
+      "id": 1,
+      "startPlace": "Lima",
+      "endPlace": "Trujillo"
+    }
+  ],
   "listDrivers": [
     {
       "id": 1,

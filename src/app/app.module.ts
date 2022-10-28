@@ -21,6 +21,8 @@ import { ListDriversComponent } from './components/list-drivers/list-drivers.com
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TestsComponent } from './components/tests/tests.component';
+import { ListTramosComponent } from './components/list-tramos/list-tramos.component';
+import { AddEditTramosComponent } from './components/add-edit-tramos/add-edit-tramos.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { TestsComponent } from './components/tests/tests.component';
     ListDriversComponent,
     LoginComponent,
     RegisterComponent,
-    TestsComponent
+    TestsComponent,
+    ListTramosComponent,
+    AddEditTramosComponent
   ],
   imports: [
     BrowserModule,

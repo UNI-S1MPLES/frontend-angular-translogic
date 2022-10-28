@@ -10,7 +10,7 @@
         <div class="main">
 
             <div class="container-fluid">
-                <div class="page__box p-4">LISTA DE VIAJES</div>
+                <div class="page__box p-4">LISTA DE TRAMOS</div>
                 <div class="page_content shadow p-3 position-relative">
                     <div class="page_content-data">
 
@@ -18,7 +18,7 @@
                             <div class="viajes">
                                 <div>
                                     <button mat-raised-button class="button" (click)="openDialog()">
-                                        <mat-icon class="img_button">add_box</mat-icon> Programar nuevo viaje
+                                        <mat-icon class="img_button">add_box</mat-icon> Establecer nuevo tramo
                                     </button>
                                 </div>
 
@@ -39,46 +39,17 @@
                                             </ng-container>
 
                                             <!-- Name Column -->
-                                            <ng-container matColumnDef="origen">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Origen </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.origen}} </td>
-                                            </ng-container>
-
-                                            <!-- Fruit Column -->
-                                            <ng-container matColumnDef="destino">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Destino </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.destino}} </td>
-                                            </ng-container>
-
-                                            <!-- Fruit Column -->
-                                            <ng-container matColumnDef="cantTramos">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Tramos </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.cantTramos}} </td>
-                                            </ng-container>
-
-                                            <!-- Fruit Column -->
-                                            <ng-container matColumnDef="fecha">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.fecha | date }} </td>
-                                            </ng-container>
-
-                                            <!-- Fruit Column -->
-                                            <ng-container matColumnDef="conductorId">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID de Conductor
+                                            <ng-container matColumnDef="startPlace">
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Lugar de partida
                                                 </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.conductorId}} </td>
+                                                <td mat-cell *matCellDef="let row"> {{row.startPlace}} </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
-                                            <ng-container matColumnDef="ruta">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Ruta </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.ruta}} </td>
-                                            </ng-container>
-
-                                            <!-- Fruit Column -->
-                                            <ng-container matColumnDef="tipoVehiculo">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Vehiculo </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.tipoVehiculo}} </td>
+                                            <ng-container matColumnDef="endPlace">
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Lugar de llegada
+                                                </th>
+                                                <td mat-cell *matCellDef="let row"> {{row.endPlace}} </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->

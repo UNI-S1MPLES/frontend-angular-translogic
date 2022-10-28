@@ -1,6 +1,6 @@
-import { Travel } from './../../models/travel';
-import { TravelService } from './../../services/travel.service';
-import { AddEditTravelsComponent } from './../add-edit-travels/add-edit-travels.component';
+import { Tramo } from './../../models/tramo';
+import { TramoService } from './../../services/tramo.service';
+import { AddEditTramosComponent } from './../add-edit-tramos/add-edit-tramos.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'; // Cuadro de dialogo
 import { MatTableDataSource } from '@angular/material/table'; // Table
@@ -9,29 +9,29 @@ import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
 
 @Component({
-  selector: 'app-list-travels',
-  templateUrl: './list-travels.component.html',
-  styleUrls: ['./list-travels.component.scss']
+  selector: 'app-list-tramos',
+  templateUrl: './list-tramos.component.html',
+  styleUrls: ['./list-tramos.component.scss']
 })
-export class ListTravelsComponent implements OnInit {
+export class ListTramosComponent implements OnInit {
 
   title = 'myTranslogic';
   sideBarOpen = true;
-  
-  dataSource = new MatTableDataSource<Travel>();
-  displayedColumns: string[] = ['id', 'origen', 'destino', 'cantTramos', 'fecha', 'conductorId', 'ruta', 'tipoVehiculo', 'actions'];
+
+  dataSource = new MatTableDataSource<Tramo>();
+  displayedColumns: string[] = ['id', 'startPlace', 'endPlace', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private dialog: MatDialog, private api: TravelService, private snackBar: MatSnackBar) { }
+  constructor(private dialog: MatDialog, private api: TramoService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllProducts();
   }
-  
+
   openDialog() {
-    this.dialog.open(AddEditTravelsComponent, {
+    this.dialog.open(AddEditTramosComponent, {
       width: '50%'
     }).afterClosed().subscribe(value => {
       if (value == 'agregar') {
@@ -42,7 +42,7 @@ export class ListTravelsComponent implements OnInit {
 
   getAllProducts() {
     this.api.get().subscribe(
-      (data: Travel[]) => {
+      (data: Tramo[]) => {
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -50,7 +50,7 @@ export class ListTravelsComponent implements OnInit {
     );
   }
   editProduct(row: any) {
-    this.dialog.open(AddEditTravelsComponent, {
+    this.dialog.open(AddEditTramosComponent, {
       width: '50%',
       data: row
     }).afterClosed().subscribe(value => {
@@ -62,15 +62,15 @@ export class ListTravelsComponent implements OnInit {
   deleteProduct(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
-        this.snackBar.open("El viaje de ID " + id + " fue eliminado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("El tramo con ID " + id + " fue eliminado correctamente", "Ok", { duration: 3000 });
         this.getAllProducts();
       },
       error: () => {
-        this.snackBar.open("Ocurrió un error al eliminar el viaje de ID " + id, "Ok", { duration: 3000 });
+        this.snackBar.open("Ocurrió un error al eliminar el tramo de ID " + id, "Ok", { duration: 3000 });
       }
     });
   }
-  
+
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
