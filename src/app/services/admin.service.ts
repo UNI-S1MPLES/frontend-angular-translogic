@@ -18,8 +18,8 @@ export class AdminService {
   add(admin: Admin) {
     return this.http.post<Admin>("http://localhost:3000/listAdmins", admin);
   }
-  update(admin: Admin) {
-    return this.http.put<Admin>("http://localhost:3000/listAdmins" + "/" + admin.id.toString(), admin);
+  update(data: Admin, id: number) {
+    return this.http.put<Admin>("http://localhost:3000/listAdmins" + "/" + id, data);
   }
   delete(id: number) {
     return this.http.delete<Admin>("http://localhost:3000/listAdmins" + "/" + id.toString());

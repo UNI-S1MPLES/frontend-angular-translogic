@@ -1,1 +1,64 @@
-<p>add-edit-drivers works!</p>
+<div class="dialog">
+    <div>
+      <h1 mat-dialog-title>Product information</h1>
+    </div>
+  
+    <div mat-dialog-content>
+      <form [formGroup]="myForm">
+  
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Nombres</mat-label>
+          <input formControlName="nombres" matInput placeholder="Nombres">
+        </mat-form-field>
+  
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Apellidos</mat-label>
+          <input formControlName="apellidos" matInput placeholder="Apellidos">
+        </mat-form-field>
+  
+        <!-- PRODUCT DATE (Date Picker) -->
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Ingreso</mat-label>
+          <input formControlName="fechaIngreso" matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br><br>
+
+        <!-- PRODUCT DATE (Date Picker) -->
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <input formControlName="fechaNacimiento" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <br><br>
+  
+        <!-- PRODUCT FRESHNESS (Radio Button) -->
+        <label for=""><h1>Estado</h1></label>
+        <mat-radio-group formControlName="ruta" class="example-radio-group">
+          <mat-radio-button class="example-radio-button" *ngFor="let estado of estados" [value]="estado">{{estado}}</mat-radio-button>
+        </mat-radio-group>
+        <br>
+
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+            <mat-label>Localizacion</mat-label>
+            <input formControlName="localizacion" matInput placeholder="Localizacion">
+          </mat-form-field>
+
+      </form>
+    </div>
+
+    <span *ngIf="myForm.get('origen')?.hasError('required') && myForm.get('origen')?.touched" class="has-error"></span>
+  
+    <!-- BUTTONS FOR SAVE AND CLOSE -->
+    <div mat-dialog-actions [align]="'end'">
+      <button mat-raised-button class="cerrar" mat-dialog-close>Cerrar</button>
+      <button mat-raised-button class="agregarAcualizar" [disabled]="myForm.invalid" (click)="addProduct()">{{actionBtn}}</button>
+    </div>
+  </div>

@@ -1,1 +1,38 @@
-<p>add-edit-admins works!</p>
+<div class="dialog">
+    <div>
+      <h1 mat-dialog-title>Product information</h1>
+    </div>
+  
+    <div mat-dialog-content>
+      <form [formGroup]="myForm">
+  
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Nombres</mat-label>
+          <input formControlName="nombres" matInput placeholder="Nombres">
+        </mat-form-field>
+  
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Apellidos</mat-label>
+          <input formControlName="apellidos" matInput placeholder="Apellidos">
+        </mat-form-field>
+
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+            <mat-label>Nickname</mat-label>
+            <input formControlName="nickname" matInput placeholder="Nickname">
+          </mat-form-field>
+
+      </form>
+    </div>
+
+    <span *ngIf="myForm.get('Nombres')?.hasError('required') && myForm.get('Nombres')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('Apellidos')?.hasError('required') && myForm.get('Apellidos')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('Nickname')?.hasError('required') && myForm.get('Nickname')?.touched" class="has-error"></span>
+    <!-- BUTTONS FOR SAVE AND CLOSE -->
+    <div mat-dialog-actions [align]="'end'">
+      <button mat-raised-button class="cerrar" mat-dialog-close>Cerrar</button>
+      <button mat-raised-button class="agregarAcualizar" [disabled]="myForm.invalid" (click)="addProduct()">{{actionBtn}}</button>
+    </div>
+  </div>

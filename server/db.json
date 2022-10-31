@@ -14,8 +14,8 @@
   "listTramos": [
     {
       "id": 1,
-      "startPlace": "Lima",
-      "endPlace": "Trujillo"
+      "startPlace": "lima",
+      "endPlace": "arequipa"
     }
   ],
   "listDrivers": [

@@ -18,8 +18,8 @@ export class DriverService {
   add(driver: Driver) {
     return this.http.post<Driver>("http://localhost:3000/listDrivers", driver);
   }
-  update(driver: Driver) {
-    return this.http.put<Driver>("http://localhost:3000/listDrivers" + "/" + driver.id.toString(), driver);
+  update(data: Driver, id: number) {
+    return this.http.put<Driver>("http://localhost:3000/listDrivers" + "/" + id, data);
   }
   delete(id: number) {
     return this.http.delete<Driver>("http://localhost:3000/listDrivers" + "/" + id.toString());
