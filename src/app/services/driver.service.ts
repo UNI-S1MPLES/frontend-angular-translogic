@@ -1,27 +1,29 @@
 import { Driver } from './../models/driver';
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http"
+import { HttpClient } from "@angular/common/http";
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DriverService {
 
+  resourcePath: string = environment.serverJSON+environment.resourceDrivers;
   constructor(private http:HttpClient) {}
   
   get() {
-    return this.http.get<Driver[]>("http://localhost:3000/listDrivers");
+    return this.http.get<Driver[]>(this.resourcePath);
   }
   getAbout(id: number) {
-    return this.http.get<Driver>("http://localhost:3000/listDrivers" + "/" + id.toString());
+    return this.http.get<Driver>(this.resourcePath + "/" + id.toString());
   }
   add(driver: Driver) {
-    return this.http.post<Driver>("http://localhost:3000/listDrivers", driver);
+    return this.http.post<Driver>(this.resourcePath, driver);
   }
   update(data: Driver, id: number) {
-    return this.http.put<Driver>("http://localhost:3000/listDrivers" + "/" + id, data);
+    return this.http.put<Driver>(this.resourcePath + "/" + id.toString(), data);
   }
   delete(id: number) {
-    return this.http.delete<Driver>("http://localhost:3000/listDrivers" + "/" + id.toString());
+    return this.http.delete<Driver>(this.resourcePath + "/" + id.toString());
   }
 }

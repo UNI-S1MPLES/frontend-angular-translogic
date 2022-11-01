@@ -19,7 +19,7 @@ export class ListDriversComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Driver>();
-  displayedColumns: string[] = ['id', 'nombres', 'apellidos', 'fechaIngreso', 'fechaNacimiento', 'estado', 'localizacion', 'actions'];
+  displayedColumns: string[] = ['id', 'idAdministrator', 'idGroup', 'name', 'surname', 'dateOfJoin', 'dateOfBirth', 'state', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -62,11 +62,11 @@ export class ListDriversComponent implements OnInit {
   deleteProduct(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
-        this.snackBar.open("El Driver con ID " + id + " fue eliminado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("The Driver with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
         this.getAllProducts();
       },
       error: () => {
-        this.snackBar.open("Ocurrió un error al eliminar el Conductor de ID " + id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while removing Driver ID " + id, "Ok", { duration: 3000 });
       }
     });
   }

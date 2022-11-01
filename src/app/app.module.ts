@@ -23,6 +23,12 @@ import { RegisterComponent } from './components/register/register.component';
 import { TestsComponent } from './components/tests/tests.component';
 import { ListTramosComponent } from './components/list-tramos/list-tramos.component';
 import { AddEditTramosComponent } from './components/add-edit-tramos/add-edit-tramos.component';
+import { ListRoutesComponent } from './components/list-routes/list-routes.component';
+import { AddEditRoutesComponent } from './components/add-edit-routes/add-edit-routes.component';
+import { ListVehiclesComponent } from './components/list-vehicles/list-vehicles.component';
+import { ListGroupsComponent } from './components/list-groups/list-groups.component';
+import { AddEditVehiclesComponent } from './components/add-edit-vehicles/add-edit-vehicles.component';
+import { AddEditGroupsComponent } from './components/add-edit-groups/add-edit-groups.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +49,13 @@ import { AddEditTramosComponent } from './components/add-edit-tramos/add-edit-tr
     RegisterComponent,
     TestsComponent,
     ListTramosComponent,
-    AddEditTramosComponent
+    AddEditTramosComponent,
+    ListRoutesComponent,
+    AddEditRoutesComponent,
+    ListVehiclesComponent,
+    ListGroupsComponent,
+    AddEditVehiclesComponent,
+    AddEditGroupsComponent,
   ],
   imports: [
     BrowserModule,

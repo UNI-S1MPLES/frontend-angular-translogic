@@ -8,28 +8,50 @@
   
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>Nombres</mat-label>
-          <input formControlName="nombres" matInput placeholder="Nombres">
+          <mat-label>Names</mat-label>
+          <input formControlName="names" matInput placeholder="Names">
         </mat-form-field>
   
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>Apellidos</mat-label>
-          <input formControlName="apellidos" matInput placeholder="Apellidos">
+          <mat-label>Surname</mat-label>
+          <input formControlName="surname" matInput placeholder="Surname">
         </mat-form-field>
 
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-            <mat-label>Nickname</mat-label>
-            <input formControlName="nickname" matInput placeholder="Nickname">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput placeholder="Email">
           </mat-form-field>
+
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input formControlName="phone" matInput placeholder="Phone">
+        </mat-form-field>
+
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input formControlName="username" matInput placeholder="Username">
+        </mat-form-field>
+
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput placeholder="Password">
+        </mat-form-field>
 
       </form>
     </div>
 
-    <span *ngIf="myForm.get('Nombres')?.hasError('required') && myForm.get('Nombres')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('Apellidos')?.hasError('required') && myForm.get('Apellidos')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('Nickname')?.hasError('required') && myForm.get('Nickname')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('Names')?.hasError('required') && myForm.get('Names')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('Surname')?.hasError('required') && myForm.get('Surname')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('Email')?.hasError('required') && myForm.get('Email')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('Phone')?.hasError('required') && myForm.get('Phone')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('Username')?.hasError('required') && myForm.get('Username')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('Password')?.hasError('required') && myForm.get('Password')?.touched" class="has-error"></span>
+    
     <!-- BUTTONS FOR SAVE AND CLOSE -->
     <div mat-dialog-actions [align]="'end'">
       <button mat-raised-button class="cerrar" mat-dialog-close>Cerrar</button>

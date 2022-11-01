@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Admin } from './../models/admin';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
@@ -6,22 +7,23 @@ import { HttpClient } from "@angular/common/http"
   providedIn: 'root'
 })
 export class AdminService {
-
+  
+  resourcePath: string = environment.serverJSON+environment.resourceAdmins;
   constructor(private http: HttpClient) {}
   
   get() {
-    return this.http.get<Admin[]>("http://localhost:3000/listAdmins");
+    return this.http.get<Admin[]>(this.resourcePath);
   }
   getAbout(id: number) {
-    return this.http.get<Admin>("http://localhost:3000/listAdmins" + "/" + id.toString());
+    return this.http.get<Admin>(this.resourcePath + "/" + id.toString());
   }
   add(admin: Admin) {
-    return this.http.post<Admin>("http://localhost:3000/listAdmins", admin);
+    return this.http.post<Admin>(this.resourcePath, admin);
   }
   update(data: Admin, id: number) {
-    return this.http.put<Admin>("http://localhost:3000/listAdmins" + "/" + id, data);
+    return this.http.put<Admin>(this.resourcePath + "/" + id.toString(), data);
   }
   delete(id: number) {
-    return this.http.delete<Admin>("http://localhost:3000/listAdmins" + "/" + id.toString());
+    return this.http.delete<Admin>(this.resourcePath + "/" + id.toString());
   }
 }

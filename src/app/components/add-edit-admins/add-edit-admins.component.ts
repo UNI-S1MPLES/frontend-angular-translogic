@@ -25,16 +25,22 @@ export class AddEditAdminsComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      nombres: ['', Validators.required],
-      apellidos: ['', Validators.required],
-      nickname: ['', Validators.required]
+      names: ['', Validators.required],
+      surname: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['nombres'].setValue(this.editData.nombres);
-      this.myForm.controls['apellidos'].setValue(this.editData.apellidos);
-      this.myForm.controls['nickname'].setValue(this.editData.nickname);
+      this.myForm.controls['names'].setValue(this.editData.names);
+      this.myForm.controls['surname'].setValue(this.editData.surname);
+      this.myForm.controls['email'].setValue(this.editData.email);
+      this.myForm.controls['phone'].setValue(this.editData.phone);
+      this.myForm.controls['username'].setValue(this.editData.username);
+      this.myForm.controls['password'].setValue(this.editData.password);
     }
   }
 
@@ -43,12 +49,12 @@ export class AddEditAdminsComponent implements OnInit {
       if(this.myForm.valid) { // Save
         this.service.add(this.myForm.value).subscribe({
           next: (data) => {
-            this.snackBar.open("El administrador fue agregado correctamente", "Ok", { duration: 3000 });
+            this.snackBar.open("Admin was added successfully", "Ok", { duration: 3000 });
             this.myForm.reset();
             this.dialogRef.close('agregar');
           },
           error: () => {
-            this.snackBar.open("Ocurrió un error al agregar el administrador", "Ok", { duration: 3000 });
+            this.snackBar.open("An error occurred while adding the administrator", "Ok", { duration: 3000 });
           }
         });
       }
@@ -60,12 +66,12 @@ export class AddEditAdminsComponent implements OnInit {
   updateProduct() {
     this.service.update(this.myForm.value, this.editData.id).subscribe({
       next: (data) => {
-        this.snackBar.open("El administrador de ID " + this.editData.id + " fue actualizado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("The ID Administrator" + this.editData.id + " was updated successfully", "Ok", { duration: 3000 });
         this.myForm.reset();
         this.dialogRef.close('actualizar');
       },
       error: (varError) => {
-        this.snackBar.open("Ocurrió un error al actualizar el administrador de ID " + this.editData.id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while updating the ID Administrator" + this.editData.id, "Ok", { duration: 3000 });
       }
     });
   }

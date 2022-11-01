@@ -24,14 +24,14 @@ export class AddEditTramosComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      startPlace: ['', Validators.required],
-      endPlace: ['', Validators.required]
+      idRoutesTramos: ['', Validators.required],
+      descriptionTramo: ['', Validators.required]
     });
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['startPlace'].setValue(this.editData.startPlace);
-      this.myForm.controls['endPlace'].setValue(this.editData.endPlace);
+      this.myForm.controls['idRoutesTramos'].setValue(this.editData.idRoutesTramos);
+      this.myForm.controls['descriptionTramo'].setValue(this.editData.descriptionTramo);
     }
   }
 
@@ -40,12 +40,12 @@ export class AddEditTramosComponent implements OnInit {
       if(this.myForm.valid) { // Save
         this.service.add(this.myForm.value).subscribe({
           next: (data) => {
-            this.snackBar.open("El tramo fue agregado correctamente", "Ok", { duration: 3000 });
+            this.snackBar.open("Tramo was added successfully", "Ok", { duration: 3000 });
             this.myForm.reset();
             this.dialogRef.close('agregar');
           },
           error: () => {
-            this.snackBar.open("Ocurrió un error al agregar el viaje", "Ok", { duration: 3000 });
+            this.snackBar.open("An error occurred while adding the Tramo", "Ok", { duration: 3000 });
           }
         });
       }
@@ -57,12 +57,12 @@ export class AddEditTramosComponent implements OnInit {
   updateProduct() {
     this.service.update(this.myForm.value, this.editData.id).subscribe({
       next: (data) => {
-        this.snackBar.open("El tramo de ID " + this.editData.id + " fue actualizado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("The ID Tramo " + this.editData.id + " was updated successfully", "Ok", { duration: 3000 });
         this.myForm.reset();
         this.dialogRef.close('actualizar');
       },
       error: (varError) => {
-        this.snackBar.open("Ocurrió un error al actualizar el tramo de ID " + this.editData.id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while updating the ID Tramo " + this.editData.id, "Ok", { duration: 3000 });
       }
     });
   }

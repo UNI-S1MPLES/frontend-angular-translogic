@@ -1,5 +1,5 @@
-import { Tramo } from './../../models/tramo';
 import { TramoService } from './../../services/tramo.service';
+import { Tramo } from './../../models/tramo';
 import { AddEditTramosComponent } from './../add-edit-tramos/add-edit-tramos.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'; // Cuadro de dialogo
@@ -19,7 +19,7 @@ export class ListTramosComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Tramo>();
-  displayedColumns: string[] = ['id', 'startPlace', 'endPlace', 'actions'];
+  displayedColumns: string[] = ['id', 'idRoutesTramos', 'descriptionTramo','actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -62,11 +62,11 @@ export class ListTramosComponent implements OnInit {
   deleteProduct(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
-        this.snackBar.open("El tramo con ID " + id + " fue eliminado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("The Tramo with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
         this.getAllProducts();
       },
       error: () => {
-        this.snackBar.open("Ocurrió un error al eliminar el tramo de ID " + id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while removing Tramo ID " + id, "Ok", { duration: 3000 });
       }
     });
   }

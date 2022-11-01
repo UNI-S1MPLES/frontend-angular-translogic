@@ -1,0 +1,46 @@
+<div class="dialog">
+    <div>
+      <h1 mat-dialog-title>Product information</h1>
+    </div>
+  
+    <div mat-dialog-content>
+      <form [formGroup]="myForm">
+  
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>ID Administrator</mat-label>
+          <input formControlName="idAdministrator" matInput placeholder="ID Administrator">
+        </mat-form-field>
+  
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+          <mat-label>ID Routes Tramos</mat-label>
+          <input formControlName="idRoutesTramos" matInput placeholder="ID Routes Tramos">
+        </mat-form-field>
+
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+            <mat-label>Start Place</mat-label>
+            <input formControlName="startPlace" matInput placeholder="Start Place">
+          </mat-form-field>
+
+        <!-- PRODUCT NAME -->
+        <mat-form-field appearance="outline">
+            <mat-label>End Place</mat-label>
+            <input formControlName="endPlace" matInput placeholder="End Place">
+          </mat-form-field>
+
+      </form>
+    </div>
+
+    <span *ngIf="myForm.get('idAdministrator')?.hasError('required') && myForm.get('idAdministrator')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('idRoutesTramos')?.hasError('required') && myForm.get('idRoutesTramos')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('startPlace')?.hasError('required') && myForm.get('startPlace')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('endPlace')?.hasError('required') && myForm.get('endPlace')?.touched" class="has-error"></span>
+
+    <!-- BUTTONS FOR SAVE AND CLOSE -->
+    <div mat-dialog-actions [align]="'end'">
+      <button mat-raised-button class="cerrar" mat-dialog-close>Cerrar</button>
+      <button mat-raised-button class="agregarAcualizar" [disabled]="myForm.invalid" (click)="addProduct()">{{actionBtn}}</button>
+    </div>
+  </div>

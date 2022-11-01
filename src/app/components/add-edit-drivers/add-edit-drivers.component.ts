@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';  // Mensaje de alerta
 })
 export class AddEditDriversComponent implements OnInit {
 
-  estados = ["Activo", "Inactivo"]; // Radio button options
+  states = ["Active", "Inactive"]; // Radio button options
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
 
@@ -25,22 +25,24 @@ export class AddEditDriversComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      nombres: ['', Validators.required],
-      apellidos: ['', Validators.required],
-      fechaIngreso: ['', Validators.required],
-      fechaNacimiento: ['', Validators.required],
-      estado: ['', Validators.required],
-      localizacion: ['', Validators.required]
+      idAdministrator: ['', Validators.required],
+      idGroup: ['', Validators.required],
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      dateOfJoin: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
+      state: ['', Validators.required]
     });
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['nombres'].setValue(this.editData.nombres);
-      this.myForm.controls['apellidos'].setValue(this.editData.apellidos);
-      this.myForm.controls['fechaIngreso'].setValue(this.editData.fechaIngreso);
-      this.myForm.controls['fechaNacimiento'].setValue(this.editData.fechaNacimiento);
-      this.myForm.controls['estado'].setValue(this.editData.estado);
-      this.myForm.controls['localizacion'].setValue(this.editData.localizacion);
+      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
+      this.myForm.controls['idGroup'].setValue(this.editData.idGroup);
+      this.myForm.controls['name'].setValue(this.editData.name);
+      this.myForm.controls['surname'].setValue(this.editData.surname);
+      this.myForm.controls['dateOfJoin'].setValue(this.editData.dateOfJoin);
+      this.myForm.controls['dateOfBirth'].setValue(this.editData.dateOfBirth);
+      this.myForm.controls['state'].setValue(this.editData.state);
     }
   }
 
@@ -49,12 +51,12 @@ export class AddEditDriversComponent implements OnInit {
       if(this.myForm.valid) { // Save
         this.service.add(this.myForm.value).subscribe({
           next: (data) => {
-            this.snackBar.open("El conductor fue agregado correctamente", "Ok", { duration: 3000 });
+            this.snackBar.open("Driver was added successfully", "Ok", { duration: 3000 });
             this.myForm.reset();
             this.dialogRef.close('agregar');
           },
           error: () => {
-            this.snackBar.open("Ocurrió un error al agregar el conductor", "Ok", { duration: 3000 });
+            this.snackBar.open("An error occurred while adding the Driver", "Ok", { duration: 3000 });
           }
         });
       }
@@ -66,12 +68,12 @@ export class AddEditDriversComponent implements OnInit {
   updateProduct() {
     this.service.update(this.myForm.value, this.editData.id).subscribe({
       next: (data) => {
-        this.snackBar.open("El conductor de ID " + this.editData.id + " fue actualizado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("The ID Driver" + this.editData.id + " was updated successfully", "Ok", { duration: 3000 });
         this.myForm.reset();
         this.dialogRef.close('actualizar');
       },
       error: (varError) => {
-        this.snackBar.open("Ocurrió un error al actualizar el conductor de ID " + this.editData.id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while updating the ID Driver" + this.editData.id, "Ok", { duration: 3000 });
       }
     });
   }

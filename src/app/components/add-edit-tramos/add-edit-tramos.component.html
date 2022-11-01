@@ -8,21 +8,21 @@
   
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>Lugar de Partida</mat-label>
-          <input formControlName="startPlace" matInput placeholder="Lugar de Partida">
+          <mat-label>ID Routes Tramos</mat-label>
+          <input formControlName="idRoutesTramos" matInput placeholder="ID Routes Tramos">
         </mat-form-field>
   
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>Lugar de LLegada</mat-label>
-          <input formControlName="endPlace" matInput placeholder="Lugar de LLegada">
+          <mat-label>Description Tramo</mat-label>
+          <input formControlName="descriptionTramo" matInput placeholder="Description Tramo">
         </mat-form-field>
 
       </form>
     </div>
 
-    <span *ngIf="myForm.get('startPlace')?.hasError('required') && myForm.get('startPlace')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('endPlace')?.hasError('required') && myForm.get('endPlace')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('idRoutesTramos')?.hasError('required') && myForm.get('idRoutesTramos')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('descriptionTramo')?.hasError('required') && myForm.get('descriptionTramo')?.touched" class="has-error"></span>
     <!-- BUTTONS FOR SAVE AND CLOSE -->
     <div mat-dialog-actions [align]="'end'">
       <button mat-raised-button class="cerrar" mat-dialog-close>Cerrar</button>

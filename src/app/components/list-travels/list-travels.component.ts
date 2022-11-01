@@ -19,7 +19,7 @@ export class ListTravelsComponent implements OnInit {
   sideBarOpen = true;
   
   dataSource = new MatTableDataSource<Travel>();
-  displayedColumns: string[] = ['id', 'origen', 'destino', 'cantTramos', 'fecha', 'conductorId', 'ruta', 'tipoVehiculo', 'actions'];
+  displayedColumns: string[] = ['id', 'idAdministrator', 'idDriver', 'idTravelsVehicles', 'idRoute', 'dateOfStart', 'dateOfEnd', 'duration', 'state', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -62,11 +62,11 @@ export class ListTravelsComponent implements OnInit {
   deleteProduct(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
-        this.snackBar.open("El viaje de ID " + id + " fue eliminado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("The Travel with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
         this.getAllProducts();
       },
       error: () => {
-        this.snackBar.open("Ocurrió un error al eliminar el viaje de ID " + id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while removing Travel ID " + id, "Ok", { duration: 3000 });
       }
     });
   }

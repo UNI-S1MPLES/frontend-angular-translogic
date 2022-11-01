@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';  // Mensaje de alerta
 })
 export class AddEditTravelsComponent implements OnInit {
 
-  rutas = ["Habilitada", "Deshabilitada"]; // Radio button options
+  states = ["Active", "Inactive"]; // Radio button options
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
 
@@ -25,24 +25,26 @@ export class AddEditTravelsComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      origen: ['', Validators.required],
-      destino: ['', Validators.required],
-      cantTramos: ['', Validators.required],
-      fecha: ['', Validators.required],
-      conductorId: ['', Validators.required],
-      ruta: ['', Validators.required],
-      tipoVehiculo: ['', Validators.required]
+      idAdministrator: ['', Validators.required],
+      idDriver: ['', Validators.required],
+      idTravelsVehicles: ['', Validators.required],
+      idRoute: ['', Validators.required],
+      dateOfStart: ['', Validators.required],
+      dateOfEnd: ['', Validators.required],
+      duration: ['', Validators.required],
+      state: ['', Validators.required]
     });
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['origen'].setValue(this.editData.origen);
-      this.myForm.controls['destino'].setValue(this.editData.destino);
-      this.myForm.controls['cantTramos'].setValue(this.editData.cantTramos);
-      this.myForm.controls['fecha'].setValue(this.editData.fecha);
-      this.myForm.controls['conductorId'].setValue(this.editData.conductorId);
-      this.myForm.controls['ruta'].setValue(this.editData.ruta);
-      this.myForm.controls['tipoVehiculo'].setValue(this.editData.tipoVehiculo);
+      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
+      this.myForm.controls['idDriver'].setValue(this.editData.idDriver);
+      this.myForm.controls['idTravelsVehicles'].setValue(this.editData.idTravelsVehicles);
+      this.myForm.controls['idRoute'].setValue(this.editData.idRoute);
+      this.myForm.controls['dateOfStart'].setValue(this.editData.dateOfStart);
+      this.myForm.controls['dateOfEnd'].setValue(this.editData.dateOfEnd);
+      this.myForm.controls['duration'].setValue(this.editData.duration);
+      this.myForm.controls['state'].setValue(this.editData.state);
     }
   }
 
@@ -51,12 +53,12 @@ export class AddEditTravelsComponent implements OnInit {
       if(this.myForm.valid) { // Save
         this.service.add(this.myForm.value).subscribe({
           next: (data) => {
-            this.snackBar.open("El viaje fue agregado correctamente", "Ok", { duration: 3000 });
+            this.snackBar.open("Travel was added successfully", "Ok", { duration: 3000 });
             this.myForm.reset();
             this.dialogRef.close('agregar');
           },
           error: () => {
-            this.snackBar.open("Ocurrió un error al agregar el viaje", "Ok", { duration: 3000 });
+            this.snackBar.open("An error occurred while adding the Travel", "Ok", { duration: 3000 });
           }
         });
       }
@@ -68,12 +70,12 @@ export class AddEditTravelsComponent implements OnInit {
   updateProduct() {
     this.service.update(this.myForm.value, this.editData.id).subscribe({
       next: (data) => {
-        this.snackBar.open("El viaje de ID " + this.editData.id + " fue actualizado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("The ID Travel" + this.editData.id + " was updated successfully", "Ok", { duration: 3000 });
         this.myForm.reset();
         this.dialogRef.close('actualizar');
       },
       error: (varError) => {
-        this.snackBar.open("Ocurrió un error al aztualizar el viaje de ID " + this.editData.id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while updating the ID Travel" + this.editData.id, "Ok", { duration: 3000 });
       }
     });
   }

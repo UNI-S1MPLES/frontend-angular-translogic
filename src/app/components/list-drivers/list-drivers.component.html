@@ -10,7 +10,7 @@
       <div class="main">
 
           <div class="container-fluid">
-              <div class="page__box p-4">LISTA DE DRIVERS</div>
+              <div class="page__box p-4">LIST OF DRIVERS</div>
               <div class="page_content shadow p-3 position-relative">
                   <div class="page_content-data">
 
@@ -18,14 +18,14 @@
                           <div class="drivers">
                               <div>
                                   <button mat-raised-button class="button" (click)="openDialog()">
-                                      <mat-icon class="img_button">add_box</mat-icon> Establecer nuevo driver
+                                      <mat-icon class="img_button">add_box</mat-icon> Set new driver
                                   </button>
                               </div>
 
                               <div class="table">
                                   <mat-form-field appearance="standard">
-                                      <mat-label>Filtro</mat-label>
-                                      <input matInput (keyup)="applyFilter($event)" placeholder="Filtro de busqueda"
+                                      <mat-label>Filter</mat-label>
+                                      <input matInput (keyup)="applyFilter($event)" placeholder="Search filter"
                                           #input>
                                   </mat-form-field>
 
@@ -39,50 +39,57 @@
                                           </ng-container>
 
                                           <!-- Name Column -->
-                                          <ng-container matColumnDef="nombres">
-                                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres
+                                          <ng-container matColumnDef="idAdministrator">
+                                              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Administrator
                                               </th>
-                                              <td mat-cell *matCellDef="let row"> {{row.nombres}} </td>
+                                              <td mat-cell *matCellDef="let row"> {{row.idAdministrator}} </td>
                                           </ng-container>
 
                                           <!-- Fruit Column -->
-                                          <ng-container matColumnDef="apellidos">
-                                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos
+                                          <ng-container matColumnDef="idGroup">
+                                              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Group
                                               </th>
-                                              <td mat-cell *matCellDef="let row"> {{row.apellidos}} </td>
+                                              <td mat-cell *matCellDef="let row"> {{row.idGroup}} </td>
                                           </ng-container>
 
                                           <!-- Fruit Column -->
-                                          <ng-container matColumnDef="fechaIngreso">
-                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Ingreso
+                                          <ng-container matColumnDef="name">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name
                                           </th>
-                                          <td mat-cell *matCellDef="let row"> {{row.fechaIngreso}} </td>
+                                          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
                                           </ng-container>
 
                                           <!-- Fruit Column -->
-                                          <ng-container matColumnDef="fechaNacimiento">
-                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de nacimiento
+                                          <ng-container matColumnDef="surname">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Surname
                                           </th>
-                                          <td mat-cell *matCellDef="let row"> {{row.fechaNacimiento}} </td>
+                                          <td mat-cell *matCellDef="let row"> {{row.surname}} </td>
                                           </ng-container>
 
                                           <!-- Fruit Column -->
-                                          <ng-container matColumnDef="estado">
-                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado                                                                 
+                                          <ng-container matColumnDef="dateOfJoin">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Join                                                                 
                                           </th>
-                                          <td mat-cell *matCellDef="let row"> {{row.estado}} </td>
+                                          <td mat-cell *matCellDef="let row"> {{row.dateOfJoin}} </td>
                                           </ng-container>
 
                                           <!-- Fruit Column -->
-                                          <ng-container matColumnDef="localizacion">
-                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Localizacion                                                                 
+                                          <ng-container matColumnDef="dateOfBirth">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Birth                                                                 
                                             </th>
-                                            <td mat-cell *matCellDef="let row"> {{row.localizacion}} </td>
+                                            <td mat-cell *matCellDef="let row"> {{row.dateOfBirth}} </td>
+                                            </ng-container>
+
+                                          <!-- Fruit Column -->
+                                          <ng-container matColumnDef="state">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> State                                                                 
+                                            </th>
+                                            <td mat-cell *matCellDef="let row"> {{row.state}} </td>
                                             </ng-container>
                                                                                       
                                           <!-- Fruit Column -->
                                           <ng-container matColumnDef="actions">
-                                              <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                                              <th mat-header-cell *matHeaderCellDef> Actions </th>
                                               <td mat-cell *matCellDef="let row">
                                                   <button mat-icon-button class="edit" (click)="editProduct(row)">
                                                       <mat-icon>edit</mat-icon>
@@ -99,13 +106,13 @@
 
                                           <!-- Row shown when there is no matching data. -->
                                           <tr class="mat-row" *matNoDataRow>
-                                              <td class="mat-cell" colspan="4">No se ha encontrado información similar
+                                              <td class="mat-cell" colspan="4">No similar information found
                                               </td>
                                           </tr>
                                       </table>
 
                                       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"
-                                          aria-label="Selecciona la cantidad de items por página"></mat-paginator>
+                                          aria-label="Select the number of items per page"></mat-paginator>
                                   </div>
                               </div>
                           </div>

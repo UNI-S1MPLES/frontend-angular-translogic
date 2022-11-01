@@ -1,6 +1,9 @@
 export interface Admin {
     id: number;
-    nombres: string;
-    apellidos: string;
-    nickname: string;
+    names: string;
+    surname: string;
+    email: string;
+    phone: number;
+    username: string;
+    password: string;
 }

@@ -1,3 +1,6 @@
+import { ListGroupsComponent } from './components/list-groups/list-groups.component';
+import { ListVehiclesComponent } from './components/list-vehicles/list-vehicles.component';
+import { ListRoutesComponent } from './components/list-routes/list-routes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // Components
@@ -19,6 +22,9 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "home", component: HomeComponent },
   { path: "travels", component: ListTravelsComponent },
+  { path: "routes", component: ListRoutesComponent },
+  { path: "vehicles", component: ListVehiclesComponent },
+  { path: "groups", component: ListGroupsComponent },
   { path: "tramos", component: ListTramosComponent },
   { path: "drivers", component: ListDriversComponent },
   { path: "admins", component: ListAdminsComponent },

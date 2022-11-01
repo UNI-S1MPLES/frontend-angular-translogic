@@ -1,10 +1,11 @@
 export interface Travel {
     id: number;
-    origen: string;
-    destino: string;
-    cantTramos: number;
-    fecha: Date;
-    conductorId: number;
-    ruta: string;
-    tipoVehiculo: string;
+    idAdministrator: number;
+    idDriver: number;
+    idTravelsVehicles: number;
+    idRoute: number;
+    dateOfStart: string;
+    dateOfEnd: string;
+    duration: number;
+    state: string;
 }

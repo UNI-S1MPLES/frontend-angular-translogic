@@ -19,7 +19,7 @@ export class ListAdminsComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Admin>();
-  displayedColumns: string[] = ['id', 'nombres', 'apellidos', 'nickname', 'actions'];
+  displayedColumns: string[] = ['id', 'names', 'surname', 'email', 'phone', 'username', 'password','actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -62,11 +62,11 @@ export class ListAdminsComponent implements OnInit {
   deleteProduct(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
-        this.snackBar.open("El Admin con ID " + id + " fue eliminado correctamente", "Ok", { duration: 3000 });
+        this.snackBar.open("The administrator with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
         this.getAllProducts();
       },
       error: () => {
-        this.snackBar.open("Ocurrió un error al eliminar el Admin de ID " + id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while deleting the ID Administrator " + id, "Ok", { duration: 3000 });
       }
     });
   }
