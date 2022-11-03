@@ -1,136 +1,143 @@
 <mat-drawer-container>
-  
+
   <mat-drawer mode="side" [opened]="sideBarOpen">
     <app-sidenav></app-sidenav>
   </mat-drawer>
-  
+
   <mat-drawer-content>
     <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
-    
+
     <div class="principal">
-      
+
       <div class="container-fluid">
-        <div class="page__box p-4">BEGIN</div>
+        <div class="page__box p-4">HOME</div>
         <div class="page_content shadow p-3 position-relative">
-            <div class="page_content-data">
-  
-              <main class="contenido">
-                <div class="pagetitle">
-                  <nav>
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a routerLink="/home">Inicio</a></li>
-                      <li class="breadcrumb-item"><a routerLink="/home">Resultados</a></li>
-                    </ol>
-                  </nav>
-                </div>
-                
-                <section class="section dashboard">
-                  <div class="row">
-                    <div class="col-lg-8">
-                      <div class="row">
-                          
-                        <div class="col-xxl-4 col-md-6">
-                          <div class="card info-card sales-card">
-                            <div class="card-body">
-                              <h5 class="card-title" routerLink="travels">Viajes <span>| Hoy</span></h5>
-                              <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                  <mat-icon>place</mat-icon>
-                                </div>
-                                <div class="ps-3">
-                                  <h6>14</h6>
-                                  <span class="text-success small pt-1 fw-bold">22%</span> <span class="text-muted small pt-2 ps-1">progreso</span>
-                                </div>
+          <div class="page_content-data">
+
+            <main class="contenido">
+              <div class="pagetitle">
+                <nav>
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a routerLink="/home">Inicio</a></li>
+                    <li class="breadcrumb-item"><a routerLink="/home">Resultados</a></li>
+                  </ol>
+                </nav>
+              </div>
+
+              <section class="section dashboard">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="row">
+
+                      <div class="col-xxl-4 col-md-6">
+                        <div class="card info-card sales-card">
+                          <div class="card-body">
+                            <h5 class="card-title" routerLink="travels">Viajes <span>| Hoy</span></h5>
+                            <div class="d-flex align-items-center">
+                              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                <mat-icon>place</mat-icon>
+                              </div>
+                              <div class="ps-3">
+                                <h6>14</h6>
+                                <span class="text-success small pt-1 fw-bold">22%</span> <span
+                                  class="text-muted small pt-2 ps-1">progreso</span>
                               </div>
                             </div>
                           </div>
                         </div>
-                          
-                        <div class="col-xxl-4 col-md-6">
-                          <div class="card info-card revenue-card">
-                            <div class="card-body">
-                              <h5 class="card-title" routerLink="drivers">Conductores <span>| Este Mes</span></h5>
-                              <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                  <mat-icon>directions_car</mat-icon>
-                                </div>
-                                <div class="ps-3">
-                                  <h6>51</h6>
-                                  <span class="text-success small pt-1 fw-bold">78%</span> <span class="text-muted small pt-2 ps-1">activos</span>
-                                </div>
+                      </div>
+
+                      <div class="col-xxl-4 col-md-6">
+                        <div class="card info-card revenue-card">
+                          <div class="card-body">
+                            <h5 class="card-title" routerLink="drivers">Conductores <span>| Este Mes</span></h5>
+                            <div class="d-flex align-items-center">
+                              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                <mat-icon>directions_car</mat-icon>
+                              </div>
+                              <div class="ps-3">
+                                <h6>51</h6>
+                                <span class="text-success small pt-1 fw-bold">78%</span> <span
+                                  class="text-muted small pt-2 ps-1">activos</span>
                               </div>
                             </div>
                           </div>
                         </div>
-                          
-                        <div class="col-12">
-                          <div class="card recent-sales">
-                            <div class="card-body">
-                              <h5 class="card-title">Top Conductores <span>| Mes</span></h5>
-                                
-                              <table class="table table-borderless datatable">
-                                <thead>
-                                  <tr>
-                                    <th scope="col" class="list-col-conductor">Conductor</th>
-                                    <th scope="col" class="list-col-nombres">Nombres</th>
-                                    <th scope="col" class="list-col-vehiculo">Vehiculo</th>
-                                    <th scope="col" class="list-col-km">Km</th>
-                                    <th scope="col" class="list-col-estado">Estado/viaje</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row"><a><img src="assets/img/conductor-1.jpg" alt="Profile" class="rounded-circle"></a></th>
-                                    <td>Alipio Cabrera</td>
-                                    <td><a href="#" class="text-primary">Autobús de dos pisos</a></td>
-                                    <td>164</td>
-                                    <td><span class="badge bg-success">En curso</span></td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row"><a><img src="assets/img/conductor-2.jpg" alt="Profile" class="rounded-circle"></a></th>
-                                    <td>Jose Ramos</td>
-                                    <td><a href="#" class="text-primary">Bus Cama</a></td>
-                                    <td>447</td>
-                                    <td><span class="badge bg-warning">En Espera</span></td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row"><a><img src="assets/img/conductor-3.jpg" alt="Profile" class="rounded-circle"></a></th>
-                                    <td>Pablo Pando</td>
-                                    <td><a href="#" class="text-primary">Autobús de dos pisos</a></td>
-                                    <td>247</td>
-                                    <td><span class="badge bg-success">En Curso</span></td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row"><a><img src="assets/img/conductor-4.jpg" alt="Profile" class="rounded-circle"></a></th>
-                                    <td>Sierra Ferguson</td>
-                                    <td><a href="#" class="text-primar">Autobús de dos pisos.</a></td>
-                                    <td>67</td>
-                                    <td><span class="badge bg-danger">Finalizado</span></td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row"><a><img src="assets/img/conductor-5.jpg" alt="Profile" class="rounded-circle"></a></th>
-                                    <td>Raul Mamani</td>
-                                    <td><a href="#" class="text-primary">Bus Cama</a></td>
-                                    <td>165</td>
-                                    <td><span class="badge bg-success">En Curso</span></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                              
-                            </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="card recent-sales">
+                          <div class="card-body">
+                            <h5 class="card-title">Top Conductores <span>| Mes</span></h5>
+
+                            <table class="table table-borderless datatable">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="list-col-conductor">Conductor</th>
+                                  <th scope="col" class="list-col-nombres">Nombres</th>
+                                  <th scope="col" class="list-col-vehiculo">Vehiculo</th>
+                                  <th scope="col" class="list-col-km">Km</th>
+                                  <th scope="col" class="list-col-estado">Estado/viaje</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row"><a><img src="assets/img/conductor-1.jpg" alt="Profile"
+                                        class="rounded-circle"></a></th>
+                                  <td>Alipio Cabrera</td>
+                                  <td><a href="#" class="text-primary">Autobús de dos pisos</a></td>
+                                  <td>164</td>
+                                  <td><span class="badge bg-success">En curso</span></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row"><a><img src="assets/img/conductor-2.jpg" alt="Profile"
+                                        class="rounded-circle"></a></th>
+                                  <td>Jose Ramos</td>
+                                  <td><a href="#" class="text-primary">Bus Cama</a></td>
+                                  <td>447</td>
+                                  <td><span class="badge bg-warning">En Espera</span></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row"><a><img src="assets/img/conductor-3.jpg" alt="Profile"
+                                        class="rounded-circle"></a></th>
+                                  <td>Pablo Pando</td>
+                                  <td><a href="#" class="text-primary">Autobús de dos pisos</a></td>
+                                  <td>247</td>
+                                  <td><span class="badge bg-success">En Curso</span></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row"><a><img src="assets/img/conductor-4.jpg" alt="Profile"
+                                        class="rounded-circle"></a></th>
+                                  <td>Sierra Ferguson</td>
+                                  <td><a href="#" class="text-primar">Autobús de dos pisos.</a></td>
+                                  <td>67</td>
+                                  <td><span class="badge bg-danger">Finalizado</span></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row"><a><img src="assets/img/conductor-5.jpg" alt="Profile"
+                                        class="rounded-circle"></a></th>
+                                  <td>Raul Mamani</td>
+                                  <td><a href="#" class="text-primary">Bus Cama</a></td>
+                                  <td>165</td>
+                                  <td><span class="badge bg-success">En Curso</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </section>
-              </main>
+                </div>
+              </section>
+            </main>
 
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </div>
 
   </mat-drawer-content>
-  
+
 </mat-drawer-container>

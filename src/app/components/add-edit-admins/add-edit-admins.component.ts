@@ -20,33 +20,33 @@ export class AddEditAdminsComponent implements OnInit {
     private service: AdminService,
     private dialogRef: MatDialogRef<AddEditAdminsComponent>,
     private snackBar: MatSnackBar,
-    @Inject(MAT_DIALOG_DATA) public editData : any) { }
+    @Inject(MAT_DIALOG_DATA) public editData: any) { }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
       names: ['', Validators.required],
-      surname: ['', Validators.required],
+      surnames: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
-      username: ['', Validators.required],
+      nickname: ['', Validators.required],
       password: ['', Validators.required]
     });
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
       this.myForm.controls['names'].setValue(this.editData.names);
-      this.myForm.controls['surname'].setValue(this.editData.surname);
+      this.myForm.controls['surnames'].setValue(this.editData.surnames);
       this.myForm.controls['email'].setValue(this.editData.email);
       this.myForm.controls['phone'].setValue(this.editData.phone);
-      this.myForm.controls['username'].setValue(this.editData.username);
+      this.myForm.controls['nickname'].setValue(this.editData.nickname);
       this.myForm.controls['password'].setValue(this.editData.password);
     }
   }
 
   addProduct(): void {
     if (!this.editData) { // Si no se ha recibido informacion para editar
-      if(this.myForm.valid) { // Save
+      if (this.myForm.valid) { // Save
         this.service.add(this.myForm.value).subscribe({
           next: (data) => {
             this.snackBar.open("Admin was added successfully", "Ok", { duration: 3000 });
@@ -71,7 +71,7 @@ export class AddEditAdminsComponent implements OnInit {
         this.dialogRef.close('actualizar');
       },
       error: (varError) => {
-        this.snackBar.open("An error occurred while updating the ID Administrator" + this.editData.id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while updating the administrator" + this.editData.id, "Ok", { duration: 3000 });
       }
     });
   }

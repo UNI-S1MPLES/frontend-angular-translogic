@@ -29,6 +29,10 @@ import { ListVehiclesComponent } from './components/list-vehicles/list-vehicles.
 import { ListGroupsComponent } from './components/list-groups/list-groups.component';
 import { AddEditVehiclesComponent } from './components/add-edit-vehicles/add-edit-vehicles.component';
 import { AddEditGroupsComponent } from './components/add-edit-groups/add-edit-groups.component';
+import { AdditionalAdminsGroupsComponent } from './components/additional-admins/additional-admins-groups/additional-admins-groups.component';
+import { AdditionalAdminsDriversComponent } from './components/additional-admins/additional-admins-drivers/additional-admins-drivers.component';
+import { AdditionalAdminsTravelsComponent } from './components/additional-admins/additional-admins-travels/additional-admins-travels.component';
+import { AdditionalAdminsRoutesComponent } from './components/additional-admins/additional-admins-routes/additional-admins-routes.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,10 @@ import { AddEditGroupsComponent } from './components/add-edit-groups/add-edit-gr
     ListGroupsComponent,
     AddEditVehiclesComponent,
     AddEditGroupsComponent,
+    AdditionalAdminsGroupsComponent,
+    AdditionalAdminsDriversComponent,
+    AdditionalAdminsTravelsComponent,
+    AdditionalAdminsRoutesComponent,
   ],
   imports: [
     BrowserModule,

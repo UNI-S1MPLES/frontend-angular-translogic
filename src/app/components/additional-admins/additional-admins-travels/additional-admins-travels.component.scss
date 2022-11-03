@@ -1,0 +1,65 @@
+/* ---------- List Travels ---------- */
+// General *
+.contenido {
+    margin: 15px;
+}
+
+.button {
+    background: #8c709e;
+    color: #ffffff;
+    padding-left: 15px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    background: #715683;
+    color: white;
+    cursor: pointer;
+}
+
+.img_button {
+    padding-right: 10px;
+}
+
+.h2 {
+    display: inline-block;
+    color: #73518f;
+    user-select: none;
+    transition: 0.3s;
+}
+
+// Table
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 30%;
+}
+
+.table {
+    margin: 0 auto;
+}
+
+.imgs-table {
+    width: 40px;
+    height: 40px;
+    padding-top: 2px;
+}
+
+// Botones de acciones (dentro de la lista)
+.vehicle {
+    color: #6ac772;
+    cursor: pointer;
+}
+
+.delete {
+    color: #ff628a;
+    cursor: pointer;
+}
+
+h3,
+h2 {
+    display: inline;
+}

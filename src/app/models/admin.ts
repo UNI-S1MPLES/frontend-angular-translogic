@@ -1,9 +1,9 @@
 export interface Admin {
     id: number;
     names: string;
-    surname: string;
+    surnames: string;
     email: string;
     phone: number;
-    username: string;
+    nickname: string;
     password: string;
 }

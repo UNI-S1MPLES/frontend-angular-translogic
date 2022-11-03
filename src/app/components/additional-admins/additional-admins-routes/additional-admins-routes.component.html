@@ -1,0 +1,68 @@
+<main class="contenido">
+
+    <h2 class="admin_name">Routes creadas por: </h2>
+    <h3>{{adminNameAndSurname}}</h3>
+    <br>
+    <div class="table">
+        <mat-form-field appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search filter" #input>
+        </mat-form-field>
+
+        <div class="mat-elevation-z5">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="tramos">
+                    <th mat-header-cell *matHeaderCellDef> Tramos </th>
+                    <td mat-cell *matCellDef="let row">
+                        <button mat-icon-button class="tramos" (click)="getTramos(row)">
+                            <mat-icon>swap_vert</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="startPlace">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Start place
+                    </th>
+                    <td mat-cell *matCellDef="let row"> {{row.startPlace}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="endPlace">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> End place
+                    </th>
+                    <td mat-cell *matCellDef="let row"> {{row.endPlace}} </td>
+                </ng-container>
+
+                <!-- Fruit Column -->
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <td mat-cell *matCellDef="let row">
+                        <button mat-icon-button class="delete" (click)="deleteProduct(row.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">Este administrador no tiene rutas creadas
+                    </td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select the number of items per page">
+            </mat-paginator>
+        </div>
+    </div>
+</main>

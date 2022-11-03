@@ -1,3 +1,8 @@
+import { AdditionalAdminsRoutesComponent } from './../additional-admins/additional-admins-routes/additional-admins-routes.component';
+import { AdditionalAdminsTravelsComponent } from './../additional-admins/additional-admins-travels/additional-admins-travels.component';
+import { AdditionalAdminsDriversComponent } from './../additional-admins/additional-admins-drivers/additional-admins-drivers.component';
+import { AdditionalAdminsGroupsComponent } from './../additional-admins/additional-admins-groups/additional-admins-groups.component';
+import { Group } from './../../models/group';
 import { Admin } from './../../models/admin';
 import { AdminService } from './../../services/admin.service';
 import { AddEditAdminsComponent } from './../add-edit-admins/add-edit-admins.component';
@@ -18,8 +23,8 @@ export class ListAdminsComponent implements OnInit {
   title = 'myTranslogic';
   sideBarOpen = true;
 
-  dataSource = new MatTableDataSource<Admin>();
-  displayedColumns: string[] = ['id', 'names', 'surname', 'email', 'phone', 'username', 'password','actions'];
+  dataSource = new MatTableDataSource<any>();
+  displayedColumns: string[] = ['id', 'names', 'surnames', 'email', 'phone', 'nickname', 'groups', 'drivers', 'travels', 'routes', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -27,20 +32,19 @@ export class ListAdminsComponent implements OnInit {
   constructor(private dialog: MatDialog, private api: AdminService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.getAllProducts();
+    this.getAllAdmins();
   }
-
   openDialog() {
     this.dialog.open(AddEditAdminsComponent, {
       width: '50%'
     }).afterClosed().subscribe(value => {
       if (value == 'agregar') {
-        this.getAllProducts();
+        this.getAllAdmins();
       }
     });
   }
 
-  getAllProducts() {
+  getAllAdmins() {
     this.api.get().subscribe(
       (data: Admin[]) => {
         this.dataSource = new MatTableDataSource(data);
@@ -55,7 +59,7 @@ export class ListAdminsComponent implements OnInit {
       data: row
     }).afterClosed().subscribe(value => {
       if (value == 'actualizar') {
-        this.getAllProducts();
+        this.getAllAdmins();
       }
     });
   }
@@ -63,7 +67,7 @@ export class ListAdminsComponent implements OnInit {
     this.api.delete(id).subscribe({
       next: (data) => {
         this.snackBar.open("The administrator with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
-        this.getAllProducts();
+        this.getAllAdmins();
       },
       error: () => {
         this.snackBar.open("An error occurred while deleting the ID Administrator " + id, "Ok", { duration: 3000 });
@@ -74,7 +78,6 @@ export class ListAdminsComponent implements OnInit {
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -82,5 +85,19 @@ export class ListAdminsComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  // Listas de cada administrador
+  openDialogListGroups(id: any) {
+    this.dialog.open(AdditionalAdminsGroupsComponent, { width: '30%', data: id });
+  }
+  openDialogListDrivers(id: any) {
+    this.dialog.open(AdditionalAdminsDriversComponent, { width: '60%', data: id });
+  }
+  openDialogListTravels(id: any) {
+    this.dialog.open(AdditionalAdminsTravelsComponent, { width: '60%', data: id });
+  }
+  openDialogListRoutes(id: any) {
+    this.dialog.open(AdditionalAdminsRoutesComponent, { width: '60%', data: id });
   }
 }

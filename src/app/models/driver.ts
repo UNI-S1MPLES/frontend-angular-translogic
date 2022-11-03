@@ -1,10 +1,8 @@
 export interface Driver {
     id: number;
-    idAdministrator: number;
-    idGroup: number;
-    name: string;
-    surname: string;
+    names: string;
+    surnames: string;
     dateOfJoin: string;
-    dateOfBirth: string;
+    dateOfBrithday: string;
     state: string;
 }
