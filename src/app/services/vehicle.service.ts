@@ -8,14 +8,14 @@ import { environment } from './../../environments/environment';
 })
 export class VehicleService {
 
-  resourcePath: string = environment.serverJSON+environment.resourceVehicles;
+  resourcePath: string = environment.serverJSON + environment.resourceVehicles;
   constructor(private http: HttpClient) { }
 
   get() {
-    return this.http.get<Vehicle[]>(this.resourcePath);
+    return this.http.get<Vehicle[]>(this.resourcePath + "/info/");
   }
   getAbout(id: number) {
-    return this.http.get<Vehicle>(this.resourcePath + "/" + id.toString());
+    return this.http.get<Vehicle>(this.resourcePath + "/info/" + id.toString());
   }
   add(data: Vehicle) {
     return this.http.post<Vehicle>(this.resourcePath, data);

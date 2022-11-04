@@ -38,69 +38,84 @@
                                                 <td mat-cell *matCellDef="let row"> {{row.id}} </td>
                                             </ng-container>
 
-                                            <!-- Name Column -->
-                                            <ng-container matColumnDef="idAdministrator">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Administrator
-                                                </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.idAdministrator}} </td>
-                                            </ng-container>
-
-                                            <!-- Fruit Column -->
-                                            <ng-container matColumnDef="idDriver">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Driver
-                                                </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.idDriver}} </td>
-                                            </ng-container>
-
-                                            <!-- Fruit Column -->
-                                            <ng-container matColumnDef="idTravelsVehicles">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Travels Vehicles
-                                                </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.idTravelsVehicles}} </td>
-                                            </ng-container>
-
-                                            <!-- Fruit Column -->
-                                            <ng-container matColumnDef="idRoute">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Route
-                                                </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.idRoute}} </td>
-                                            </ng-container>
-                                            
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="dateOfStart">
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Start
                                                 </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.dateOfStart}} </td>
+                                                <td mat-cell *matCellDef="let row"> {{row.dateOfStart | date:'dd/MM/yyyy
+                                                    - hh:mm'}} </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="dateOfEnd">
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of End
                                                 </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.dateOfEnd}} </td>
+                                                <td mat-cell *matCellDef="let row"> {{row.dateOfEnd | date:'dd/MM/yyyy -
+                                                    hh:mm'}} </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="duration">
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration
                                                 </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.duration}} </td>
+                                                <td mat-cell *matCellDef="let row"> {{row.duration}} horas</td>
                                             </ng-container>
+
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="state">
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> State
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.state}} </td>
-                                            </ng-container>                        
+                                            </ng-container>
+
+                                            <!-- Name Column -->
+                                            <ng-container matColumnDef="administrator">
+                                                <th mat-header-cell *matHeaderCellDef> Administrator </th>
+                                                <td mat-cell *matCellDef="let row">
+                                                    <button mat-icon-button class="more" (click)="getAdmin(row)">
+                                                        <mat-icon>info</mat-icon>
+                                                    </button>
+                                                </td>
+                                            </ng-container>
+
+                                            <!-- Name Column -->
+                                            <ng-container matColumnDef="driver">
+                                                <th mat-header-cell *matHeaderCellDef> Driver </th>
+                                                <td mat-cell *matCellDef="let row">
+                                                    <button mat-icon-button class="more" (click)="getDriver(row)">
+                                                        <mat-icon>info</mat-icon>
+                                                    </button>
+                                                </td>
+                                            </ng-container>
+
+                                            <!-- Name Column -->
+                                            <ng-container matColumnDef="vehicle">
+                                                <th mat-header-cell *matHeaderCellDef> Vehicle </th>
+                                                <td mat-cell *matCellDef="let row">
+                                                    <button mat-icon-button class="more" (click)="getVehicle(row)">
+                                                        <mat-icon>info</mat-icon>
+                                                    </button>
+                                                </td>
+                                            </ng-container>
+
+                                            <!-- Name Column -->
+                                            <ng-container matColumnDef="route">
+                                                <th mat-header-cell *matHeaderCellDef> Route </th>
+                                                <td mat-cell *matCellDef="let row">
+                                                    <button mat-icon-button class="more" (click)="getRoute(row)">
+                                                        <mat-icon>info</mat-icon>
+                                                    </button>
+                                                </td>
+                                            </ng-container>
+
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="actions">
                                                 <th mat-header-cell *matHeaderCellDef> Actions </th>
                                                 <td mat-cell *matCellDef="let row">
-                                                    <button mat-icon-button class="edit" (click)="editProduct(row)">
+                                                    <button mat-icon-button class="edit" (click)="edit(row)">
                                                         <mat-icon>edit</mat-icon>
                                                     </button>
-                                                    <button mat-icon-button class="delete"
-                                                        (click)="deleteProduct(row.id)">
+                                                    <button mat-icon-button class="delete" (click)="delete(row.id)">
                                                         <mat-icon>delete</mat-icon>
                                                     </button>
                                                 </td>

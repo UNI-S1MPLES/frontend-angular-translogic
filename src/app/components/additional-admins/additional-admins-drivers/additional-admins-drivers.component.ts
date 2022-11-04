@@ -37,7 +37,7 @@ export class AdditionalAdminsDriversComponent implements OnInit {
       }
     );
   }
-  deleteProduct(id: number) {
+  deleteDriver(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
         this.snackBar.open("El grupo (ID: " + id + ") fue eliminado correctamente!", "Ok", { duration: 3000 });
@@ -47,6 +47,9 @@ export class AdditionalAdminsDriversComponent implements OnInit {
         this.snackBar.open("Ha ocurrido un error. Es posible que el grupo tenga mas de un conductor", "Ok", { duration: 3000 });
       }
     });
+  }
+  locate(id: number) {
+
   }
 
   applyFilter(event: Event) {

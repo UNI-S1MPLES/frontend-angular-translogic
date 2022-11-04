@@ -8,14 +8,14 @@ import { environment } from './../../environments/environment';
 })
 export class DriverService {
 
-  resourcePath: string = environment.serverJSON+environment.resourceDrivers;
-  constructor(private http:HttpClient) {}
-  
+  resourcePath: string = environment.serverJSON + environment.resourceDrivers;
+  constructor(private http: HttpClient) { }
+
   get() {
-    return this.http.get<Driver[]>(this.resourcePath);
+    return this.http.get<Driver[]>(this.resourcePath + "/info");
   }
   getAbout(id: number) {
-    return this.http.get<Driver>(this.resourcePath + "/" + id.toString());
+    return this.http.get<Driver>(this.resourcePath + "/info/" + id.toString());
   }
   add(driver: Driver) {
     return this.http.post<Driver>(this.resourcePath, driver);

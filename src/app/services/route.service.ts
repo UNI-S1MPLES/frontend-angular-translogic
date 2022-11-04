@@ -8,14 +8,14 @@ import { environment } from './../../environments/environment';
 })
 export class RouteService {
 
-  resourcePath: string = environment.serverJSON+environment.resourceRoutes;
-  constructor(private http:HttpClient) {}
-  
+  resourcePath: string = environment.serverJSON + environment.resourceRoutes;
+  constructor(private http: HttpClient) { }
+
   get() {
-    return this.http.get<Route[]>(this.resourcePath);
+    return this.http.get<Route[]>(this.resourcePath + "/info");
   }
   getAbout(id: number) {
-    return this.http.get<Route>(this.resourcePath + "/" + id.toString());
+    return this.http.get<Route>(this.resourcePath + "/info/" + id.toString());
   }
   add(route: Route) {
     return this.http.post<Route>(this.resourcePath, route);

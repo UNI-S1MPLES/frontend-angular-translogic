@@ -19,16 +19,16 @@ export class AdminService {
     return this.http.get<Admin[]>(this.resourcePath + "/info");
   }
   getAbout(id: number) {
-    return this.http.get<Admin>(this.resourcePath + "/id/" + id.toString());
+    return this.http.get<Admin>(this.resourcePath + "/info" + id.toString());
   }
   add(admin: Admin) {
     return this.http.post<Admin>(this.resourcePath, admin);
   }
   update(data: Admin, id: number) {
-    return this.http.put<Admin>(this.resourcePath + "/id/" + id.toString(), data);
+    return this.http.put<Admin>(this.resourcePath + "/" + id.toString(), data);
   }
   delete(id: number) {
-    return this.http.delete<Admin>(this.resourcePath + "/id/" + id.toString());
+    return this.http.delete<Admin>(this.resourcePath + "/" + id.toString());
   }
 
   // Lists of administrator (byId)

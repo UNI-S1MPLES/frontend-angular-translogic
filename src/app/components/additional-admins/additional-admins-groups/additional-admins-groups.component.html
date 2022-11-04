@@ -27,11 +27,14 @@
 
                 <!-- Fruit Column -->
                 <ng-container matColumnDef="actions">
-                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <th mat-header-cell *matHeaderCellDef> Locate </th>
                     <td mat-cell *matCellDef="let row">
-                        <button mat-icon-button class="delete" (click)="deleteProduct(row.id)">
-                            <mat-icon>delete</mat-icon>
+                        <button mat-icon-button class="locate" (click)="locate(row.id)">
+                            <mat-icon>navigation</mat-icon>
                         </button>
+                        <!-- <button mat-icon-button class="delete" (click)="deleteGroup(row.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button> -->
                     </td>
                 </ng-container>
 

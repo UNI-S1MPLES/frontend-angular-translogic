@@ -19,7 +19,7 @@ export class ListTramosComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Tramo>();
-  displayedColumns: string[] = ['id', 'idRoutesTramos', 'descriptionTramo','actions'];
+  displayedColumns: string[] = ['id', 'description', 'routes', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -27,20 +27,19 @@ export class ListTramosComponent implements OnInit {
   constructor(private dialog: MatDialog, private api: TramoService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.getAllProducts();
+    this.getAll();
   }
-
   openDialog() {
     this.dialog.open(AddEditTramosComponent, {
       width: '50%'
     }).afterClosed().subscribe(value => {
       if (value == 'agregar') {
-        this.getAllProducts();
+        this.getAll();
       }
     });
   }
 
-  getAllProducts() {
+  getAll() {
     this.api.get().subscribe(
       (data: Tramo[]) => {
         this.dataSource = new MatTableDataSource(data);
@@ -49,21 +48,24 @@ export class ListTramosComponent implements OnInit {
       }
     );
   }
-  editProduct(row: any) {
+  getRoutes(row: any) {
+
+  }
+  edit(row: any) {
     this.dialog.open(AddEditTramosComponent, {
       width: '50%',
       data: row
     }).afterClosed().subscribe(value => {
       if (value == 'actualizar') {
-        this.getAllProducts();
+        this.getAll();
       }
     });
   }
-  deleteProduct(id: number) {
+  delete(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
         this.snackBar.open("The Tramo with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
-        this.getAllProducts();
+        this.getAll();
       },
       error: () => {
         this.snackBar.open("An error occurred while removing Tramo ID " + id, "Ok", { duration: 3000 });

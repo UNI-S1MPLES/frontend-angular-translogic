@@ -19,7 +19,7 @@ export class ListGroupsComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Group>();
-  displayedColumns: string[] = ['id', 'idAdministrator', 'sector', 'actions'];
+  displayedColumns: string[] = ['id', 'sector', 'administrator', 'drivers', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -27,7 +27,7 @@ export class ListGroupsComponent implements OnInit {
   constructor(private dialog: MatDialog, private api: GroupService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.getAllProducts();
+    this.getAll();
   }
 
   openDialog() {
@@ -35,12 +35,12 @@ export class ListGroupsComponent implements OnInit {
       width: '50%'
     }).afterClosed().subscribe(value => {
       if (value == 'agregar') {
-        this.getAllProducts();
+        this.getAll();
       }
     });
   }
 
-  getAllProducts() {
+  getAll() {
     this.api.get().subscribe(
       (data: Group[]) => {
         this.dataSource = new MatTableDataSource(data);
@@ -49,21 +49,27 @@ export class ListGroupsComponent implements OnInit {
       }
     );
   }
-  editProduct(row: any) {
+  getAdmin(row: any) {
+
+  }
+  getDrivers(row: any) {
+
+  }
+  edit(row: any) {
     this.dialog.open(AddEditGroupsComponent, {
       width: '50%',
       data: row
     }).afterClosed().subscribe(value => {
       if (value == 'actualizar') {
-        this.getAllProducts();
+        this.getAll();
       }
     });
   }
-  deleteProduct(id: number) {
+  delete(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
         this.snackBar.open("The Group with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
-        this.getAllProducts();
+        this.getAll();
       },
       error: () => {
         this.snackBar.open("An error occurred while removing Group ID " + id, "Ok", { duration: 3000 });
@@ -74,7 +80,6 @@ export class ListGroupsComponent implements OnInit {
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

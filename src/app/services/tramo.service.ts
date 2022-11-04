@@ -8,14 +8,14 @@ import { environment } from './../../environments/environment';
 })
 export class TramoService {
 
-  resourcePath: string = environment.serverJSON+environment.resourceTramos;
+  resourcePath: string = environment.serverJSON + environment.resourceTramos;
   constructor(private http: HttpClient) { }
 
   get() {
-    return this.http.get<Tramo[]>(this.resourcePath);
+    return this.http.get<Tramo[]>(this.resourcePath + "/info");
   }
   getAbout(id: number) {
-    return this.http.get<Tramo>(this.resourcePath + "/" + id.toString());
+    return this.http.get<Tramo>(this.resourcePath + "/info/" + id.toString());
   }
   add(data: Tramo) {
     return this.http.post<Tramo>(this.resourcePath, data);

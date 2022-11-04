@@ -3,6 +3,6 @@ export interface Driver {
     names: string;
     surnames: string;
     dateOfJoin: string;
-    dateOfBrithday: string;
+    dateOfBirthday: string;
     state: string;
 }

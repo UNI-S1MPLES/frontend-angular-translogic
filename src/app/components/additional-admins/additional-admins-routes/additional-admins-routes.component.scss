@@ -48,8 +48,13 @@ table {
     padding-top: 2px;
 }
 
+h3,
+h2 {
+    display: inline;
+}
+
 // Botones de acciones (dentro de la lista)
-.tramos {
+.edit {
     color: #a06ac7;
     cursor: pointer;
 }
@@ -59,7 +64,12 @@ table {
     cursor: pointer;
 }
 
-h3,
-h2 {
-    display: inline;
+.more {
+    color: #7476d6;
+    cursor: pointer;
+}
+
+.locate {
+    color: #a06ac7;
+    cursor: pointer;
 }

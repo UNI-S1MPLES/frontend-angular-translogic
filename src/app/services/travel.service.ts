@@ -8,14 +8,14 @@ import { environment } from './../../environments/environment';
 })
 export class TravelService {
 
-  resourcePath: string = environment.serverJSON+environment.resourceTravels;
+  resourcePath: string = environment.serverJSON + environment.resourceTravels;
   constructor(private http: HttpClient) { }
 
   get() {
-    return this.http.get<Travel[]>(this.resourcePath);
+    return this.http.get<Travel[]>(this.resourcePath + "/info/");
   }
   getAbout(id: number) {
-    return this.http.get<Travel>(this.resourcePath + "/" + id.toString());
+    return this.http.get<Travel>(this.resourcePath + "/info/" + id.toString());
   }
   add(data: Travel) {
     return this.http.post<Travel>(this.resourcePath, data);

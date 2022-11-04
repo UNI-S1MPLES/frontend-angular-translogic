@@ -1,149 +1,160 @@
 // ------------------------------- App Component -------------------------------
 :host {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 mat-drawer {
-    width: 300px;
-    background: #9B7EB0;
+  width: 300px;
+  background: #9B7EB0;
 }
 
 mat-drawer-container {
-    height: 100%;
+  height: 100%;
 }
 
 // ------------------------------- Toolbar -------------------------------
 mat-toolbar {
-    background: #9B7EB0;
+  background: #9B7EB0;
 
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 ul {
-    li {
-        list-style: none;
-    }
+  li {
+    list-style: none;
+  }
 }
 
 button {
-    border: 0;
-    outline: none;
-    background: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
 }
 
 .user {
-    font-size: 14px;
-    color: white;
+  font-size: 14px;
+  color: white;
 }
 
 .user-image {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 
 .user-image-icon {
-    height: 18px;
-    font-size: 16px;
+  height: 18px;
+  font-size: 16px;
 }
 
 ::ng-deep {
-    .mat-menu-content {
-        width: 300px;
-    }
+  .mat-menu-content {
+    width: 300px;
+  }
 }
 
 // ------------------------------- Content -------------------------------
 .page {
-    padding: 0 1rem;
-    background: #f6f1f9;
+  padding: 0 1rem;
+  background: #f6f1f9;
 
-    &__box {
-        min-height: 120px;
-        background: #ffffff;
-        color: #9B7EB0;
-        margin: 0 -0.5rem;
-        font-size: 36px;
-        font-weight: 500;
-        letter-spacing: 4px;
-        text-align: center;
-        -webkit-text-stroke: 3px #9B7EB0;
-    }
-    &_content {
-        min-height: calc(100vh - 160px);
-        border: 1px solid #9B7EB0;
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
-        margin-top: -3rem;
-        background: #f9f4fd;
-        color: black;
-    }
+  &__box {
+    min-height: 120px;
+    background: #ffffff;
+    color: #9B7EB0;
+    margin: 0 -0.5rem;
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-align: center;
+    -webkit-text-stroke: 3px #9B7EB0;
+  }
+
+  &_content {
+    min-height: calc(100vh - 160px);
+    border: 1px solid #9B7EB0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-top: -3rem;
+    background: #f9f4fd;
+    color: black;
+  }
 }
 
 /* ---------- List Travels ---------- */
 // General *
 .contenido {
-    margin: 30px;
-  }
-  
-  .button {
-    background: #8c709e;
-    color: #ffffff;
-    padding-left: 15px;
-    transition: 0.5s;
-  }
-  
-  .button:hover {
-    background: #715683;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .img_button {
-    padding-right: 10px;
-  }
-  
-  .h2 {
-    display: inline-block;
-    color: #73518f;
-    user-select: none;
-    transition: 0.3s;
-  }
-  
-  // Table
-  table {
-    width: 100%;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 20%;
-  }
-  
-  .table {
-    margin: 0 auto;
-  }
-  
-  .imgs-table {
-    width: 40px;
-    height: 40px;
-    padding-top: 2px;
-  }
-  
-  // Botones de acciones (dentro de la lista)
-  .edit {
-    color: #a06ac7;
-    cursor: pointer;
-  }
-  
-  .delete {
-    color: #ff628a;
-    cursor: pointer;
-  }
+  margin: 30px;
+}
+
+.button {
+  background: #8c709e;
+  color: #ffffff;
+  padding-left: 15px;
+  transition: 0.5s;
+}
+
+.button:hover {
+  background: #715683;
+  color: white;
+  cursor: pointer;
+}
+
+.img_button {
+  padding-right: 10px;
+}
+
+.h2 {
+  display: inline-block;
+  color: #73518f;
+  user-select: none;
+  transition: 0.3s;
+}
+
+// Table
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 20%;
+}
+
+.table {
+  margin: 0 auto;
+}
+
+.imgs-table {
+  width: 40px;
+  height: 40px;
+  padding-top: 2px;
+}
+
+// Botones de acciones (dentro de la lista)
+.edit {
+  color: #a06ac7;
+  cursor: pointer;
+}
+
+.delete {
+  color: #ff628a;
+  cursor: pointer;
+}
+
+.more {
+  color: #7476d6;
+  cursor: pointer;
+}
+
+.locate {
+  color: #a06ac7;
+  cursor: pointer;
+}

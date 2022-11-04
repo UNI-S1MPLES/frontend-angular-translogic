@@ -73,6 +73,7 @@ button {
     text-align: center;
     -webkit-text-stroke: 3px #9b7eb0;
   }
+
   &_content {
     min-height: calc(100vh - 160px);
     border: 1px solid #9b7eb0;
@@ -92,20 +93,24 @@ button {
 .contenido {
   margin: 30px;
 }
+
 .button {
   background: #8c709e;
   color: #ffffff;
   padding-left: 15px;
   transition: 0.5s;
 }
+
 .button:hover {
   background: #715683;
   color: white;
   cursor: pointer;
 }
+
 .img_button {
   padding-right: 10px;
 }
+
 .h2 {
   display: inline-block;
   color: #73518f;
@@ -117,13 +122,16 @@ button {
 table {
   width: 100%;
 }
+
 .mat-form-field {
   font-size: 14px;
   width: 20%;
 }
+
 .table {
   margin: 0 auto;
 }
+
 .imgs-table {
   width: 40px;
   height: 40px;
@@ -135,7 +143,18 @@ table {
   color: #a06ac7;
   cursor: pointer;
 }
+
 .delete {
   color: #ff628a;
+  cursor: pointer;
+}
+
+.more {
+  color: #7476d6;
+  cursor: pointer;
+}
+
+.locate {
+  color: #a06ac7;
   cursor: pointer;
 }

@@ -38,29 +38,32 @@
                                                 <td mat-cell *matCellDef="let row"> {{row.id}} </td>
                                             </ng-container>
 
-                                            <!-- Name Column -->
-                                            <ng-container matColumnDef="idTravelsVehicles">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Travels Vehicles
+                                            <!-- Fruit Column -->
+                                            <ng-container matColumnDef="kmTravelled">
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Km Traveled
                                                 </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.idTravelsVehicles}} </td>
+                                                <td mat-cell *matCellDef="let row"> {{row.kmTravelled}} </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
-                                            <ng-container matColumnDef="kmTraveled">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Km Traveled
+                                            <ng-container matColumnDef="travels">
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Travels
                                                 </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.kmTraveled}} </td>
+                                                <td mat-cell *matCellDef="let row">
+                                                    <button mat-icon-button class="more" (click)="getTravels(row)">
+                                                        <mat-icon>receipt</mat-icon>
+                                                    </button>
+                                                </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="actions">
                                                 <th mat-header-cell *matHeaderCellDef> Actions </th>
                                                 <td mat-cell *matCellDef="let row">
-                                                    <button mat-icon-button class="edit" (click)="editProduct(row)">
+                                                    <button mat-icon-button class="edit" (click)="edit(row)">
                                                         <mat-icon>edit</mat-icon>
                                                     </button>
-                                                    <button mat-icon-button class="delete"
-                                                        (click)="deleteProduct(row.id)">
+                                                    <button mat-icon-button class="delete" (click)="delete(row.id)">
                                                         <mat-icon>delete</mat-icon>
                                                     </button>
                                                 </td>

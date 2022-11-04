@@ -19,7 +19,7 @@ export class ListDriversComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Driver>();
-  displayedColumns: string[] = ['id', 'idAdministrator', 'idGroup', 'name', 'surname', 'dateOfJoin', 'dateOfBirth', 'state', 'actions'];
+  displayedColumns: string[] = ['id', 'names', 'surnames', 'dateOfJoin', 'dateOfBirthday', 'state', 'administrator', 'group', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -27,20 +27,19 @@ export class ListDriversComponent implements OnInit {
   constructor(private dialog: MatDialog, private api: DriverService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.getAllProducts();
+    this.getAll();
   }
-
   openDialog() {
     this.dialog.open(AddEditDriversComponent, {
       width: '50%'
     }).afterClosed().subscribe(value => {
       if (value == 'agregar') {
-        this.getAllProducts();
+        this.getAll();
       }
     });
   }
 
-  getAllProducts() {
+  getAll() {
     this.api.get().subscribe(
       (data: Driver[]) => {
         this.dataSource = new MatTableDataSource(data);
@@ -49,21 +48,27 @@ export class ListDriversComponent implements OnInit {
       }
     );
   }
-  editProduct(row: any) {
+  getAdmin(row: number) {
+
+  }
+  getGroup(row: number) {
+
+  }
+  edit(row: any) {
     this.dialog.open(AddEditDriversComponent, {
       width: '50%',
       data: row
     }).afterClosed().subscribe(value => {
       if (value == 'actualizar') {
-        this.getAllProducts();
+        this.getAll();
       }
     });
   }
-  deleteProduct(id: number) {
+  delete(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
         this.snackBar.open("The Driver with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
-        this.getAllProducts();
+        this.getAll();
       },
       error: () => {
         this.snackBar.open("An error occurred while removing Driver ID " + id, "Ok", { duration: 3000 });

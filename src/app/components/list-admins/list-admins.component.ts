@@ -53,7 +53,7 @@ export class ListAdminsComponent implements OnInit {
       }
     );
   }
-  editProduct(row: any) {
+  edit(row: any) {
     this.dialog.open(AddEditAdminsComponent, {
       width: '50%',
       data: row
@@ -63,7 +63,7 @@ export class ListAdminsComponent implements OnInit {
       }
     });
   }
-  deleteProduct(id: number) {
+  delete(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
         this.snackBar.open("The administrator with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
@@ -92,12 +92,12 @@ export class ListAdminsComponent implements OnInit {
     this.dialog.open(AdditionalAdminsGroupsComponent, { width: '30%', data: id });
   }
   openDialogListDrivers(id: any) {
-    this.dialog.open(AdditionalAdminsDriversComponent, { width: '60%', data: id });
+    this.dialog.open(AdditionalAdminsDriversComponent, { width: '50%', data: id });
   }
   openDialogListTravels(id: any) {
-    this.dialog.open(AdditionalAdminsTravelsComponent, { width: '60%', data: id });
+    this.dialog.open(AdditionalAdminsTravelsComponent, { width: '50%', data: id });
   }
   openDialogListRoutes(id: any) {
-    this.dialog.open(AdditionalAdminsRoutesComponent, { width: '60%', data: id });
+    this.dialog.open(AdditionalAdminsRoutesComponent, { width: '40%', data: id });
   }
 }
