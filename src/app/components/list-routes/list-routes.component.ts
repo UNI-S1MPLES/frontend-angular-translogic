@@ -8,6 +8,8 @@ import { MatTableDataSource } from '@angular/material/table'; // Table
 import { MatSort } from '@angular/material/sort'; // Table
 import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
+import { AdditionalRoutesAdminComponent } from '../additional-tramos/additional-routes-admin/additional-routes-admin.component';
+import { AdditionalRoutesTramosComponent } from '../additional-tramos/additional-routes-tramos/additional-routes-tramos.component';
 
 @Component({
   selector: 'app-list-routes',
@@ -50,10 +52,10 @@ export class ListRoutesComponent implements OnInit {
     );
   }
   getAdmin(row: any) {
-    // this.dialog.open(AdditionalRoutesAdminComponent, { width: '60%', data: row });
+    this.dialog.open(AdditionalRoutesAdminComponent, { width: '50%', data: row });
   }
   getTramos(row: any) {
-    // this.dialog.open(AdditionalRoutesTramosComponent, { width: '35%', data: row });
+    this.dialog.open(AdditionalRoutesTramosComponent, { width: '50%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditRoutesComponent, {

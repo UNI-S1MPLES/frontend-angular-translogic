@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table'; // Table
 import { MatSort } from '@angular/material/sort'; // Table
 import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
+import { AdditionalVehiclesTravelsComponent } from '../additional-vehicles/additional-vehicles-travels/additional-vehicles-travels.component';
 
 @Component({
   selector: 'app-list-vehicles',
@@ -48,8 +49,8 @@ export class ListVehiclesComponent implements OnInit {
       }
     );
   }
-  getTravels(row: number) {
-
+  getTravels(row: any) {
+    this.dialog.open(AdditionalVehiclesTravelsComponent, { width: '50%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditVehiclesComponent, {

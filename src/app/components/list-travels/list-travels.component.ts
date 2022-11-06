@@ -7,6 +7,10 @@ import { MatTableDataSource } from '@angular/material/table'; // Table
 import { MatSort } from '@angular/material/sort'; // Table
 import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
+import { AdditionalTravelsAdminComponent } from '../additional-travels/additional-travels-admin/additional-travels-admin.component';
+import { AdditionalTravelsRouteComponent } from '../additional-travels/additional-travels-route/additional-travels-route.component';
+import { AdditionalTravelsVehicleComponent } from '../additional-travels/additional-travels-vehicle/additional-travels-vehicle.component';
+import { AdditionalTravelsDriverComponent } from '../additional-travels/additional-travels-driver/additional-travels-driver.component';
 
 @Component({
   selector: 'app-list-travels',
@@ -48,17 +52,17 @@ export class ListTravelsComponent implements OnInit {
       }
     );
   }
-  getAdmin(row: number) {
-
+  getAdmin(row: any) {
+    this.dialog.open(AdditionalTravelsAdminComponent, { width: '50%', data: row });
   }
-  getDriver(row: number) {
-
+  getDriver(row: any) {
+    this.dialog.open(AdditionalTravelsDriverComponent, { width: '50%', data: row });
   }
-  getVehicle(row: number) {
-
+  getVehicle(row: any) {
+    this.dialog.open(AdditionalTravelsVehicleComponent, { width: '50%', data: row });
   }
-  getRoute(row: number) {
-
+  getRoute(row: any) {
+    this.dialog.open(AdditionalTravelsRouteComponent, { width: '50%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditTravelsComponent, {

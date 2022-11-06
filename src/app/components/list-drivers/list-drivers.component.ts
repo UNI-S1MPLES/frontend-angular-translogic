@@ -7,6 +7,8 @@ import { MatTableDataSource } from '@angular/material/table'; // Table
 import { MatSort } from '@angular/material/sort'; // Table
 import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
+import { AdditionalDriversAdminComponent } from '../additional-drivers/additional-drivers-admin/additional-drivers-admin.component';
+import { AdditionalDriversGroupComponent } from '../additional-drivers/additional-drivers-group/additional-drivers-group.component';
 
 @Component({
   selector: 'app-list-drivers',
@@ -48,11 +50,11 @@ export class ListDriversComponent implements OnInit {
       }
     );
   }
-  getAdmin(row: number) {
-
+  getAdmin(row: any) {
+    this.dialog.open(AdditionalDriversAdminComponent, { width: '50%', data: row });
   }
-  getGroup(row: number) {
-
+  getGroup(row: any) {
+    this.dialog.open(AdditionalDriversGroupComponent, { width: '50%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditDriversComponent, {

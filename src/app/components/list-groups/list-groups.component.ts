@@ -7,6 +7,8 @@ import { MatTableDataSource } from '@angular/material/table'; // Table
 import { MatSort } from '@angular/material/sort'; // Table
 import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
+import { AdditionalGroupAdminComponent } from '../additional-group/additional-group-admin/additional-group-admin.component';
+import { AdditionalGroupDriversComponent } from '../additional-group/additional-group-drivers/additional-group-drivers.component';
 
 @Component({
   selector: 'app-list-groups',
@@ -50,10 +52,10 @@ export class ListGroupsComponent implements OnInit {
     );
   }
   getAdmin(row: any) {
-
+    this.dialog.open(AdditionalGroupAdminComponent, { width: '50%', data: row });
   }
   getDrivers(row: any) {
-
+    this.dialog.open(AdditionalGroupDriversComponent, { width: '50%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditGroupsComponent, {

@@ -50,7 +50,7 @@ export class ListTramosComponent implements OnInit {
     );
   }
   getRoutes(row: any) {
-    this.dialog.open(AdditionalTramosRoutesComponent, { width: '35%', data: row });
+    this.dialog.open(AdditionalTramosRoutesComponent, { width: '50%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditTramosComponent, {
