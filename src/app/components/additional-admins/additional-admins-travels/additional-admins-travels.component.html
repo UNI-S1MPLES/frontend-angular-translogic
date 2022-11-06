@@ -46,20 +46,11 @@
                     <td mat-cell *matCellDef="let row"> {{row.state}} </td>
                 </ng-container>
 
-                <ng-container matColumnDef="vehicle">
-                    <th mat-header-cell *matHeaderCellDef> Vehicle </th>
-                    <td mat-cell *matCellDef="let row">
-                        <button mat-icon-button class="more" (click)="getVehicle(row)">
-                            <mat-icon>directions_car</mat-icon>
-                        </button>
-                    </td>
-                </ng-container>
-
                 <!-- Fruit Column -->
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef> Locate </th>
                     <td mat-cell *matCellDef="let row">
-                        <button mat-icon-button class="more" (click)="locate(row.id)">
+                        <button mat-icon-button class="locate" (click)="locate(row.id)">
                             <mat-icon>navigation</mat-icon>
                         </button>
                         <!-- <button mat-icon-button class="delete" (click)="deleteTravel(row.id)">

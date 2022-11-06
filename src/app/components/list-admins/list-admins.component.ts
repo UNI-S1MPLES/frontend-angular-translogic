@@ -32,19 +32,19 @@ export class ListAdminsComponent implements OnInit {
   constructor(private dialog: MatDialog, private api: AdminService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.getAllAdmins();
+    this.getAll();
   }
   openDialog() {
     this.dialog.open(AddEditAdminsComponent, {
       width: '50%'
     }).afterClosed().subscribe(value => {
       if (value == 'agregar') {
-        this.getAllAdmins();
+        this.getAll();
       }
     });
   }
 
-  getAllAdmins() {
+  getAll() {
     this.api.get().subscribe(
       (data: Admin[]) => {
         this.dataSource = new MatTableDataSource(data);
@@ -53,13 +53,25 @@ export class ListAdminsComponent implements OnInit {
       }
     );
   }
+  getGroups(row: any) {
+    this.dialog.open(AdditionalAdminsGroupsComponent, { width: '35%', data: row });
+  }
+  getDrivers(row: any) {
+    this.dialog.open(AdditionalAdminsDriversComponent, { width: '50%', data: row });
+  }
+  getTravels(row: any) {
+    this.dialog.open(AdditionalAdminsTravelsComponent, { width: '50%', data: row });
+  }
+  getRoutes(row: any) {
+    this.dialog.open(AdditionalAdminsRoutesComponent, { width: '40%', data: row });
+  }
   edit(row: any) {
     this.dialog.open(AddEditAdminsComponent, {
       width: '50%',
       data: row
     }).afterClosed().subscribe(value => {
       if (value == 'actualizar') {
-        this.getAllAdmins();
+        this.getAll();
       }
     });
   }
@@ -67,7 +79,7 @@ export class ListAdminsComponent implements OnInit {
     this.api.delete(id).subscribe({
       next: (data) => {
         this.snackBar.open("The administrator with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
-        this.getAllAdmins();
+        this.getAll();
       },
       error: () => {
         this.snackBar.open("An error occurred while deleting the ID Administrator " + id, "Ok", { duration: 3000 });
@@ -85,19 +97,5 @@ export class ListAdminsComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
-  }
-
-  // Listas de cada administrador
-  openDialogListGroups(id: any) {
-    this.dialog.open(AdditionalAdminsGroupsComponent, { width: '30%', data: id });
-  }
-  openDialogListDrivers(id: any) {
-    this.dialog.open(AdditionalAdminsDriversComponent, { width: '50%', data: id });
-  }
-  openDialogListTravels(id: any) {
-    this.dialog.open(AdditionalAdminsTravelsComponent, { width: '50%', data: id });
-  }
-  openDialogListRoutes(id: any) {
-    this.dialog.open(AdditionalAdminsRoutesComponent, { width: '40%', data: id });
   }
 }

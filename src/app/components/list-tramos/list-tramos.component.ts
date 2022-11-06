@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table'; // Table
 import { MatSort } from '@angular/material/sort'; // Table
 import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
+import { AdditionalTramosRoutesComponent } from '../additional-tramos/additional-tramos-routes/additional-tramos-routes.component';
 
 @Component({
   selector: 'app-list-tramos',
@@ -49,7 +50,7 @@ export class ListTramosComponent implements OnInit {
     );
   }
   getRoutes(row: any) {
-
+    this.dialog.open(AdditionalTramosRoutesComponent, { width: '35%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditTramosComponent, {

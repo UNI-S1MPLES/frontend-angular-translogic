@@ -12,10 +12,10 @@ export class RouteService {
   constructor(private http: HttpClient) { }
 
   get() {
-    return this.http.get<Route[]>(this.resourcePath + "/info");
+    return this.http.get<Route[]>(this.resourcePath);
   }
   getAbout(id: number) {
-    return this.http.get<Route>(this.resourcePath + "/info/" + id.toString());
+    return this.http.get<Route>(this.resourcePath + id.toString());
   }
   add(route: Route) {
     return this.http.post<Route>(this.resourcePath, route);

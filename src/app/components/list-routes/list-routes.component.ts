@@ -1,3 +1,4 @@
+import { AdditionalTramosRoutesComponent } from './../additional-tramos/additional-tramos-routes/additional-tramos-routes.component';
 import { AddEditRoutesComponent } from './../add-edit-routes/add-edit-routes.component';
 import { Route } from './../../models/route';
 import { RouteService } from './../../services/route.service';
@@ -48,11 +49,11 @@ export class ListRoutesComponent implements OnInit {
       }
     );
   }
-  getAdmin(row: number) {
-
+  getAdmin(row: any) {
+    // this.dialog.open(AdditionalRoutesAdminComponent, { width: '60%', data: row });
   }
-  getTramos(row: number) {
-
+  getTramos(row: any) {
+    // this.dialog.open(AdditionalRoutesTramosComponent, { width: '35%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditRoutesComponent, {

@@ -78,8 +78,7 @@
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Groups
                                                 </th>
                                                 <td mat-cell *matCellDef="let row">
-                                                    <button mat-icon-button class="more"
-                                                        (click)="openDialogListGroups(row)">
+                                                    <button mat-icon-button class="more" (click)="getGroups(row)">
                                                         <mat-icon>receipt</mat-icon>
                                                     </button>
                                                 </td>
@@ -90,8 +89,7 @@
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Drivers
                                                 </th>
                                                 <td mat-cell *matCellDef="let row">
-                                                    <button mat-icon-button class="more"
-                                                        (click)="openDialogListDrivers(row)">
+                                                    <button mat-icon-button class="more" (click)="getDrivers(row)">
                                                         <mat-icon>receipt</mat-icon>
                                                     </button>
                                                 </td>
@@ -102,8 +100,7 @@
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Travels
                                                 </th>
                                                 <td mat-cell *matCellDef="let row">
-                                                    <button mat-icon-button class="more"
-                                                        (click)="openDialogListTravels(row)">
+                                                    <button mat-icon-button class="more" (click)="getTravels(row)">
                                                         <mat-icon>receipt</mat-icon>
                                                     </button>
                                                 </td>
@@ -114,8 +111,7 @@
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Routes
                                                 </th>
                                                 <td mat-cell *matCellDef="let row">
-                                                    <button mat-icon-button class="more"
-                                                        (click)="openDialogListRoutes(row)">
+                                                    <button mat-icon-button class="more" (click)="getRoutes(row)">
                                                         <mat-icon>receipt</mat-icon>
                                                     </button>
                                                 </td>

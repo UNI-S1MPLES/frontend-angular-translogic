@@ -32,15 +32,6 @@
                     <td mat-cell *matCellDef="let row"> {{row.endPlace}} </td>
                 </ng-container>
 
-                <ng-container matColumnDef="tramos">
-                    <th mat-header-cell *matHeaderCellDef> Tramos </th>
-                    <td mat-cell *matCellDef="let row">
-                        <button mat-icon-button class="more" (click)="getTramos(row)">
-                            <mat-icon>swap_vert</mat-icon>
-                        </button>
-                    </td>
-                </ng-container>
-
                 <!-- Fruit Column -->
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef> Locate </th>

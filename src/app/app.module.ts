@@ -33,6 +33,7 @@ import { AdditionalAdminsGroupsComponent } from './components/additional-admins/
 import { AdditionalAdminsDriversComponent } from './components/additional-admins/additional-admins-drivers/additional-admins-drivers.component';
 import { AdditionalAdminsTravelsComponent } from './components/additional-admins/additional-admins-travels/additional-admins-travels.component';
 import { AdditionalAdminsRoutesComponent } from './components/additional-admins/additional-admins-routes/additional-admins-routes.component';
+import { AdditionalTramosRoutesComponent } from './components/additional-tramos/additional-tramos-routes/additional-tramos-routes.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { AdditionalAdminsRoutesComponent } from './components/additional-admins/
     AdditionalAdminsDriversComponent,
     AdditionalAdminsTravelsComponent,
     AdditionalAdminsRoutesComponent,
+    AdditionalTramosRoutesComponent,
   ],
   imports: [
     BrowserModule,

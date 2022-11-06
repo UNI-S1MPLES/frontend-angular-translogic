@@ -16,7 +16,7 @@ export class AdditionalAdminsTravelsComponent implements OnInit {
 
   adminNameAndSurname: any;
   dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['id', 'vehicle', 'dateOfStart', 'dateOfEnd', 'duration', 'state', 'actions'];
+  displayedColumns: string[] = ['id', 'dateOfStart', 'dateOfEnd', 'duration', 'state', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

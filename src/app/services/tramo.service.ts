@@ -12,10 +12,10 @@ export class TramoService {
   constructor(private http: HttpClient) { }
 
   get() {
-    return this.http.get<Tramo[]>(this.resourcePath + "/info");
+    return this.http.get<Tramo[]>(this.resourcePath);
   }
   getAbout(id: number) {
-    return this.http.get<Tramo>(this.resourcePath + "/info/" + id.toString());
+    return this.http.get<Tramo>(this.resourcePath + id.toString());
   }
   add(data: Tramo) {
     return this.http.post<Tramo>(this.resourcePath, data);
