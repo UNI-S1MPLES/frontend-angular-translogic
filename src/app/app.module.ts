@@ -46,8 +46,8 @@ import { AdditionalTravelsDriverComponent } from './components/additional-travel
 import { AdditionalTravelsVehicleComponent } from './components/additional-travels/additional-travels-vehicle/additional-travels-vehicle.component';
 import { AdditionalTravelsRouteComponent } from './components/additional-travels/additional-travels-route/additional-travels-route.component';
 import { AdditionalVehiclesTravelsComponent } from './components/additional-vehicles/additional-vehicles-travels/additional-vehicles-travels.component';
-import { AdditionalRoutesAdminComponent } from './components/additional-tramos/additional-routes-admin/additional-routes-admin.component';
-import { AdditionalRoutesTramosComponent } from './components/additional-tramos/additional-routes-tramos/additional-routes-tramos.component';
+import { AdditionalRoutesAdminComponent } from './components/additional-routes/additional-routes-admin/additional-routes-admin.component';
+import { AdditionalRoutesTramosComponent } from './components/additional-routes/additional-routes-tramos/additional-routes-tramos.component';
 import { AdditionalTramosRoutesComponent } from './components/additional-tramos/additional-tramos-routes/additional-tramos-routes.component';
 
 @NgModule({
@@ -94,10 +94,10 @@ import { AdditionalTramosRoutesComponent } from './components/additional-tramos/
     AdditionalTravelsDriverComponent,
     AdditionalTravelsVehicleComponent,
     AdditionalTravelsRouteComponent,
+    AdditionalVehiclesTravelsComponent,
     AdditionalRoutesAdminComponent,
     AdditionalRoutesTramosComponent,
     AdditionalTramosRoutesComponent,
-    AdditionalVehiclesTravelsComponent,
   ],
   imports: [
     BrowserModule,

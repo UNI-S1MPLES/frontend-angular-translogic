@@ -1,3 +1,4 @@
+import { Tramo } from './../models/tramo';
 import { Route } from './../models/route';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
@@ -25,5 +26,9 @@ export class RouteService {
   }
   delete(id: number) {
     return this.http.delete<Route>(this.resourcePath + "/" + id.toString());
+  }
+
+  getAllTramosByRouteId(id: number) {
+    return this.http.get<Tramo[]>(this.resourcePath + "/tramos/" + id.toString());
   }
 }

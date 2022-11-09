@@ -1,3 +1,73 @@
+/* ---------- List Travels ---------- */
+// General *
+.contenido {
+    margin: 30px;
+}
+
+.button {
+    background: #8c709e;
+    color: #ffffff;
+    padding-left: 15px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    background: #715683;
+    color: white;
+    cursor: pointer;
+}
+
+.img_button {
+    padding-right: 10px;
+}
+
+.h2 {
+    display: inline-block;
+    color: #73518f;
+    user-select: none;
+    transition: 0.3s;
+}
+
+// Table
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+}
+
+.table {
+    margin: 0 auto;
+}
+
+.imgs-table {
+    width: 40px;
+    height: 40px;
+    padding-top: 2px;
+}
+
+// Botones de acciones (dentro de la lista)
+.edit {
+    color: #a06ac7;
+    cursor: pointer;
+}
+
+.delete {
+    color: #ff628a;
+    cursor: pointer;
+}
+
+.more {
+    color: #ffa162;
+    cursor: pointer;
+}
+
+.locate {
+    color: #a06ac7;
+    cursor: pointer;
+}
+
 // Input information field
 mat-form-field {
     width: 100%;
@@ -10,6 +80,7 @@ mat-form-field {
     background: #a06ac7;
     cursor: pointer;
 }
+
 .cerrar {
     color: #ffffffff;
     font-weight: 500;

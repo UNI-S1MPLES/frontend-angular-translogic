@@ -8,8 +8,8 @@ import { MatTableDataSource } from '@angular/material/table'; // Table
 import { MatSort } from '@angular/material/sort'; // Table
 import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
-import { AdditionalRoutesAdminComponent } from '../additional-tramos/additional-routes-admin/additional-routes-admin.component';
-import { AdditionalRoutesTramosComponent } from '../additional-tramos/additional-routes-tramos/additional-routes-tramos.component';
+import { AdditionalRoutesAdminComponent } from '../additional-routes/additional-routes-admin/additional-routes-admin.component';
+import { AdditionalRoutesTramosComponent } from '../additional-routes/additional-routes-tramos/additional-routes-tramos.component';
 
 @Component({
   selector: 'app-list-routes',
@@ -55,11 +55,11 @@ export class ListRoutesComponent implements OnInit {
     this.dialog.open(AdditionalRoutesAdminComponent, { width: '50%', data: row });
   }
   getTramos(row: any) {
-    this.dialog.open(AdditionalRoutesTramosComponent, { width: '50%', data: row });
+    this.dialog.open(AdditionalRoutesTramosComponent, { width: '30%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditRoutesComponent, {
-      width: '50%',
+      width: '30%',
       data: row
     }).afterClosed().subscribe(value => {
       if (value == 'actualizar') {

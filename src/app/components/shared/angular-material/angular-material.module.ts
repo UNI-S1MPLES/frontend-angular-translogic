@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table'; // Table
 import { MatSortModule } from '@angular/material/sort'; // Table
 import { MatPaginatorModule } from '@angular/material/paginator'; // Table
+import { MatCheckboxModule } from '@angular/material/checkbox';
 // Add, Edit
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Guardar la informacion de un formulario angular
 import { MatDialogModule } from '@angular/material/dialog'; // Cuadro de diálogo
@@ -42,6 +43,7 @@ import { MatRadioModule } from '@angular/material/radio'; // Radio Button
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatCheckboxModule,
     // Add, Edit
     ReactiveFormsModule,
     FormsModule,
@@ -72,6 +74,7 @@ import { MatRadioModule } from '@angular/material/radio'; // Radio Button
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatCheckboxModule,
     // Add, Edit
     ReactiveFormsModule,
     FormsModule,
