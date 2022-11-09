@@ -1,3 +1,5 @@
+import { Group } from 'src/app/models/group';
+import { Admin } from './../models/admin';
 import { Driver } from './../models/driver';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
@@ -25,5 +27,13 @@ export class DriverService {
   }
   delete(id: number) {
     return this.http.delete<Driver>(this.resourcePath + "/" + id.toString());
+  }
+
+  getListOfAdmins(id: number) {
+    return this.http.get<Admin[]>(this.resourcePath + "/admin/" + id.toString());
+  }
+
+  getListOfGroups(id: number) {
+    return this.http.get<Group[]>(this.resourcePath + "/group/" + id.toString());
   }
 }
