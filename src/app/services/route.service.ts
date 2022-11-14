@@ -3,6 +3,7 @@ import { Route } from './../models/route';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { environment } from './../../environments/environment';
+import { Admin } from '../models/admin';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,9 @@ export class RouteService {
 
   getAllTramosByRouteId(id: number) {
     return this.http.get<Tramo[]>(this.resourcePath + "/tramos/" + id.toString());
+  }
+
+  getListOfAdmins(id: number) {
+    return this.http.get<Admin[]>(this.resourcePath + "/admin/" + id.toString());
   }
 }

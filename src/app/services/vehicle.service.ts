@@ -1,3 +1,4 @@
+import { Travel } from './../models/travel';
 import { Vehicle } from './../models/vehicle';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
@@ -25,5 +26,8 @@ export class VehicleService {
   }
   delete(id: number) {
     return this.http.delete<Vehicle>(this.resourcePath + id);
+  }
+  getListOfTravels(id: number) {
+    return this.http.get<Travel[]>(this.resourcePath + "/travels/" + id.toString());
   }
 }
