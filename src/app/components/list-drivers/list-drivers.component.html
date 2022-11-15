@@ -38,13 +38,13 @@
                                                 <td mat-cell *matCellDef="let row"> {{row.id}} </td>
                                             </ng-container>
 
-                                            <!-- Fruit Column -->
+                                            <!-- Name Column -->
                                             <ng-container matColumnDef="names">
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Names
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.names}} </td>
                                             </ng-container>
-
+                                            
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="surnames">
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Surnames
@@ -56,16 +56,18 @@
                                             <ng-container matColumnDef="dateOfJoin">
                                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Join
                                                 </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.dateOfJoin | date:'dd/MM/yyyy
-                                                    - hh:mm'}} </td>
+                                                <td mat-cell *matCellDef="let row"> 
+                                                    {{row.dateOfJoin | date:'dd/MM/yyyy- hh:mm'}} 
+                                                </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
-                                            <ng-container matColumnDef="dateOfBirthday">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Birthday
+                                            <ng-container matColumnDef="dateOfBirth">
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Birth
                                                 </th>
-                                                <td mat-cell *matCellDef="let row"> {{row.dateOfBirthday |
-                                                    date:'dd/MM'}} </td>
+                                                <td mat-cell *matCellDef="let row2"> 
+                                                    {{row2.dateOfBirth | date:'dd/MM/yyyy- hh:mm'}} 
+                                                </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
