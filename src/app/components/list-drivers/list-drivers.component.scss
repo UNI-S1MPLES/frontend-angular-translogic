@@ -7,61 +7,64 @@
 
 mat-drawer {
   width: 300px;
-  background: #ff8000;
+  background: #000000;
 }
 
 mat-drawer-container {
   height: 100%;
 }
 
+
 // ------------------------------- Content -------------------------------
 .page {
   padding: 0 1rem;
-  background: #f6f1f9;
+  background: #a509ff;
 
-  &__box {
-    min-height: 120px;
-    background: #000000;
-    color: #000000;
-    margin: 0 -0.5rem;
+  &__box  {
+    height: 120px;
+    max-width: auto;
+    background: #0e0e0e;
+    color: #0e0e0e;
     font-size: 36px;
     font-weight: 500;
     letter-spacing: 4px;
     text-align: center;
-    -webkit-text-stroke: 3px #ff8000;
+    -webkit-text-stroke: 2px #ff8000;
   }
 
   &_content {
     min-height: calc(100vh - 160px);
-    border: 1px solid #000000;
+    border: 10px solid #000000;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     margin-top: -3rem;
-    background: #f9f4fd;
-    color: black;
+    background: #424140;
+    color: rgb(247, 247, 247);
   }
 }
 
-/* ---------- List Travels ---------- */
+/* ---------- List ---------- */
 // General *
 .contenido {
   margin: 30px;
 }
 
 .button {
-  background: #000000;
+  background: #0e0e0e;
   color: #ff8000;
   padding-left: 15px;
   transition: 0.5s;
+  vertical-align: 20px;
 }
 
 .button:hover {
-  background: #000000;
-  color: white;
+  background: #ff8000;
+  color: rgb(0, 0, 0);
   cursor: pointer;
+
 }
 
 .img_button {
@@ -70,11 +73,19 @@ mat-drawer-container {
 
 .h2 {
   display: inline-block;
-  color: #000000;
+  color: #ffffff;
   user-select: none;
   transition: 0.3s;
 }
 
+mat-label{
+  color:#ff8000;
+  border-radius: 10px;
+}
+
+.filtrocolor{
+ color:#ffffff;
+}
 // Table
 table {
   width: 100%;
@@ -102,16 +113,16 @@ table {
 }
 
 .delete {
-  color: #ff0040;
+  color: #ff0000;
   cursor: pointer;
 }
 
 .more {
-  color: #ffa162;
+  color: #ff8000;
   cursor: pointer;
 }
 
 .locate {
-  color: #a06ac7;
+  color: #000000;
   cursor: pointer;
 }

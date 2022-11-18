@@ -7,7 +7,7 @@
 
 mat-drawer {
     width: 300px;
-    background: #9B7EB0;
+    background: #000000;
 }
 
 mat-drawer-container {
@@ -16,7 +16,7 @@ mat-drawer-container {
 
 // ------------------------------- Toolbar -------------------------------
 mat-toolbar {
-    background: #9B7EB0;
+    background: #000000;
 
     position: sticky;
     top: 0;
@@ -64,26 +64,25 @@ button {
 
     &__box {
         min-height: 120px;
-        background: #ffffff;
-        color: #9B7EB0;
-        margin: 0 -0.5rem;
+        background: #0e0e0e;
+        color: #0e0e0e;
         font-size: 36px;
         font-weight: 500;
         letter-spacing: 4px;
         text-align: center;
-        -webkit-text-stroke: 3px #9B7EB0;
+        -webkit-text-stroke: 2px #ff8000;
     }
     &_content {
         min-height: calc(100vh - 160px);
-        border: 1px solid #9B7EB0;
+        border: 1px solid #ff8000;
         border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         -ms-border-radius: 10px;
         -o-border-radius: 10px;
         margin-top: -3rem;
-        background: #f9f4fd;
-        color: black;
+        background: #424140;
+        color: #020202;
     }
 }
 
@@ -105,27 +104,27 @@ button {
 }
 .h2 {
     display: inline-block;
-    color: #76518f;
+    color: #000000;
     cursor: pointer;
     transition: 0.3s;
 }
 .h2:hover {
-    color: #a689bd;
+    color: #000000;
     cursor: pointer;
 }
 
 // Contact*
 .contact .info-box {
-  padding: 28px 30px;
+  padding: 20px 40px;
 }
 .contact .info-box i {
   font-size: 38px;
   line-height: 0;
-  color: #ab41f1;
+  color: #000000;
 }
 .contact .info-box h3 {
   font-size: 20px;
-  color: #440170;
+  color: #000000;
   font-weight: 700;
   margin: 20px 0 10px 0;
 }
@@ -134,11 +133,12 @@ button {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
+  padding-right: 20px;
 }
 .contact .php-email-form .error-message {
   display: none;
   color: #ffffff;
-  background: #880ded;
+  background: #ffffff;
   text-align: left;
   padding: 15px;
   margin-bottom: 24px;
@@ -147,7 +147,7 @@ button {
 .contact .php-email-form .sent-message {
   display: none;
   color: #ffffff;
-  background: #8818d2;
+  background: #000000;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -167,8 +167,8 @@ button {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #8818d2;
-  border-top-color: rgb(238, 238, 238);
+  border: 3px solid #000000;
+  border-top-color: rgb(255, 255, 255);
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
@@ -179,7 +179,7 @@ button {
   border-radius: 0;
 }
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-  border-color: #ab41f1;
+  border-color: #ff8000;
 }
 .contact .php-email-form input {
   padding: 10px 15px;
@@ -188,7 +188,7 @@ button {
   padding: 12px 15px;
 }
 .contact .php-email-form button[type=submit] {
-  background: #b041f1;
+  background: #000000;
   border: 0;
   padding: 10px 30px;
   color: #ffffff;
@@ -196,7 +196,7 @@ button {
   border-radius: 4px;
 }
 .contact .php-email-form button[type=submit]:hover {
-  background: #a959f3;
+  background: #000000;
 }
 @-webkit-keyframes animate-loading {
   0% {
@@ -213,4 +213,12 @@ button {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.col-lg-6{
+padding-top: 20px;
+}
+
+.pagetitle{
+color: #ff8000;
 }

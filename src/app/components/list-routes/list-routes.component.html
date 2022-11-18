@@ -23,12 +23,13 @@
                                 </div>
 
                                 <div class="table">
-                                    <mat-form-field appearance="standard">
-                                        <mat-label>Filter</mat-label>
-                                        <input matInput (keyup)="applyFilter($event)" placeholder="Search filter"
+                                    <mat-form-field appearance="standard" color="warn">
+                                        <mat-label>Filtro de búsqueda</mat-label>
+                                        <div class = "filtrocolor">
+                                            <input matInput (keyup)="applyFilter($event)"
                                             #input>
+                                        </div>
                                     </mat-form-field>
-
                                     <div class="mat-elevation-z5">
                                         <table mat-table [dataSource]="dataSource" matSort>
 

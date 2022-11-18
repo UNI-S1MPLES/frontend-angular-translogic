@@ -8,7 +8,7 @@
   
         <mat-form-field appearance="outline">
           <mat-label>Seleccione el administrador</mat-label>
-          <mat-select [(value)] = "adminSelected">
+          <mat-select formControlName="idAdministrator" [(value)]="idAdministrator">
             <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
               {{admin.id}} - {{admin.names}} {{admin.surnames}}
             </mat-option>
@@ -17,7 +17,7 @@
   
         <mat-form-field appearance="outline">
           <mat-label>Seleccione el grupo</mat-label>
-          <mat-select [(value)] = "groupSelected">
+          <mat-select formControlName="idGroup" [(value)]="idGroup">
             <mat-option *ngFor="let group of listGroups" [value]="group.id">
               {{group.id}}
             </mat-option>
@@ -69,7 +69,7 @@
     <span *ngIf="myForm.get('names')?.hasError('required') && myForm.get('names')?.touched" class="has-error"></span>
     <span *ngIf="myForm.get('surnames')?.hasError('required') && myForm.get('surnames')?.touched" class="has-error"></span>  
     <span *ngIf="myForm.get('dateOfJoin')?.hasError('required') && myForm.get('dateOfJoin')?.touched" class="has-error"></span>  
-    <span *ngIf="myForm.get('dateOfBirth')?.hasError('required') && myForm.get('dateOfBirth')?.touched" class="has-error"></span>  
+    <span *ngIf="myForm.get('dateOfBirthday')?.hasError('required') && myForm.get('dateOfBirthday')?.touched" class="has-error"></span>  
     <span *ngIf="myForm.get('state')?.hasError('required') && myForm.get('state')?.touched" class="has-error"></span>  
 
     <!-- BUTTONS FOR SAVE AND CLOSE -->

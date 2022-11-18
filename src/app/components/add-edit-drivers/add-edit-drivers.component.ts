@@ -5,8 +5,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar';  // Mensaje de alerta
-import { Group } from 'src/app/models/group';
 import { Admin } from 'src/app/models/admin';
+import { Group } from 'src/app/models/group';
+
 
 @Component({
   selector: 'app-add-edit-drivers',
@@ -19,9 +20,9 @@ export class AddEditDriversComponent implements OnInit {
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
   listAdmins!:Admin[]
-  adminSelected!: string
+  idAdministrator!: Admin
   listGroups!:Group[]
-  groupSelected!: string
+  idGroup!: Group
   
   constructor(
     private formBuilder: FormBuilder,
@@ -35,6 +36,8 @@ export class AddEditDriversComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
+      idAdministrator: ['', Validators.required],
+      idGroup: ['', Validators.required],
       names: ['', Validators.required],
       surnames: ['', Validators.required],
       dateOfJoin: ['', Validators.required],
@@ -44,13 +47,14 @@ export class AddEditDriversComponent implements OnInit {
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['idAdministrator'].setValue(this.editData.adminSelected);
-      this.myForm.controls['idGroup'].setValue(this.editData.groupSelected);
       this.myForm.controls['names'].setValue(this.editData.names);
       this.myForm.controls['surnames'].setValue(this.editData.surnames);
       this.myForm.controls['dateOfJoin'].setValue(this.editData.dateOfJoin);
       this.myForm.controls['dateOfBirthday'].setValue(this.editData.dateOfBirthday);
       this.myForm.controls['state'].setValue(this.editData.state);
+      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
+      this.myForm.controls['idGroup'].setValue(this.editData.idGroup);
+
     }
 
     this.cargarAdmins();
@@ -72,7 +76,7 @@ export class AddEditDriversComponent implements OnInit {
   }
   addProduct(): void {
     if (!this.editData) { // Si no se ha recibido informacion para editar
-      if(this.myForm.valid) { // Save
+      if (this.myForm.valid) { // Save
         this.service.add(this.myForm.value).subscribe({
           next: (data) => {
             this.snackBar.open("Driver was added successfully", "Ok", { duration: 3000 });
@@ -80,7 +84,7 @@ export class AddEditDriversComponent implements OnInit {
             this.dialogRef.close('agregar');
           },
           error: () => {
-            this.snackBar.open("An error occurred while adding the Driver", "Ok", { duration: 3000 });
+            this.snackBar.open("An error occurred while adding the driver", "Ok", { duration: 3000 });
           }
         });
       }

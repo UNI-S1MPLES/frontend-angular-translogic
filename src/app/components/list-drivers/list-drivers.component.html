@@ -23,10 +23,12 @@
                                 </div>
 
                                 <div class="table">
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Filtro</mat-label>
-                                        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar conductor"
+                                    <mat-form-field appearance="standard" color="warn">
+                                        <mat-label>Filtro de búsqueda</mat-label>
+                                        <div class = "filtrocolor">
+                                            <input matInput (keyup)="applyFilter($event)"
                                             #input>
+                                        </div>
                                     </mat-form-field>
 
                                     <div class="mat-elevation-z5">
@@ -40,46 +42,46 @@
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="names">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Names
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.names}} </td>
                                             </ng-container>
                                             
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="surnames">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Surnames
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.surnames}} </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="dateOfJoin">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Join
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de registro
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> 
-                                                    {{row.dateOfJoin | date:'dd/MM/yyyy- hh:mm'}} 
+                                                    {{row.dateOfJoin | date:'dd/MM/yyyy - hh:mm'}} 
                                                 </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
-                                            <ng-container matColumnDef="dateOfBirth">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Birth
+                                            <ng-container matColumnDef="dateOfBirthday">
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de cumpleaños
                                                 </th>
-                                                <td mat-cell *matCellDef="let row2"> 
-                                                    {{row2.dateOfBirth | date:'dd/MM/yyyy- hh:mm'}} 
+                                                <td mat-cell *matCellDef="let row"> 
+                                                    {{row.dateOfBirthday | date:'dd/MM/yyyy - hh:mm'}} 
                                                 </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="state">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> State
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.state}} </td>
                                             </ng-container>
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="administrator">
-                                                <th mat-header-cell *matHeaderCellDef> Administrator </th>
+                                                <th mat-header-cell *matHeaderCellDef> Administrador </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getAdmin(row)">
                                                         <mat-icon>touch_app</mat-icon>
@@ -89,7 +91,7 @@
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="group">
-                                                <th mat-header-cell *matHeaderCellDef> Group </th>
+                                                <th mat-header-cell *matHeaderCellDef> Grupos </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getGroup(row)">
                                                         <mat-icon>touch_app</mat-icon>
@@ -99,7 +101,7 @@
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="actions">
-                                                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                                                <th mat-header-cell *matHeaderCellDef> Acciones </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="edit" (click)="edit(row)">
                                                         <mat-icon>edit</mat-icon>

@@ -18,15 +18,17 @@
                             <div class="groups">
                                 <div>
                                     <button mat-raised-button class="button" (click)="openDialog()">
-                                        <mat-icon class="img_button">add_box</mat-icon> Set new group
+                                        <mat-icon class="img_button">add_box</mat-icon> Añadir grupo
                                     </button>
                                 </div>
 
                                 <div class="table">
-                                    <mat-form-field appearance="standard">
-                                        <mat-label>Filter</mat-label>
-                                        <input matInput (keyup)="applyFilter($event)" placeholder="Search filter"
+                                    <mat-form-field appearance="standard" color="warn">
+                                        <mat-label>Filtro de búsqueda</mat-label>
+                                        <div class = "filtrocolor">
+                                            <input matInput (keyup)="applyFilter($event)"
                                             #input>
+                                        </div>
                                     </mat-form-field>
 
                                     <div class="mat-elevation-z5">
@@ -47,7 +49,7 @@
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="administrator">
-                                                <th mat-header-cell *matHeaderCellDef> Administrator </th>
+                                                <th mat-header-cell *matHeaderCellDef> Administrador </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getAdmin(row)">
                                                         <mat-icon>touch_app</mat-icon>
@@ -57,7 +59,7 @@
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="drivers">
-                                                <th mat-header-cell *matHeaderCellDef> Drivers </th>
+                                                <th mat-header-cell *matHeaderCellDef> Conductores </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getDrivers(row)">
                                                         <mat-icon>receipt</mat-icon>
@@ -67,7 +69,7 @@
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="actions">
-                                                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                                                <th mat-header-cell *matHeaderCellDef> Acciones </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="edit" (click)="edit(row)">
                                                         <mat-icon>edit</mat-icon>

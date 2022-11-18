@@ -21,7 +21,7 @@ export class ListDriversComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Driver>();
-  displayedColumns: string[] = ['id', 'names', 'surnames', 'dateOfJoin', 'dateOfBirth', 'state', 'administrator', 'group', 'actions'];
+  displayedColumns: string[] = ['id', 'names', 'surnames', 'dateOfJoin', 'dateOfBirthday', 'state', 'administrator', 'group', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
