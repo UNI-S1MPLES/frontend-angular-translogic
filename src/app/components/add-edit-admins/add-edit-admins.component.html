@@ -1,6 +1,6 @@
 <div class="dialog">
   <div>
-    <h1 mat-dialog-title>Product information</h1>
+    <h1 mat-dialog-title>Descripcion del Administrador</h1>
   </div>
 
   <div mat-dialog-content>
@@ -8,51 +8,51 @@
 
       <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>Names</mat-label>
-        <input formControlName="names" matInput placeholder="Names">
+        <mat-label>Nombres</mat-label>
+        <input formControlName="names" matInput type = "text" placeholder="Inserte sus nombres">
       </mat-form-field>
 
       <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>Surnames</mat-label>
-        <input formControlName="surnames" matInput placeholder="Surnames">
+        <mat-label>Apellidos</mat-label>
+        <input formControlName="surnames" matInput type = "text" placeholder="Inserte sus apellidos">
       </mat-form-field>
 
       <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input formControlName="email" matInput placeholder="Email">
+        <mat-label>Correo Electrónico</mat-label>
+        <input formControlName="email" matInput type = "email" placeholder="Inserte su correo">
       </mat-form-field>
 
       <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>Phone</mat-label>
-        <input formControlName="phone" matInput placeholder="Phone">
+        <mat-label>Teléfono</mat-label>
+        <input formControlName="phone" matInput type = "number" placeholder="Inserte su número">
       </mat-form-field>
 
       <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>Nickname</mat-label>
-        <input formControlName="nickname" matInput placeholder="Nickname">
+        <mat-label>Apodo</mat-label>
+        <input formControlName="nickname" matInput type = "text" placeholder="Inserte su apodo">
       </mat-form-field>
 
       <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input formControlName="password" matInput placeholder="Password">
+        <mat-label>Contraseña</mat-label>
+        <input formControlName="password" matInput type = "password" placeholder="Inserte su contraseña">
       </mat-form-field>
 
     </form>
   </div>
 
-  <span *ngIf="myForm.get('Names')?.hasError('required') && myForm.get('Names')?.touched" class="has-error"></span>
-  <span *ngIf="myForm.get('Surnames')?.hasError('required') && myForm.get('Surnames')?.touched"
+  <span *ngIf="myForm.get('Inserte sus nombres')?.hasError('required') && myForm.get('Inserte sus nombres')?.touched" class="has-error"></span>
+  <span *ngIf="myForm.get('Inserte sus apellidos')?.hasError('required') && myForm.get('Inserte sus apellidos')?.touched"
     class="has-error"></span>
-  <span *ngIf="myForm.get('Email')?.hasError('required') && myForm.get('Email')?.touched" class="has-error"></span>
-  <span *ngIf="myForm.get('Phone')?.hasError('required') && myForm.get('Phone')?.touched" class="has-error"></span>
-  <span *ngIf="myForm.get('Nickname')?.hasError('required') && myForm.get('Nickname')?.touched"
+  <span  type = "email"*ngIf="myForm.get('Inserte su correo')?.hasError('required') && myForm.get('Inserte su correo')?.touched" class="has-error"></span>
+  <span *ngIf="myForm.get('Inserte su número')?.hasError('required') && myForm.get('Inserte su número')?.touched" class="has-error"></span>
+  <span *ngIf="myForm.get('Inserte su apodo')?.hasError('required') && myForm.get('Inserte su apodo')?.touched"
     class="has-error"></span>
-  <span *ngIf="myForm.get('Password')?.hasError('required') && myForm.get('Password')?.touched"
+  <span *ngIf="myForm.get('Inserte su contraseña')?.hasError('required') && myForm.get('Inserte su contraseña')?.touched"
     class="has-error"></span>
 
   <!-- BUTTONS FOR SAVE AND CLOSE -->

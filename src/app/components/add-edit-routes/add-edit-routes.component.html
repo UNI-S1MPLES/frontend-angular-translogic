@@ -1,15 +1,19 @@
 <div class="dialog">
   <div>
-    <h1 mat-dialog-title>Product information</h1>
+    <h1 mat-dialog-title>Informacion de ruta</h1>
   </div>
 
   <div mat-dialog-content>
     <form [formGroup]="myForm">
+      
 
-      <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>Administrator</mat-label>
-        <input formControlName="administrator" matInput placeholder="Administrator">
+        <mat-label>Selecciona el Administrator</mat-label>
+        <mat-select [(value)] = "adminSelected">
+          <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
+            {{admin.id}} - {{admin.names}} {{admin.surnames}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <!-- PRODUCT NAME -->
@@ -78,11 +82,9 @@
     </form>
   </div>
 
-  <span *ngIf="myForm.get('idAdministrator')?.hasError('required') && myForm.get('idAdministrator')?.touched"
+  <span *ngIf="myForm.get('Start Place')?.hasError('required') && myForm.get('Start Place')?.touched"
     class="has-error"></span>
-  <span *ngIf="myForm.get('startPlace')?.hasError('required') && myForm.get('startPlace')?.touched"
-    class="has-error"></span>
-  <span *ngIf="myForm.get('endPlace')?.hasError('required') && myForm.get('endPlace')?.touched"
+  <span *ngIf="myForm.get('End Place')?.hasError('required') && myForm.get('End Place')?.touched"
     class="has-error"></span>
 
   <!-- BUTTONS FOR SAVE AND CLOSE -->

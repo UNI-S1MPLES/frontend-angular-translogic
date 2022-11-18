@@ -1,15 +1,18 @@
 <div class="dialog">
     <div>
-      <h1 mat-dialog-title>Product information</h1>
+      <h1 mat-dialog-title>Descripción del grupo</h1>
     </div>
   
     <div mat-dialog-content>
       <form [formGroup]="myForm">
   
-        <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>ID Administrator</mat-label>
-          <input formControlName="idAdministrator" matInput placeholder="ID Administrator">
+          <mat-label>Selecciona el Administrator</mat-label>
+          <mat-select [(value)] = "adminSelected">
+            <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
+              {{admin.id}} - {{admin.names}} {{admin.surnames}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
   
         <!-- PRODUCT NAME -->
@@ -21,13 +24,14 @@
       </form>
     </div>
 
-    <span *ngIf="myForm.get('idAdministrator')?.hasError('required') && myForm.get('idAdministrator')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('adminSelected')?.hasError('required') && myForm.get('adminSelected')?.touched" class="has-error"></span>
     <span *ngIf="myForm.get('sector')?.hasError('required') && myForm.get('sector')?.touched" class="has-error"></span>
     
 
     <!-- BUTTONS FOR SAVE AND CLOSE -->
     <div mat-dialog-actions [align]="'end'">
       <button mat-raised-button class="cerrar" mat-dialog-close>Cerrar</button>
-      <button mat-raised-button class="agregarAcualizar" [disabled]="myForm.invalid" (click)="addProduct()">{{actionBtn}}</button>
+      <button mat-raised-button class="agregarAcualizar" [disabled]="myForm.invalid"
+        (click)="addProduct()">{{actionBtn}}</button>
     </div>
   </div>

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TestsComponent } from './components/tests/tests.component';
+import { FormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
 // ---------------- [ Components ] ----------------
 // Sidebar Components
@@ -49,7 +50,7 @@ import { AdditionalVehiclesTravelsComponent } from './components/additional-vehi
 import { AdditionalRoutesAdminComponent } from './components/additional-routes/additional-routes-admin/additional-routes-admin.component';
 import { AdditionalRoutesTramosComponent } from './components/additional-routes/additional-routes-tramos/additional-routes-tramos.component';
 import { AdditionalTramosRoutesComponent } from './components/additional-tramos/additional-tramos-routes/additional-tramos-routes.component';
-
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     // ---------------- [ Angular ] ----------------
@@ -103,6 +104,8 @@ import { AdditionalTramosRoutesComponent } from './components/additional-tramos/
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    MatSelectModule,
     // ---------------- [ Angular Material ] ----------------
     AngularMaterialModule,
   ],

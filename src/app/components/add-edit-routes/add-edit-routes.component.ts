@@ -1,3 +1,4 @@
+import { AdminService } from './../../services/admin.service';
 import { TramoService } from './../../services/tramo.service';
 import { RouteService } from './../../services/route.service';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
@@ -8,6 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Tramo } from 'src/app/models/tramo';
+import { Admin } from 'src/app/models/admin';
 import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
@@ -22,6 +24,8 @@ export class AddEditRoutesComponent implements OnInit {
 
   title = 'myTranslogic';
   sideBarOpen = true;
+  listAdmins!:Admin[]
+  adminSelected!: string
 
   dataSource = new MatTableDataSource<Tramo>();
   displayedColumns: string[] = ['select', 'id', 'description'];
@@ -30,25 +34,34 @@ export class AddEditRoutesComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   selection = new SelectionModel<any>(true, []);
 
-  constructor(private apiTramos: TramoService, private formBuilder: FormBuilder, private service: RouteService, private dialogRef: MatDialogRef<AddEditRoutesComponent>, private snackBar: MatSnackBar, @Inject(MAT_DIALOG_DATA) public editData: any) { }
+  constructor(private apiAdmin: AdminService, private apiTramos: TramoService, private formBuilder: FormBuilder, private service: RouteService, private dialogRef: MatDialogRef<AddEditRoutesComponent>, private snackBar: MatSnackBar, @Inject(MAT_DIALOG_DATA) public editData: any) { }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
       idAdministrator: ['', Validators.required],
-      idRoutesTramos: ['', Validators.required],
       startPlace: ['', Validators.required],
-      endPlace: ['', Validators.required]
+      endPlace: ['', Validators.required],
+      idRoutesTramos: ['', Validators.required]
     });
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
-      this.myForm.controls['idRoutesTramos'].setValue(this.editData.idRoutesTramos);
+      this.myForm.controls['adminSelected'].setValue(this.editData.idAdministrator);
       this.myForm.controls['startPlace'].setValue(this.editData.startPlace);
       this.myForm.controls['endPlace'].setValue(this.editData.endPlace);
+      this.myForm.controls['idRoutesTramos'].setValue(this.editData.idRoutesTramos);
       this.getAll();
     }
+
+    this.cargarAdmins();
+  }
+
+  cargarAdmins(){
+    this.apiAdmin.get().subscribe(data => {
+      this.listAdmins = data
+      console.log("Admins cargados",this.listAdmins)
+    })
   }
   getAll() {
     this.apiTramos.get().subscribe(

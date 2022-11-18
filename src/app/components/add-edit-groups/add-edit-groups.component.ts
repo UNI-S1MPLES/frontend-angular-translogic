@@ -3,6 +3,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar';  // Mensaje de alerta
+import { Admin } from 'src/app/models/admin';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-add-edit-groups',
@@ -13,12 +15,15 @@ export class AddEditGroupsComponent implements OnInit {
 
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
-
+  listAdmins!:Admin[]
+  adminSelected!: string
+  
   constructor(
     private formBuilder: FormBuilder,
     private service: GroupService,
     private dialogRef: MatDialogRef<AddEditGroupsComponent>,
     private snackBar: MatSnackBar,
+    private apiAdmin: AdminService,
     @Inject(MAT_DIALOG_DATA) public editData : any) { }
 
   ngOnInit(): void {
@@ -30,11 +35,17 @@ export class AddEditGroupsComponent implements OnInit {
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
+      this.myForm.controls['adminSelected'].setValue(this.editData.idAdministrator);
       this.myForm.controls['sector'].setValue(this.editData.sector);
     }
+    this.cargarAdmins();
   }
-
+  cargarAdmins(){
+    this.apiAdmin.get().subscribe(data => {
+      this.listAdmins = data
+      console.log("Admins cargados",this.listAdmins)
+    })
+  }
   addProduct(): void {
     if (!this.editData) { // Si no se ha recibido informacion para editar
       if(this.myForm.valid) { // Save
