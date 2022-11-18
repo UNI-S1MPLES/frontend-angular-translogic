@@ -7,7 +7,7 @@
       <form [formGroup]="myForm">
   
         <mat-form-field appearance="outline">
-          <mat-label>Selecciona el Administrator</mat-label>
+          <mat-label>Seleccione el administrator</mat-label>
           <mat-select [(value)] = "adminSelected">
             <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
               {{admin.id}} - {{admin.names}} {{admin.surnames}}

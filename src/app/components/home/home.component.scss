@@ -7,7 +7,7 @@
 
 mat-drawer {
     width: 300px;
-    background: #9B7EB0;
+    background: #000000;
 }
 
 mat-drawer-container {
@@ -16,7 +16,7 @@ mat-drawer-container {
 
 // ------------------------------- Toolbar -------------------------------
 mat-toolbar {
-    background: #9B7EB0;
+    background: #000000;
 
     position: sticky;
     top: 0;
@@ -60,29 +60,29 @@ button {
 // ------------------------------- Content -------------------------------
 .page {
     padding: 0 1rem;
-    background: #f6f1f9;
+    background: #000000;
 
     &__box {
         min-height: 120px;
-        background: #ffffff;
-        color: #9B7EB0;
-        margin: 0 -0.5rem;
+        background: #0e0e0e;
+        color: #000000;
+
         font-size: 36px;
         font-weight: 500;
         letter-spacing: 4px;
         text-align: center;
-        -webkit-text-stroke: 3px #9B7EB0;
+        -webkit-text-stroke: 2px #ff8000;
     }
     &_content {
         min-height: calc(100vh - 160px);
-        border: 1px solid #9B7EB0;
+        border: 1px solid #000000;
         border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         -ms-border-radius: 10px;
         -o-border-radius: 10px;
         margin-top: -3rem;
-        background: #f9f4fd;
+        background: #000000;
         color: black;
     }
 }
@@ -90,14 +90,14 @@ button {
 // General *
 body {
     font-family: "Open Sans", sans-serif;
-    background: #fbf6ff;
-    color: #444444;
+    background: #000000;
+    color: #000000;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Nunito", sans-serif;
 }
 a {
-    color: #9B7EB0;
+    color: #0a0a0a;
     text-decoration: none;
 }
 
@@ -109,7 +109,7 @@ a {
     font-size: 24px;
     margin-bottom: 0;
     font-weight: 600;
-    color: #3b0066;
+    color: #040405;
 }
 
 /* Card */
@@ -121,20 +121,20 @@ a {
     overflow: hidden;
 }
 .card-header, .card-footer {
-    border-color: #f1ebf4;
-    background-color: rgb(255, 255, 255);
-    color: #9e79b3;
+    border-color: #000000;
+    background-color: rgb(0, 0, 0);
+    color: #151515;
     padding: 15px;
 }
 .card-title {
     padding: 20px 0 15px 0;
     font-size: 18px;
     font-weight: 500;
-    color: #40006e;
+    color: #000000;
     font-family: "Poppins", sans-serif;
 }
 .card-title span {
-    color: #a889bd;
+    color: #000000;
     font-size: 14px;
     font-weight: 400;
 }
@@ -161,21 +161,21 @@ td span {
 .breadcrumb {
     font-size: 14px;
     font-family: "Nunito", sans-serif;
-    color: #a689bd;
+    color: #000000;
     font-weight: 600;
 }
 .breadcrumb a {
-    color: #a689bd;
+    color: #ff8000;
     transition: 0.3s;
 }
 .breadcrumb a:hover {
-    color: #73518f;
+    color: #ffffff;
 }
 .breadcrumb .breadcrumb-item::before {
-    color: #a689bd;
+    color: #ffffff;
 }
 .breadcrumb .active {
-    color: #73518f;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -183,7 +183,7 @@ td span {
 /* Info Cards */
 .dashboard .info-card h6 {
     font-size: 28px;
-    color: #3e0170;
+    color: #080808;
     font-weight: 700;
     margin: 0;
     padding: 0;
@@ -197,17 +197,17 @@ td span {
     flex-grow: 0;
 }
 .dashboard .sales-card .card-icon {
-    color: #a241f1;
-    background: #fbf6fe;
+    color: #000000;
+    background: #ff8000;
 }
 .dashboard .revenue-card .card-icon {
-    color: #8c2eca;
-    background: #eee0f8;
+    color: #000000;
+    background: #ff8000;
 }
 .dashboard .customers-card .card-icon {
-    color: #a51dff;
-    background: #f2dfff;
+    color: #000000;
+    background: #ff8000;
 }
 .dashboard .recent-sales .table thead {
-    background: #fbf6fe;
+    background: #f0e5d9;
 }

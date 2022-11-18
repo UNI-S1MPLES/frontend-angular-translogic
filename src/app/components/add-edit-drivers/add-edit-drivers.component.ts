@@ -1,8 +1,12 @@
+import { AdminService } from 'src/app/services/admin.service';
+import { GroupService } from 'src/app/services/group.service';
 import { DriverService } from './../../services/driver.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar';  // Mensaje de alerta
+import { Group } from 'src/app/models/group';
+import { Admin } from 'src/app/models/admin';
 
 @Component({
   selector: 'app-add-edit-drivers',
@@ -11,41 +15,61 @@ import { MatSnackBar } from '@angular/material/snack-bar';  // Mensaje de alerta
 })
 export class AddEditDriversComponent implements OnInit {
 
-  states = ["Active", "Inactive"]; // Radio button options
+  states = ["Activo", "Inactivo"]; // Radio button options
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
-
+  listAdmins!:Admin[]
+  adminSelected!: string
+  listGroups!:Group[]
+  groupSelected!: string
+  
   constructor(
     private formBuilder: FormBuilder,
     private service: DriverService,
     private dialogRef: MatDialogRef<AddEditDriversComponent>,
     private snackBar: MatSnackBar,
+    private apiAdmin: AdminService,
+    private apiGroup: GroupService,
     @Inject(MAT_DIALOG_DATA) public editData : any) { }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      idAdministrator: ['', Validators.required],
-      idGroup: ['', Validators.required],
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
+      names: ['', Validators.required],
+      surnames: ['', Validators.required],
       dateOfJoin: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
+      dateOfBirthday: ['', Validators.required],
       state: ['', Validators.required]
     });
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
-      this.myForm.controls['idGroup'].setValue(this.editData.idGroup);
-      this.myForm.controls['name'].setValue(this.editData.name);
-      this.myForm.controls['surname'].setValue(this.editData.surname);
+      this.myForm.controls['idAdministrator'].setValue(this.editData.adminSelected);
+      this.myForm.controls['idGroup'].setValue(this.editData.groupSelected);
+      this.myForm.controls['names'].setValue(this.editData.names);
+      this.myForm.controls['surnames'].setValue(this.editData.surnames);
       this.myForm.controls['dateOfJoin'].setValue(this.editData.dateOfJoin);
-      this.myForm.controls['dateOfBirth'].setValue(this.editData.dateOfBirth);
+      this.myForm.controls['dateOfBirthday'].setValue(this.editData.dateOfBirthday);
       this.myForm.controls['state'].setValue(this.editData.state);
     }
+
+    this.cargarAdmins();
+    this.cargarGroups();
   }
 
+  cargarAdmins(){
+    this.apiAdmin.get().subscribe(data => {
+      this.listAdmins = data
+      console.log("Admins cargados",this.listAdmins)
+    })
+  }
+
+  cargarGroups(){
+    this.apiGroup.get().subscribe(data => {
+      this.listGroups = data
+      console.log("Grupos cargados",this.listGroups)
+    })
+  }
   addProduct(): void {
     if (!this.editData) { // Si no se ha recibido informacion para editar
       if(this.myForm.valid) { // Save

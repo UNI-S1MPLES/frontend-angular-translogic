@@ -7,54 +7,11 @@
 
 mat-drawer {
   width: 300px;
-  background: #9B7EB0;
+  background: #ff8000;
 }
 
 mat-drawer-container {
   height: 100%;
-}
-
-// ------------------------------- Toolbar -------------------------------
-mat-toolbar {
-  background: #9B7EB0;
-
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-ul {
-  li {
-    list-style: none;
-  }
-}
-
-button {
-  border: 0;
-  outline: none;
-  background: transparent;
-}
-
-.user {
-  font-size: 14px;
-  color: white;
-}
-
-.user-image {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
-
-.user-image-icon {
-  height: 18px;
-  font-size: 16px;
-}
-
-::ng-deep {
-  .mat-menu-content {
-    width: 300px;
-  }
 }
 
 // ------------------------------- Content -------------------------------
@@ -64,19 +21,19 @@ button {
 
   &__box {
     min-height: 120px;
-    background: #ffffff;
-    color: #9B7EB0;
+    background: #000000;
+    color: #000000;
     margin: 0 -0.5rem;
     font-size: 36px;
     font-weight: 500;
     letter-spacing: 4px;
     text-align: center;
-    -webkit-text-stroke: 3px #9B7EB0;
+    -webkit-text-stroke: 3px #ff8000;
   }
 
   &_content {
     min-height: calc(100vh - 160px);
-    border: 1px solid #9B7EB0;
+    border: 1px solid #000000;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -95,14 +52,14 @@ button {
 }
 
 .button {
-  background: #8c709e;
-  color: #ffffff;
+  background: #000000;
+  color: #ff8000;
   padding-left: 15px;
   transition: 0.5s;
 }
 
 .button:hover {
-  background: #715683;
+  background: #000000;
   color: white;
   cursor: pointer;
 }
@@ -113,7 +70,7 @@ button {
 
 .h2 {
   display: inline-block;
-  color: #73518f;
+  color: #000000;
   user-select: none;
   transition: 0.3s;
 }
@@ -140,12 +97,12 @@ table {
 
 // Botones de acciones (dentro de la lista)
 .edit {
-  color: #a06ac7;
+  color: #000000;
   cursor: pointer;
 }
 
 .delete {
-  color: #ff628a;
+  color: #ff0040;
   cursor: pointer;
 }
 

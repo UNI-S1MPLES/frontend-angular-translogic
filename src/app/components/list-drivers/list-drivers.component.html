@@ -10,7 +10,7 @@
         <div class="main">
 
             <div class="container-fluid">
-                <div class="page__box p-4">LIST OF DRIVERS</div>
+                <div class="page__box p-4">CONDUCTORES</div>
                 <div class="page_content shadow p-3 position-relative">
                     <div class="page_content-data">
 
@@ -18,14 +18,14 @@
                             <div class="drivers">
                                 <div>
                                     <button mat-raised-button class="button" (click)="openDialog()">
-                                        <mat-icon class="img_button">add_box</mat-icon> Set new driver
+                                        <mat-icon class="img_button">add_box</mat-icon> Añadir conductor
                                     </button>
                                 </div>
 
                                 <div class="table">
-                                    <mat-form-field appearance="standard">
-                                        <mat-label>Filter</mat-label>
-                                        <input matInput (keyup)="applyFilter($event)" placeholder="Search filter"
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Filtro</mat-label>
+                                        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar conductor"
                                             #input>
                                     </mat-form-field>
 

@@ -16,7 +16,7 @@
         span {
             cursor: pointer;
             padding-left: 10px;
-            color: white;
+            color: rgb(255, 255, 255);
             font-size: 26px;
             font-weight: 600;
             letter-spacing: 1px;
@@ -31,7 +31,7 @@
 
 .mat-divider {
     border-top-width: 2px;
-    border-color: #fff;
+    border-color: #ff8000;
 }
 
 .mat-list-item {
@@ -44,8 +44,8 @@
             border-radius: 5px;
             margin: 0 8px;
             &:hover {
-                background: white !important;
-                color: #9B7EB0;
+                background: #ff8000 !important;
+                color: #424140;
             }
         }
     }
@@ -55,15 +55,16 @@
     color: white;
     ::ng-deep {
         .mat-list-item-content {
-            background: white;
-            color: #9B7EB0;
+            background: #424140;
+            color: #ff8000;
         }
     }
 }
 
 .mat-subheader {
-    color: white;
+    color: #ffffff;
     font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-align: center;
 }

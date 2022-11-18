@@ -1,38 +1,44 @@
 <div class="dialog">
     <div>
-      <h1 mat-dialog-title>Product information</h1>
+      <h1 mat-dialog-title>Descripción del conductor</h1>
     </div>
   
     <div mat-dialog-content>
       <form [formGroup]="myForm">
   
-        <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>ID Administrator</mat-label>
-          <input formControlName="idAdministrator" matInput placeholder="ID Administrator">
+          <mat-label>Seleccione el administrador</mat-label>
+          <mat-select [(value)] = "adminSelected">
+            <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
+              {{admin.id}} - {{admin.names}} {{admin.surnames}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
   
-        <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>ID Group</mat-label>
-          <input formControlName="idGroup" matInput placeholder="ID Group">
+          <mat-label>Seleccione el grupo</mat-label>
+          <mat-select [(value)] = "groupSelected">
+            <mat-option *ngFor="let group of listGroups" [value]="group.id">
+              {{group.id}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
 
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input formControlName="name" matInput placeholder="Name">
+          <mat-label>Nombres</mat-label>
+          <input formControlName="names" matInput placeholder="Inserte sus nombres">
         </mat-form-field>
 
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>Surname</mat-label>
-          <input formControlName="surname" matInput placeholder="Surname">
+          <mat-label>Apellidos</mat-label>
+          <input formControlName="surnames" matInput placeholder="Inserte sus apellidos">
         </mat-form-field>
   
         <!-- PRODUCT DATE (Date Picker) -->
-        <mat-form-field appearance="fill">
-          <mat-label>Date Of Join</mat-label>
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de inicio</mat-label>
           <input formControlName="dateOfJoin" matInput [matDatepicker]="picker">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -41,9 +47,9 @@
         <br><br>
 
         <!-- PRODUCT DATE (Date Picker) -->
-        <mat-form-field appearance="fill">
-            <mat-label>Date Of Birth</mat-label>
-            <input formControlName="dateOfBirth" matInput [matDatepicker]="picker2">
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha de cumpleaños</mat-label>
+            <input formControlName="dateOfBirthday" matInput [matDatepicker]="picker2">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
@@ -51,7 +57,7 @@
           <br><br>
   
         <!-- PRODUCT FRESHNESS (Radio Button) -->
-        <label for=""><h1>State</h1></label>
+        <label for=""><h1>Estado</h1></label>
         <mat-radio-group formControlName="state" class="example-radio-group">
           <mat-radio-button class="example-radio-button" *ngFor="let state of states" [value]="state">{{state}}</mat-radio-button>
         </mat-radio-group>
@@ -60,14 +66,11 @@
       </form>
     </div>
 
-    <span *ngIf="myForm.get('idAdministrator')?.hasError('required') && myForm.get('idAdministrator')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('idGroup')?.hasError('required') && myForm.get('idGroup')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('surname')?.hasError('required') && myForm.get('surname')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('dateOfJoin')?.hasError('required') && myForm.get('dateOfJoin')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('dateOfBirth')?.hasError('required') && myForm.get('dateOfBirth')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('state')?.hasError('required') && myForm.get('state')?.touched" class="has-error"></span>
-    
+    <span *ngIf="myForm.get('names')?.hasError('required') && myForm.get('names')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('surnames')?.hasError('required') && myForm.get('surnames')?.touched" class="has-error"></span>  
+    <span *ngIf="myForm.get('dateOfJoin')?.hasError('required') && myForm.get('dateOfJoin')?.touched" class="has-error"></span>  
+    <span *ngIf="myForm.get('dateOfBirth')?.hasError('required') && myForm.get('dateOfBirth')?.touched" class="has-error"></span>  
+    <span *ngIf="myForm.get('state')?.hasError('required') && myForm.get('state')?.touched" class="has-error"></span>  
 
     <!-- BUTTONS FOR SAVE AND CLOSE -->
     <div mat-dialog-actions [align]="'end'">
