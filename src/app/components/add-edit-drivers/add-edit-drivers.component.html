@@ -2,22 +2,22 @@
     <div>
       <h1 mat-dialog-title>Descripción del conductor</h1>
     </div>
-  
+
     <div mat-dialog-content>
       <form [formGroup]="myForm">
-  
+
         <mat-form-field appearance="outline">
           <mat-label>Seleccione el administrador</mat-label>
-          <mat-select formControlName="idAdministrator" [(value)]="idAdministrator">
+          <mat-select formControlName="adminSelected" [(ngModel)]="adminSelected">
             <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
               {{admin.id}} - {{admin.names}} {{admin.surnames}}
             </mat-option>
           </mat-select>
         </mat-form-field>
-  
-        <mat-form-field appearance="outline">
+
+       <mat-form-field appearance="outline">
           <mat-label>Seleccione el grupo</mat-label>
-          <mat-select formControlName="idGroup" [(value)]="idGroup">
+          <mat-select formControlName="groupSelected" [(ngModel)]="groupSelected">
             <mat-option *ngFor="let group of listGroups" [value]="group.id">
               {{group.id}}
             </mat-option>
@@ -35,7 +35,7 @@
           <mat-label>Apellidos</mat-label>
           <input formControlName="surnames" matInput placeholder="Inserte sus apellidos">
         </mat-form-field>
-  
+
         <!-- PRODUCT DATE (Date Picker) -->
         <mat-form-field appearance="outline">
           <mat-label>Fecha de inicio</mat-label>
@@ -55,7 +55,7 @@
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
           <br><br>
-  
+
         <!-- PRODUCT FRESHNESS (Radio Button) -->
         <label for=""><h1>Estado</h1></label>
         <mat-radio-group formControlName="state" class="example-radio-group">
@@ -67,10 +67,10 @@
     </div>
 
     <span *ngIf="myForm.get('names')?.hasError('required') && myForm.get('names')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('surnames')?.hasError('required') && myForm.get('surnames')?.touched" class="has-error"></span>  
-    <span *ngIf="myForm.get('dateOfJoin')?.hasError('required') && myForm.get('dateOfJoin')?.touched" class="has-error"></span>  
-    <span *ngIf="myForm.get('dateOfBirthday')?.hasError('required') && myForm.get('dateOfBirthday')?.touched" class="has-error"></span>  
-    <span *ngIf="myForm.get('state')?.hasError('required') && myForm.get('state')?.touched" class="has-error"></span>  
+    <span *ngIf="myForm.get('surnames')?.hasError('required') && myForm.get('surnames')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('dateOfJoin')?.hasError('required') && myForm.get('dateOfJoin')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('dateOfBirthday')?.hasError('required') && myForm.get('dateOfBirthday')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('state')?.hasError('required') && myForm.get('state')?.touched" class="has-error"></span>
 
     <!-- BUTTONS FOR SAVE AND CLOSE -->
     <div mat-dialog-actions [align]="'end'">

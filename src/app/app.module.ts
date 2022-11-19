@@ -51,6 +51,8 @@ import { AdditionalRoutesAdminComponent } from './components/additional-routes/a
 import { AdditionalRoutesTramosComponent } from './components/additional-routes/additional-routes-tramos/additional-routes-tramos.component';
 import { AdditionalTramosRoutesComponent } from './components/additional-tramos/additional-tramos-routes/additional-tramos-routes.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatOptionModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     // ---------------- [ Angular ] ----------------
@@ -106,6 +108,8 @@ import {MatSelectModule} from '@angular/material/select';
     BrowserAnimationsModule,
     FormsModule,
     MatSelectModule,
+    MatAutocompleteModule,
+    MatOptionModule,
     // ---------------- [ Angular Material ] ----------------
     AngularMaterialModule,
   ],

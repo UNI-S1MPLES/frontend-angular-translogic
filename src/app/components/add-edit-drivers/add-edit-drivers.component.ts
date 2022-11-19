@@ -20,10 +20,10 @@ export class AddEditDriversComponent implements OnInit {
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
   listAdmins!:Admin[]
-  idAdministrator!: Admin
+  adminSelected!: number;
   listGroups!:Group[]
-  idGroup!: Group
-  
+  groupSelected!: number;
+
   constructor(
     private formBuilder: FormBuilder,
     private service: DriverService,
@@ -36,8 +36,8 @@ export class AddEditDriversComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      idAdministrator: ['', Validators.required],
-      idGroup: ['', Validators.required],
+      adminSelected: ['', Validators.required],
+      groupSelected: ['', Validators.required],
       names: ['', Validators.required],
       surnames: ['', Validators.required],
       dateOfJoin: ['', Validators.required],
@@ -52,13 +52,13 @@ export class AddEditDriversComponent implements OnInit {
       this.myForm.controls['dateOfJoin'].setValue(this.editData.dateOfJoin);
       this.myForm.controls['dateOfBirthday'].setValue(this.editData.dateOfBirthday);
       this.myForm.controls['state'].setValue(this.editData.state);
-      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
-      this.myForm.controls['idGroup'].setValue(this.editData.idGroup);
-
+      this.myForm.controls['adminSelected'].setValue(this.editData.JSON.stringify({id:this.adminSelected}));
+      this.myForm.controls['groupSelected'].setValue(this.editData.JSON.stringify({id:this.groupSelected}));
     }
 
     this.cargarAdmins();
     this.cargarGroups();
+    this.validacionID();
   }
 
   cargarAdmins(){
@@ -67,7 +67,11 @@ export class AddEditDriversComponent implements OnInit {
       console.log("Admins cargados",this.listAdmins)
     })
   }
-
+  
+  validacionID(){
+    console.log("Admin id", this.adminSelected)
+    console.log("Grupo id", this.groupSelected)
+  }
   cargarGroups(){
     this.apiGroup.get().subscribe(data => {
       this.listGroups = data
