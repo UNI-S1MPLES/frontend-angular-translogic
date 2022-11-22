@@ -47,7 +47,7 @@ export class AddEditRoutesComponent implements OnInit {
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['adminSelected'].setValue(this.editData.idAdministrator);
+      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
       this.myForm.controls['startPlace'].setValue(this.editData.startPlace);
       this.myForm.controls['endPlace'].setValue(this.editData.endPlace);
       this.myForm.controls['idRoutesTramos'].setValue(this.editData.idRoutesTramos);

@@ -1,6 +1,6 @@
 <div class="dialog">
     <div>
-      <h1 mat-dialog-title>Product information</h1>
+      <h1 mat-dialog-title>Descripción del producto</h1>
     </div>
   
     <div mat-dialog-content>
@@ -8,31 +8,46 @@
   
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>ID Administrator</mat-label>
-          <input formControlName="idAdministrator" matInput type = "number" placeholder="ID Administrator">
+          <mat-label>Seleccione el administrator</mat-label>
+          <mat-select formControlName="adminSelected" [(ngModel)]="adminSelected">
+            <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
+              {{admin.id}} - {{admin.names}} {{admin.surnames}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
   
-        <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>ID Driver</mat-label>
-          <input formControlName="idDriver" matInput type = "number" placeholder="ID Driver">
+          <mat-label>Seleccione el conductor</mat-label>
+          <mat-select formControlName="driverSelected" [(ngModel)]="driverSelected">
+            <mat-option *ngFor="let driver of listDrivers" [value]="driver.id">
+              {{driver.id}} - {{driver.names}} {{driver.surnames}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
   
         <!-- PRODUCT PRICE (Input Numbers) -->
         <mat-form-field appearance="outline">
-          <mat-label>ID Travels Vehicles</mat-label>
-          <input formControlName="idTravelsVehicles" matInput type="number" placeholder="ID Travels Vehicles">
+          <mat-label>Seleccione el vehiculo</mat-label>
+          <mat-select formControlName="vehicleSelected" [(ngModel)]="vehicleSelected">
+            <mat-option *ngFor="let vehicle of listVehicles" [value]="vehicle.id">
+              {{vehicle.id}} - {{vehicle.kmTraveled}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
 
         <!-- PRODUCT PRICE (Input Numbers) -->
         <mat-form-field appearance="outline">
-          <mat-label>ID Route</mat-label>
-          <input formControlName="idRoute" matInput type="number" placeholder="ID Route">
-        </mat-form-field>  
+          <mat-label>Seleccione la ruta</mat-label>
+          <mat-select formControlName="routeSelected" [(ngModel)]="routeSelected">
+            <mat-option *ngFor="let route of listRoutes" [value]="route.id">
+              {{route.id}} - {{route.startPlace}} / {{route.endPlace}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
         <!-- PRODUCT DATE (Date Picker) -->
         <mat-form-field appearance="fill">
-          <mat-label>Date Of Start</mat-label>
+          <mat-label>Fecha de inicio</mat-label>
           <input formControlName="dateOfStart" matInput [matDatepicker]="picker1">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -42,7 +57,7 @@
 
         <!-- PRODUCT DATE (Date Picker) -->
         <mat-form-field appearance="fill">
-          <mat-label>Date Of End</mat-label>
+          <mat-label>Fecha de llegada</mat-label>
           <input formControlName="dateOfEnd" matInput [matDatepicker]="picker2">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>

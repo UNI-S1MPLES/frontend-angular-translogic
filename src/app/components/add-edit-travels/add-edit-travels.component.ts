@@ -1,8 +1,16 @@
+import { RouteService } from './../../services/route.service';
+import { VehicleService } from './../../services/vehicle.service';
+import { AdminService } from './../../services/admin.service';
+import { DriverService } from './../../services/driver.service';
 import { TravelService } from './../../services/travel.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar';  // Mensaje de alerta
+import { Admin } from 'src/app/models/admin';
+import { Driver } from 'src/app/models/driver';
+import { Vehicle } from 'src/app/models/vehicle';
+import { Route } from 'src/app/models/route';
 
 @Component({
   selector: 'app-add-edit-travels',
@@ -15,11 +23,27 @@ export class AddEditTravelsComponent implements OnInit {
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
 
+  listAdmins!:Admin[]
+  adminSelected!: string
+
+  listDrivers!:Driver[]
+  driverSelected!: string
+
+  listVehicles!:Vehicle[]
+  vehicleSelected!: string
+
+  listRoutes!:Route[]
+  routeSelected!: string
+
   constructor(
     private formBuilder: FormBuilder,
     private service: TravelService,
     private dialogRef: MatDialogRef<AddEditTravelsComponent>,
     private snackBar: MatSnackBar,
+    private apiAdmin: AdminService,
+    private apiDriver: DriverService,
+    private apiVehicle: VehicleService,
+    private apiRoute: RouteService,
     @Inject(MAT_DIALOG_DATA) public editData : any) { }
 
   ngOnInit(): void {
@@ -46,8 +70,37 @@ export class AddEditTravelsComponent implements OnInit {
       this.myForm.controls['duration'].setValue(this.editData.duration);
       this.myForm.controls['state'].setValue(this.editData.state);
     }
+    this.cargarAdmins();
+    this.cargarDrivers();
+    this.cargarRoutes();
+    this.cargarVehicles();
+  }
+  cargarAdmins(){
+    this.apiAdmin.get().subscribe(data => {
+      this.listAdmins = data
+      console.log("Admins cargados",this.listAdmins)
+    })
+  }
+  cargarRoutes(){
+    this.apiRoute.get().subscribe(data => {
+      this.listRoutes = data
+      console.log("Rutas cargados",this.listRoutes)
+    })
   }
 
+  cargarVehicles(){
+    this.apiVehicle.get().subscribe(data => {
+      this.listVehicles = data
+      console.log("Vehiculos cargados",this.listVehicles)
+    })
+  }
+
+  cargarDrivers(){
+    this.apiDriver.get().subscribe(data => {
+      this.listDrivers = data
+      console.log("Conductores cargados",this.listDrivers)
+    })
+  }
   addProduct(): void {
     if (!this.editData) { // Si no se ha recibido informacion para editar
       if(this.myForm.valid) { // Save

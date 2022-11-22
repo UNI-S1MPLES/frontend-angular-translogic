@@ -24,7 +24,6 @@ export class AddEditVehiclesComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      idTravelsVehicles: ['', Validators.required],
       kmTraveled: ['', Validators.required]
 
     });

@@ -5,12 +5,6 @@
   
     <div mat-dialog-content>
       <form [formGroup]="myForm">
-  
-        <!-- PRODUCT PRICE (Input Numbers) -->
-        <mat-form-field appearance="outline">
-          <mat-label>ID Travels Vehicles</mat-label>
-          <input formControlName="idTravelsVehicles" matInput type="number" placeholder="ID Travels Vehicles">
-        </mat-form-field>
 
         <!-- PRODUCT PRICE (Input Numbers) -->
         <mat-form-field appearance="outline">
@@ -21,8 +15,6 @@
       </form>
     </div>
 
-
-    <span *ngIf="myForm.get('idTravelsVehicles')?.hasError('required') && myForm.get('idTravelsVehicles')?.touched" class="has-error"></span>
     <span *ngIf="myForm.get('kmTraveled')?.hasError('required') && myForm.get('kmTraveled')?.touched" class="has-error"></span>
 
   

@@ -20,9 +20,9 @@ export class AddEditDriversComponent implements OnInit {
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
   listAdmins!:Admin[]
-  adminSelected!: number;
+  adminSelected!: string;
   listGroups!:Group[]
-  groupSelected!: number;
+  groupSelected!: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -36,8 +36,8 @@ export class AddEditDriversComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      adminSelected: ['', Validators.required],
-      groupSelected: ['', Validators.required],
+      idAdministrator: ['', Validators.required],
+      idGroup: ['', Validators.required],
       names: ['', Validators.required],
       surnames: ['', Validators.required],
       dateOfJoin: ['', Validators.required],
@@ -52,14 +52,15 @@ export class AddEditDriversComponent implements OnInit {
       this.myForm.controls['dateOfJoin'].setValue(this.editData.dateOfJoin);
       this.myForm.controls['dateOfBirthday'].setValue(this.editData.dateOfBirthday);
       this.myForm.controls['state'].setValue(this.editData.state);
-      this.myForm.controls['adminSelected'].setValue(this.editData.JSON.stringify({id:this.adminSelected}));
-      this.myForm.controls['groupSelected'].setValue(this.editData.JSON.stringify({id:this.groupSelected}));
+      this.myForm.controls['idAdministrator'].setValue(this.editData.adminSelected);
+      this.myForm.controls['idGroup'].setValue(this.editData.groupSelected);
     }
 
     this.cargarAdmins();
     this.cargarGroups();
     this.validacionID();
   }
+
 
   cargarAdmins(){
     this.apiAdmin.get().subscribe(data => {

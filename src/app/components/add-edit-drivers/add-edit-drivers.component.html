@@ -8,7 +8,7 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Seleccione el administrador</mat-label>
-          <mat-select formControlName="adminSelected" [(ngModel)]="adminSelected">
+          <mat-select formControlName="idAdministrator" [(ngModel)]="adminSelected">
             <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
               {{admin.id}} - {{admin.names}} {{admin.surnames}}
             </mat-option>
@@ -17,7 +17,7 @@
 
        <mat-form-field appearance="outline">
           <mat-label>Seleccione el grupo</mat-label>
-          <mat-select formControlName="groupSelected" [(ngModel)]="groupSelected">
+          <mat-select formControlName="idGroup" [(ngModel)]="groupSelected">
             <mat-option *ngFor="let group of listGroups" [value]="group.id">
               {{group.id}}
             </mat-option>

@@ -8,14 +8,14 @@
   
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
-          <mat-label>Description Tramo</mat-label>
-          <input formControlName="descriptionTramo" matInput placeholder="Description Tramo">
+          <mat-label>Descripción</mat-label>
+          <input formControlName="description" matInput placeholder="Inserte su descripción">
         </mat-form-field>
 
         <div class="table">
           <mat-form-field appearance="standard">
-            <mat-label>Filter</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Search filter" #input>
+            <mat-label>Filtro</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Buscar ruta" #input>
           </mat-form-field>
   
           <div class="mat-elevation-z5">
@@ -44,13 +44,13 @@
   
               <!-- Fruit Column -->
               <ng-container matColumnDef="startPlace">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Place</th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Lugar de inicio</th>
                 <td mat-cell *matCellDef="let row"> {{row.startPlace}} </td>
               </ng-container>
   
               <!-- Fruit Column -->
               <ng-container matColumnDef="endPlace">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> End Place </th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lugar de llegada </th>
               <td mat-cell *matCellDef="let row"> {{row.endPlace}} </td>
               </ng-container>
   
@@ -72,7 +72,7 @@
       </form>
     </div>
 
-    <span *ngIf="myForm.get('descriptionTramo')?.hasError('required') && myForm.get('descriptionTramo')?.touched" class="has-error"></span>
+    <span *ngIf="myForm.get('description')?.hasError('required') && myForm.get('description')?.touched" class="has-error"></span>
 
     <!-- BUTTONS FOR SAVE AND CLOSE -->
     <div mat-dialog-actions [align]="'end'">

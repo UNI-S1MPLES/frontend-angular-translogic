@@ -35,7 +35,7 @@ export class AddEditGroupsComponent implements OnInit {
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['adminSelected'].setValue(this.editData.idAdministrator);
+      this.myForm.controls['idAdministrator'].setValue(this.editData.adminSelected);
       this.myForm.controls['sector'].setValue(this.editData.sector);
     }
     this.cargarAdmins();

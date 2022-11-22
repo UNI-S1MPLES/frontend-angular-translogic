@@ -9,7 +9,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Selecciona el Administrator</mat-label>
-        <mat-select [(value)] = "adminSelected">
+        <mat-select formControlName="idAdministrator" [(ngModel)]="adminSelected">
           <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
             {{admin.id}} - {{admin.names}} {{admin.surnames}}
           </mat-option>
@@ -18,20 +18,20 @@
 
       <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>Start Place</mat-label>
-        <input formControlName="startPlace" matInput placeholder="Start Place">
+        <mat-label>Lugar de inicio</mat-label>
+        <input formControlName="startPlace" matInput placeholder="Inserte el lugar de inicio">
       </mat-form-field>
 
       <!-- PRODUCT NAME -->
       <mat-form-field appearance="outline">
-        <mat-label>End Place</mat-label>
-        <input formControlName="endPlace" matInput placeholder="End Place">
+        <mat-label>Lugar de llegada</mat-label>
+        <input formControlName="endPlace" matInput placeholder="Inserte el lugar de llegada">
       </mat-form-field>
 
       <div class="table">
         <mat-form-field appearance="standard">
-          <mat-label>Filter</mat-label>
-          <input matInput (keyup)="applyFilter($event)" placeholder="Search filter" #input>
+          <mat-label>Filtro</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Buscar tramo" #input>
         </mat-form-field>
 
         <div class="mat-elevation-z5">

@@ -8,7 +8,7 @@
   
         <mat-form-field appearance="outline">
           <mat-label>Seleccione el administrator</mat-label>
-          <mat-select [(value)] = "adminSelected">
+          <mat-select formControlName="idAdministrator" [(ngModel)]="adminSelected">
             <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
               {{admin.id}} - {{admin.names}} {{admin.surnames}}
             </mat-option>
@@ -18,13 +18,12 @@
         <!-- PRODUCT NAME -->
         <mat-form-field appearance="outline">
           <mat-label>Sector</mat-label>
-          <input formControlName="sector" matInput placeholder="Sector">
+          <input formControlName="sector" matInput placeholder="Inserte su sector">
         </mat-form-field>
 
       </form>
     </div>
 
-    <span *ngIf="myForm.get('adminSelected')?.hasError('required') && myForm.get('adminSelected')?.touched" class="has-error"></span>
     <span *ngIf="myForm.get('sector')?.hasError('required') && myForm.get('sector')?.touched" class="has-error"></span>
     
 
