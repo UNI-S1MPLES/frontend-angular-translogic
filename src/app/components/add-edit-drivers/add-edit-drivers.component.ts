@@ -1,3 +1,5 @@
+import { Admin } from './../../models/admin';
+import { Driver } from './../../models/driver';
 import { AdminService } from 'src/app/services/admin.service';
 import { GroupService } from 'src/app/services/group.service';
 import { DriverService } from './../../services/driver.service';
@@ -5,7 +7,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar';  // Mensaje de alerta
-import { Admin } from 'src/app/models/admin';
 import { Group } from 'src/app/models/group';
 
 
@@ -20,9 +21,12 @@ export class AddEditDriversComponent implements OnInit {
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
   listAdmins!:Admin[]
-  adminSelected!: string;
+  adminSelected: number = 1;
   listGroups!:Group[]
-  groupSelected!: string;
+  groupSelected: number = 1;
+
+  saveAdmin!: Admin
+  saveGroup!: Group
 
   constructor(
     private formBuilder: FormBuilder,
@@ -36,8 +40,8 @@ export class AddEditDriversComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      idAdministrator: ['', Validators.required],
-      idGroup: ['', Validators.required],
+      adminSelected: [''],
+      groupSelected: [''],
       names: ['', Validators.required],
       surnames: ['', Validators.required],
       dateOfJoin: ['', Validators.required],
@@ -52,15 +56,30 @@ export class AddEditDriversComponent implements OnInit {
       this.myForm.controls['dateOfJoin'].setValue(this.editData.dateOfJoin);
       this.myForm.controls['dateOfBirthday'].setValue(this.editData.dateOfBirthday);
       this.myForm.controls['state'].setValue(this.editData.state);
-      this.myForm.controls['idAdministrator'].setValue(this.editData.adminSelected);
-      this.myForm.controls['idGroup'].setValue(this.editData.groupSelected);
+      this.myForm.controls['adminSelected'].setValue(this.editData.saveAdmin);
+      this.myForm.controls['groupSelected'].setValue(this.editData.saveGroup);
     }
 
     this.cargarAdmins();
     this.cargarGroups();
-    this.validacionID();
+    this.JSONvalores();
   }
 
+  JSONvalores(){
+
+    var idAdmin = {id: this.adminSelected}
+    var jsonAdmin = JSON.stringify(idAdmin)
+    console.log("JSON admin",jsonAdmin)
+    this.saveAdmin = JSON.parse(jsonAdmin)
+    console.log("Objeto",this.saveAdmin)
+
+    var idGroup = {id: this.groupSelected}
+    var jsonGroup = JSON.stringify(idGroup)
+    console.log("JSON grupo",jsonGroup)
+    this.saveGroup = JSON.parse(jsonGroup)
+    console.log("Objeto",this.saveGroup)
+    
+  }
 
   cargarAdmins(){
     this.apiAdmin.get().subscribe(data => {
@@ -69,10 +88,6 @@ export class AddEditDriversComponent implements OnInit {
     })
   }
   
-  validacionID(){
-    console.log("Admin id", this.adminSelected)
-    console.log("Grupo id", this.groupSelected)
-  }
   cargarGroups(){
     this.apiGroup.get().subscribe(data => {
       this.listGroups = data
@@ -110,4 +125,6 @@ export class AddEditDriversComponent implements OnInit {
       }
     });
   }
+
+
 }

@@ -29,7 +29,7 @@ export class RouteService {
     return this.http.delete<Route>(this.resourcePath + "/" + id.toString());
   }
 
-  getAllTramosByRouteId(id: number) {
+  getListOfTramos(id: number) {
     return this.http.get<Tramo[]>(this.resourcePath + "/tramos/" + id.toString());
   }
 

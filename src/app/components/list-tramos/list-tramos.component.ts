@@ -1,13 +1,18 @@
-import { TramoService } from './../../services/tramo.service';
-import { Tramo } from './../../models/tramo';
 import { AddEditTramosComponent } from './../add-edit-tramos/add-edit-tramos.component';
+import { TramoService } from './../../services/tramo.service';
+import { AdditionalTramosRoutesComponent } from './../additional-tramos/additional-tramos-routes/additional-tramos-routes.component';
+import { AddEditRoutesComponent } from './../add-edit-routes/add-edit-routes.component';
+import { Route } from './../../models/route';
+import { RouteService } from './../../services/route.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'; // Cuadro de dialogo
 import { MatTableDataSource } from '@angular/material/table'; // Table
 import { MatSort } from '@angular/material/sort'; // Table
 import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
-import { AdditionalTramosRoutesComponent } from '../additional-tramos/additional-tramos-routes/additional-tramos-routes.component';
+import { AdditionalRoutesAdminComponent } from '../additional-routes/additional-routes-admin/additional-routes-admin.component';
+import { AdditionalRoutesTramosComponent } from '../additional-routes/additional-routes-tramos/additional-routes-tramos.component';
+import { Tramo } from 'src/app/models/tramo';
 
 @Component({
   selector: 'app-list-tramos',
@@ -20,7 +25,7 @@ export class ListTramosComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Tramo>();
-  displayedColumns: string[] = ['id', 'description', 'routes', 'actions'];
+  displayedColumns: string[] = ['id', 'description','routes', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -50,11 +55,11 @@ export class ListTramosComponent implements OnInit {
     );
   }
   getRoutes(row: any) {
-    this.dialog.open(AdditionalTramosRoutesComponent, { width: '50%', data: row });
+    this.dialog.open(AdditionalTramosRoutesComponent, { width: '30%', data: row });
   }
   edit(row: any) {
-    this.dialog.open(AddEditTramosComponent, {
-      width: '50%',
+    this.dialog.open(AddEditRoutesComponent, {
+      width: '30%',
       data: row
     }).afterClosed().subscribe(value => {
       if (value == 'actualizar') {
@@ -65,11 +70,11 @@ export class ListTramosComponent implements OnInit {
   delete(id: number) {
     this.api.delete(id).subscribe({
       next: (data) => {
-        this.snackBar.open("The Tramo with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
+        this.snackBar.open("The tramo with ID " + id + " was removed successfully", "Ok", { duration: 3000 });
         this.getAll();
       },
       error: () => {
-        this.snackBar.open("An error occurred while removing Tramo ID " + id, "Ok", { duration: 3000 });
+        this.snackBar.open("An error occurred while removing tramo ID " + id, "Ok", { duration: 3000 });
       }
     });
   }

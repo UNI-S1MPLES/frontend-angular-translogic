@@ -30,7 +30,7 @@
           <mat-label>Seleccione el vehiculo</mat-label>
           <mat-select formControlName="vehicleSelected" [(ngModel)]="vehicleSelected">
             <mat-option *ngFor="let vehicle of listVehicles" [value]="vehicle.id">
-              {{vehicle.id}} - {{vehicle.kmTraveled}}
+              {{vehicle.id}} - {{vehicle.kmTravelled}}
             </mat-option>
           </mat-select>
         </mat-form-field>

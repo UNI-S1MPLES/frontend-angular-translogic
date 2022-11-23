@@ -1,4 +1,4 @@
 export interface Vehicle {
     id: number;
-    kmTraveled: number;
+    kmTravelled: number;
 }
