@@ -10,7 +10,7 @@
         <div class="main">
 
             <div class="container-fluid">
-                <div class="page__box p-4">LIST OF VEHICLES</div>
+                <div class="page__box p-4">LISTA DE VEHICULOS</div>
                 <div class="page_content shadow p-3 position-relative">
                     <div class="page_content-data">
 
@@ -18,7 +18,7 @@
                             <div class="travels">
                                 <div>
                                     <button mat-raised-button class="button" (click)="openDialog()">
-                                        <mat-icon class="img_button">add_box</mat-icon> Set new vehicle
+                                        <mat-icon class="img_button">add_box</mat-icon> Añadir vehiculo
                                     </button>
                                 </div>
 
@@ -42,14 +42,14 @@
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="kmTravelled">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Km Traveled
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Km recorridos
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.kmTravelled}} </td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="travels">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Travels
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Viajes
                                                 </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getTravels(row)">
@@ -60,7 +60,7 @@
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="actions">
-                                                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                                                <th mat-header-cell *matHeaderCellDef> Acciones </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="edit" (click)="edit(row)">
                                                         <mat-icon>edit</mat-icon>

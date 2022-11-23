@@ -10,7 +10,7 @@
         <div class="main">
 
             <div class="container-fluid">
-                <div class="page__box p-4">LIST OF TRAVELS</div>
+                <div class="page__box p-4">LISTA DE VIAJES</div>
                 <div class="page_content shadow p-3 position-relative">
                     <div class="page_content-data">
 
@@ -18,7 +18,7 @@
                             <div class="travels">
                                 <div>
                                     <button mat-raised-button class="button" (click)="openDialog()">
-                                        <mat-icon class="img_button">add_box</mat-icon> Set new travel
+                                        <mat-icon class="img_button">add_box</mat-icon> Añadir viaje
                                     </button>
                                 </div>
 
@@ -42,7 +42,7 @@
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="dateOfStart">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Start
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de inicio
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.dateOfStart | date:'dd/MM/yyyy
                                                     - hh:mm'}} </td>
@@ -50,7 +50,7 @@
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="dateOfEnd">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of End
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha fin
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.dateOfEnd | date:'dd/MM/yyyy -
                                                     hh:mm'}} </td>
@@ -58,21 +58,21 @@
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="duration">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Duración
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.duration}} horas</td>
                                             </ng-container>
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="state">
-                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> State
+                                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado
                                                 </th>
                                                 <td mat-cell *matCellDef="let row"> {{row.state}} </td>
                                             </ng-container>
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="administrator">
-                                                <th mat-header-cell *matHeaderCellDef> Administrator </th>
+                                                <th mat-header-cell *matHeaderCellDef> Administrador </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getAdmin(row)">
                                                         <mat-icon>touch_app</mat-icon>
@@ -82,7 +82,7 @@
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="driver">
-                                                <th mat-header-cell *matHeaderCellDef> Driver </th>
+                                                <th mat-header-cell *matHeaderCellDef> Conductor </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getDriver(row)">
                                                         <mat-icon>touch_app</mat-icon>
@@ -92,7 +92,7 @@
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="vehicle">
-                                                <th mat-header-cell *matHeaderCellDef> Vehicle </th>
+                                                <th mat-header-cell *matHeaderCellDef> Vehiculo </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getVehicle(row)">
                                                         <mat-icon>touch_app</mat-icon>
@@ -102,7 +102,7 @@
 
                                             <!-- Name Column -->
                                             <ng-container matColumnDef="route">
-                                                <th mat-header-cell *matHeaderCellDef> Route </th>
+                                                <th mat-header-cell *matHeaderCellDef> Ruta </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="more" (click)="getRoute(row)">
                                                         <mat-icon>touch_app</mat-icon>
@@ -112,7 +112,7 @@
 
                                             <!-- Fruit Column -->
                                             <ng-container matColumnDef="actions">
-                                                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                                                <th mat-header-cell *matHeaderCellDef> Acciones </th>
                                                 <td mat-cell *matCellDef="let row">
                                                     <button mat-icon-button class="edit" (click)="edit(row)">
                                                         <mat-icon>edit</mat-icon>
