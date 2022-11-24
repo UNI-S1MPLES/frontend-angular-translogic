@@ -1,3 +1,4 @@
+import { AdditionalTravelsAdminComponent } from './../additional-travels/additional-travels-admin/additional-travels-admin.component';
 import { Driver } from './../../models/driver';
 import { DriverService } from './../../services/driver.service';
 import { AddEditDriversComponent } from './../add-edit-drivers/add-edit-drivers.component';
@@ -9,7 +10,7 @@ import { MatPaginator } from '@angular/material/paginator'; // Table
 import { MatSnackBar } from '@angular/material/snack-bar'; // Mensaje de alerta
 import { AdditionalDriversAdminComponent } from '../additional-drivers/additional-drivers-admin/additional-drivers-admin.component';
 import { AdditionalDriversGroupComponent } from '../additional-drivers/additional-drivers-group/additional-drivers-group.component';
-
+import { AdditionalDriversTravelsComponent } from '../additional-drivers/additional-drivers-travels/additional-drivers-travels.component';
 @Component({
   selector: 'app-list-drivers',
   templateUrl: './list-drivers.component.html',
@@ -21,7 +22,7 @@ export class ListDriversComponent implements OnInit {
   sideBarOpen = true;
 
   dataSource = new MatTableDataSource<Driver>();
-  displayedColumns: string[] = ['id', 'names', 'surnames', 'dateOfJoin', 'dateOfBirthday', 'state', 'administrator', 'group', 'actions'];
+  displayedColumns: string[] = ['id', 'names', 'surnames', 'dateOfJoin', 'dateOfBirthday', 'state', 'administrator', 'group', 'travels', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -55,6 +56,9 @@ export class ListDriversComponent implements OnInit {
   }
   getGroup(row: any) {
     this.dialog.open(AdditionalDriversGroupComponent, { width: '50%', data: row });
+  }
+  getTravels(row: any) {
+    this.dialog.open(AdditionalDriversTravelsComponent, { width: '50%', data: row });
   }
   edit(row: any) {
     this.dialog.open(AddEditDriversComponent, {

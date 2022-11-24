@@ -1,0 +1,62 @@
+<main class="contenido">
+
+    <h2 class="admin_name">Viajes de {{NameAndSurname}}</h2>
+    <br>
+    <div class="table">
+        <mat-form-field appearance="standard">
+            <mat-label>Filtro</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search filter" #input>
+        </mat-form-field>
+        <div class="mat-elevation-z5">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="dateOfStart">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de inicio
+                    </th>
+                    <td mat-cell *matCellDef="let row"> {{row.dateOfStart | date:'dd/MM/yyyy - hh:mm'}} </td>
+                </ng-container>
+
+                <!-- Fruit Column -->
+                <ng-container matColumnDef="dateOfEnd">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha fin
+                    </th>
+                    <td mat-cell *matCellDef="let row"> {{row.dateOfEnd | date:'dd/MM/yyyy - hh:mm'}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="duration">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Duración
+                    </th>
+                    <td mat-cell *matCellDef="let row"> {{row.duration}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="state">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado
+                    </th>
+                    <td mat-cell *matCellDef="let row"> {{row.state}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">Este driver no tiene viajes
+                    </td>
+                </tr>
+
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select the number of items per page">
+            </mat-paginator>
+        </div>
+    </div>
+</main>

@@ -21,9 +21,9 @@ export class AddEditDriversComponent implements OnInit {
   myForm!: FormGroup; // Received data of the form (angular reactive form)
   actionBtn: string = "Agregar"; // Save or Update
   listAdmins!:Admin[]
-  adminSelected: number = 1;
+  adminSelected!: number
   listGroups!:Group[]
-  groupSelected: number = 1;
+  groupSelected!: number
 
   saveAdmin!: Admin
   saveGroup!: Group

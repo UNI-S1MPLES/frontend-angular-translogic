@@ -11,7 +11,7 @@
           <mat-label>Seleccione el administrator</mat-label>
           <mat-select formControlName="adminSelected" [(ngModel)]="adminSelected">
             <mat-option *ngFor="let admin of listAdmins" [value]="admin.id">
-              {{admin.id}} - {{admin.names}} {{admin.surnames}}
+              {{admin.names}} {{admin.surnames}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -20,7 +20,7 @@
           <mat-label>Seleccione el conductor</mat-label>
           <mat-select formControlName="driverSelected" [(ngModel)]="driverSelected">
             <mat-option *ngFor="let driver of listDrivers" [value]="driver.id">
-              {{driver.id}} - {{driver.names}} {{driver.surnames}}
+              {{driver.names}} {{driver.surnames}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -30,7 +30,7 @@
           <mat-label>Seleccione el vehiculo</mat-label>
           <mat-select formControlName="vehicleSelected" [(ngModel)]="vehicleSelected">
             <mat-option *ngFor="let vehicle of listVehicles" [value]="vehicle.id">
-              {{vehicle.id}} - {{vehicle.kmTravelled}}
+              {{vehicle.id}} - {{vehicle.kmTravelled}} Km
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -40,7 +40,7 @@
           <mat-label>Seleccione la ruta</mat-label>
           <mat-select formControlName="routeSelected" [(ngModel)]="routeSelected">
             <mat-option *ngFor="let route of listRoutes" [value]="route.id">
-              {{route.id}} - {{route.startPlace}} / {{route.endPlace}}
+              {{route.startPlace}} / {{route.endPlace}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -81,10 +81,6 @@
       </form>
     </div>
 
-    <span *ngIf="myForm.get('idAdministrator')?.hasError('required') && myForm.get('idAdministrator')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('idDriver')?.hasError('required') && myForm.get('idDriver')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('idTravelsVehicles')?.hasError('required') && myForm.get('idTravelsVehicles')?.touched" class="has-error"></span>
-    <span *ngIf="myForm.get('idRoute')?.hasError('required') && myForm.get('idRoute')?.touched" class="has-error"></span>
     <span *ngIf="myForm.get('dateOfStart')?.hasError('required') && myForm.get('dateOfStart')?.touched" class="has-error"></span>
     <span *ngIf="myForm.get('dateOfEnd')?.hasError('required') && myForm.get('dateOfEnd')?.touched" class="has-error"></span>
     <span *ngIf="myForm.get('state')?.hasError('required') && myForm.get('state')?.touched" class="has-error"></span>

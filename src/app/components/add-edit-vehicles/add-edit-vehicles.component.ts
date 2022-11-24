@@ -24,14 +24,13 @@ export class AddEditVehiclesComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      kmTraveled: ['', Validators.required]
+      kmTravelled: ['', Validators.required]
 
     });
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['idTravelsVehicles'].setValue(this.editData.idTravelsVehicles);
-      this.myForm.controls['kmTraveled'].setValue(this.editData.kmTraveled)
+      this.myForm.controls['kmTravelled'].setValue(this.editData.kmTravelled)
     }
   }
 

@@ -4,6 +4,7 @@ import { Driver } from './../models/driver';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { environment } from './../../environments/environment';
+import { Travel } from '../models/travel';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,9 @@ export class DriverService {
 
   getListOfGroups(id: number) {
     return this.http.get<Group[]>(this.resourcePath + "/group/" + id.toString());
+  }
+
+  getListOfTravels(id: number) {
+    return this.http.get<Travel[]>(this.resourcePath + "/travels/" + id.toString());
   }
 }

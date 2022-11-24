@@ -21,8 +21,8 @@ export class TravelService {
   getAbout(id: number) {
     return this.http.get<Travel>(this.resourcePath + "/info/" + id.toString());
   }
-  add(data: Travel) {
-    return this.http.post<Travel>(this.resourcePath, data);
+  add(travel: Travel) {
+    return this.http.post<Travel>(this.resourcePath, travel);
   }
   update(data: Travel, id: number) {
     return this.http.put<Travel>(this.resourcePath + id, data);
@@ -42,4 +42,5 @@ export class TravelService {
   getListOfRoutes(id: number) {
     return this.http.get<Route[]>(this.resourcePath + "/route/" + id.toString());
   }
+  
 }

@@ -24,16 +24,21 @@ export class AddEditTravelsComponent implements OnInit {
   actionBtn: string = "Agregar"; // Save or Update
 
   listAdmins!:Admin[]
-  adminSelected!: string
+  adminSelected!: number
 
   listDrivers!:Driver[]
-  driverSelected!: string
+  driverSelected!: number
 
   listVehicles!:Vehicle[]
-  vehicleSelected!: string
+  vehicleSelected!: number
 
   listRoutes!:Route[]
-  routeSelected!: string
+  routeSelected!: number
+
+  saveAdmin!: Admin
+  saveDriver!: Driver
+  saveVehicle!: Vehicle
+  saveRoute!: Route
 
   constructor(
     private formBuilder: FormBuilder,
@@ -49,10 +54,10 @@ export class AddEditTravelsComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       id: [''],
-      idAdministrator: ['', Validators.required],
-      idDriver: ['', Validators.required],
-      idTravelsVehicles: ['', Validators.required],
-      idRoute: ['', Validators.required],
+      adminSelected: [''],
+      driverSelected: [''],
+      vehicleSelected: [''],
+      routeSelected: [''],
       dateOfStart: ['', Validators.required],
       dateOfEnd: ['', Validators.required],
       duration: ['', Validators.required],
@@ -61,19 +66,47 @@ export class AddEditTravelsComponent implements OnInit {
 
     if (this.editData) {
       this.actionBtn = "Actualizar";
-      this.myForm.controls['idAdministrator'].setValue(this.editData.idAdministrator);
-      this.myForm.controls['idDriver'].setValue(this.editData.idDriver);
-      this.myForm.controls['idTravelsVehicles'].setValue(this.editData.idTravelsVehicles);
-      this.myForm.controls['idRoute'].setValue(this.editData.idRoute);
       this.myForm.controls['dateOfStart'].setValue(this.editData.dateOfStart);
       this.myForm.controls['dateOfEnd'].setValue(this.editData.dateOfEnd);
       this.myForm.controls['duration'].setValue(this.editData.duration);
       this.myForm.controls['state'].setValue(this.editData.state);
+      this.myForm.controls['adminSelected'].setValue(this.editData.saveAdmin);
+      this.myForm.controls['driverSelected'].setValue(this.editData.saveDriver);
+      this.myForm.controls['vehicleSelected'].setValue(this.editData.saveVehicle);
+      this.myForm.controls['routeSelected'].setValue(this.editData.saveRoute);
     }
     this.cargarAdmins();
     this.cargarDrivers();
     this.cargarRoutes();
     this.cargarVehicles();
+  }
+
+  JSONvalores(){
+
+    var idAdmin = {id: this.adminSelected}
+    var jsonAdmin = JSON.stringify(idAdmin)
+    console.log("JSON admin",jsonAdmin)
+    this.saveAdmin = JSON.parse(jsonAdmin)
+    console.log("Objeto",this.saveAdmin)
+
+    var idDriver = {id: this.driverSelected}
+    var jsonDriver = JSON.stringify(idDriver)
+    console.log("JSON driver",jsonDriver)
+    this.saveDriver = JSON.parse(jsonDriver)
+    console.log("Objeto",this.saveDriver)
+
+    var idVehicle = {id: this.vehicleSelected}
+    var jsonVehicle = JSON.stringify(idVehicle)
+    console.log("JSON vehicle",jsonVehicle)
+    this.saveVehicle = JSON.parse(jsonVehicle)
+    console.log("Objeto",this.saveVehicle)
+
+    var idRoute = {id: this.routeSelected}
+    var jsonRoute = JSON.stringify(idRoute)
+    console.log("JSON route",jsonRoute)
+    this.saveRoute = JSON.parse(jsonRoute)
+    console.log("Objeto",this.saveRoute)
+    
   }
   cargarAdmins(){
     this.apiAdmin.get().subscribe(data => {
@@ -103,7 +136,7 @@ export class AddEditTravelsComponent implements OnInit {
   }
   addProduct(): void {
     if (!this.editData) { // Si no se ha recibido informacion para editar
-      if(this.myForm.valid) { // Save
+      if (this.myForm.valid) { // Save
         this.service.add(this.myForm.value).subscribe({
           next: (data) => {
             this.snackBar.open("Travel was added successfully", "Ok", { duration: 3000 });
@@ -111,7 +144,7 @@ export class AddEditTravelsComponent implements OnInit {
             this.dialogRef.close('agregar');
           },
           error: () => {
-            this.snackBar.open("An error occurred while adding the Travel", "Ok", { duration: 3000 });
+            this.snackBar.open("An error occurred while adding the travel", "Ok", { duration: 3000 });
           }
         });
       }
